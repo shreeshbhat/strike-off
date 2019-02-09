@@ -1,0 +1,22 @@
+.kd-create-task-wrapper {
+  height: 50px;
+  padding: 15px 15px 15px 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.kd-create-task {
+  max-width: 600px;
+  height: 40px;
+  width: 100%;
+  font-size: 16px;
+
+}
+
+.kd-create-task:focus {
+  outline-color: darkgreen;
+  outline-style: dashed;
+  outline-width: thin;
+}
+
