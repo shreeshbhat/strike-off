@@ -11,7 +11,12 @@
   },
   "dependencies": {
     "@stencil/core": "~0.16.2",
-    "@stencil/router": "~0.3.1"
+    "@stencil/redux": "^0.1.0",
+    "@stencil/router": "~0.3.1",
+    "redux": "^4.0.1"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@types/redux": "^3.6.0"
+  }
 }
