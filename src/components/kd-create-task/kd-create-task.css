@@ -10,13 +10,18 @@
   max-width: 600px;
   height: 40px;
   width: 100%;
-  font-size: 16px;
+  font-size: 20px;
+  padding-left: 12px;
 
+  border: 1px solid transparent;
+
+  border-radius: 2px;
+  border: none;
+  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
 }
 
 .kd-create-task:focus {
-  outline-color: darkgreen;
-  outline-style: dashed;
-  outline-width: thin;
+  transition: 0.2s;
+  outline: none;
+  box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.1);
 }
-
