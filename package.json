@@ -1,8 +1,8 @@
 {
-  "name": "kandoo",
+  "name": "strike-off",
   "private": true,
   "version": "0.0.1",
-  "description": "Stencil App Starter",
+  "description": "A fast progressive web app to organize your to-do items and strike em off.",
   "scripts": {
     "build": "stencil build",
     "start": "stencil build --dev --watch --serve",

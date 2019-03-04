@@ -1,16 +1,16 @@
 import { Component } from '@stencil/core';
 
 @Component({
-  tag: 'kd-create-task',
-  styleUrl: 'kd-create-task.css',
+  tag: 'so-create-task',
+  styleUrl: 'so-create-task.css',
   shadow: true
 })
-export class KdCreateTask {
+export class SoCreateTask {
 
   render() {
     return (
-      <div class="kd-create-task-wrapper">
-        <input class="kd-create-task">
+      <div class="so-create-task-wrapper">
+        <input class="so-create-task">
         </input>
       </div>
     );
