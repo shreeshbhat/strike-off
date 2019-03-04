@@ -12,7 +12,7 @@ export class AppRoot {
     return (
       <div>
         <header>
-          <h1>Kando</h1>
+          <h1>Strike off</h1>
         </header>
 
         <main>

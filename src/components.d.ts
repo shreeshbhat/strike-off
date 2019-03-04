@@ -29,8 +29,8 @@ export namespace Components {
   interface AppRoot {}
   interface AppRootAttributes extends StencilHTMLAttributes {}
 
-  interface KdCreateTask {}
-  interface KdCreateTaskAttributes extends StencilHTMLAttributes {}
+  interface SoCreateTask {}
+  interface SoCreateTaskAttributes extends StencilHTMLAttributes {}
 }
 
 declare global {
@@ -38,14 +38,14 @@ declare global {
     'AppHome': Components.AppHome;
     'AppProfile': Components.AppProfile;
     'AppRoot': Components.AppRoot;
-    'KdCreateTask': Components.KdCreateTask;
+    'SoCreateTask': Components.SoCreateTask;
   }
 
   interface StencilIntrinsicElements {
     'app-home': Components.AppHomeAttributes;
     'app-profile': Components.AppProfileAttributes;
     'app-root': Components.AppRootAttributes;
-    'kd-create-task': Components.KdCreateTaskAttributes;
+    'so-create-task': Components.SoCreateTaskAttributes;
   }
 
 
@@ -67,24 +67,24 @@ declare global {
     new (): HTMLAppRootElement;
   };
 
-  interface HTMLKdCreateTaskElement extends Components.KdCreateTask, HTMLStencilElement {}
-  var HTMLKdCreateTaskElement: {
-    prototype: HTMLKdCreateTaskElement;
-    new (): HTMLKdCreateTaskElement;
+  interface HTMLSoCreateTaskElement extends Components.SoCreateTask, HTMLStencilElement {}
+  var HTMLSoCreateTaskElement: {
+    prototype: HTMLSoCreateTaskElement;
+    new (): HTMLSoCreateTaskElement;
   };
 
   interface HTMLElementTagNameMap {
     'app-home': HTMLAppHomeElement
     'app-profile': HTMLAppProfileElement
     'app-root': HTMLAppRootElement
-    'kd-create-task': HTMLKdCreateTaskElement
+    'so-create-task': HTMLSoCreateTaskElement
   }
 
   interface ElementTagNameMap {
     'app-home': HTMLAppHomeElement;
     'app-profile': HTMLAppProfileElement;
     'app-root': HTMLAppRootElement;
-    'kd-create-task': HTMLKdCreateTaskElement;
+    'so-create-task': HTMLSoCreateTaskElement;
   }
 
 
