@@ -17,8 +17,8 @@ export class AppRoot {
 
         <main>
 
-          <kd-create-task>
-          </kd-create-task>
+          <so-create-task>
+          </so-create-task>
           <stencil-router>
             <stencil-route-switch scrollTopOffset={0}>
               <stencil-route url='/' component='app-home' exact={true} />
