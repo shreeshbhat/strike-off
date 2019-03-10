@@ -7,7 +7,7 @@
 
   Any global CSS variables should also be applied here.
 */
-
+@import url("theme.css");
 
 body {
   margin: 0px;
