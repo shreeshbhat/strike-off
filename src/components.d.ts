@@ -29,8 +29,23 @@ export namespace Components {
   interface AppRoot {}
   interface AppRootAttributes extends StencilHTMLAttributes {}
 
-  interface SoCreateTask {}
-  interface SoCreateTaskAttributes extends StencilHTMLAttributes {}
+  interface SoCreateTodo {}
+  interface SoCreateTodoAttributes extends StencilHTMLAttributes {
+    'onInputSubmit'?: (event: CustomEvent) => void;
+  }
+
+  interface SoTodoItem {
+    'checked': boolean;
+    'index': string;
+    'text': string;
+  }
+  interface SoTodoItemAttributes extends StencilHTMLAttributes {
+    'checked'?: boolean;
+    'index'?: string;
+    'onItemCheck'?: (event: CustomEvent) => void;
+    'onItemRemove'?: (event: CustomEvent) => void;
+    'text'?: string;
+  }
 }
 
 declare global {
@@ -38,14 +53,16 @@ declare global {
     'AppHome': Components.AppHome;
     'AppProfile': Components.AppProfile;
     'AppRoot': Components.AppRoot;
-    'SoCreateTask': Components.SoCreateTask;
+    'SoCreateTodo': Components.SoCreateTodo;
+    'SoTodoItem': Components.SoTodoItem;
   }
 
   interface StencilIntrinsicElements {
     'app-home': Components.AppHomeAttributes;
     'app-profile': Components.AppProfileAttributes;
     'app-root': Components.AppRootAttributes;
-    'so-create-task': Components.SoCreateTaskAttributes;
+    'so-create-todo': Components.SoCreateTodoAttributes;
+    'so-todo-item': Components.SoTodoItemAttributes;
   }
 
 
@@ -67,24 +84,32 @@ declare global {
     new (): HTMLAppRootElement;
   };
 
-  interface HTMLSoCreateTaskElement extends Components.SoCreateTask, HTMLStencilElement {}
-  var HTMLSoCreateTaskElement: {
-    prototype: HTMLSoCreateTaskElement;
-    new (): HTMLSoCreateTaskElement;
+  interface HTMLSoCreateTodoElement extends Components.SoCreateTodo, HTMLStencilElement {}
+  var HTMLSoCreateTodoElement: {
+    prototype: HTMLSoCreateTodoElement;
+    new (): HTMLSoCreateTodoElement;
+  };
+
+  interface HTMLSoTodoItemElement extends Components.SoTodoItem, HTMLStencilElement {}
+  var HTMLSoTodoItemElement: {
+    prototype: HTMLSoTodoItemElement;
+    new (): HTMLSoTodoItemElement;
   };
 
   interface HTMLElementTagNameMap {
     'app-home': HTMLAppHomeElement
     'app-profile': HTMLAppProfileElement
     'app-root': HTMLAppRootElement
-    'so-create-task': HTMLSoCreateTaskElement
+    'so-create-todo': HTMLSoCreateTodoElement
+    'so-todo-item': HTMLSoTodoItemElement
   }
 
   interface ElementTagNameMap {
     'app-home': HTMLAppHomeElement;
     'app-profile': HTMLAppProfileElement;
     'app-root': HTMLAppRootElement;
-    'so-create-task': HTMLSoCreateTaskElement;
+    'so-create-todo': HTMLSoCreateTodoElement;
+    'so-todo-item': HTMLSoTodoItemElement;
   }
 
 

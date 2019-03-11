@@ -1,4 +1,4 @@
-.so-create-task-wrapper {
+.so-create-todo-wrapper {
   height: 50px;
   padding: 15px 15px 15px 15px;
   display: flex;
@@ -6,7 +6,7 @@
   justify-content: center;
 }
 
-.so-create-task {
+.so-create-todo {
   max-width: 600px;
   height: 40px;
   width: 100%;
@@ -20,7 +20,7 @@
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
 }
 
-.so-create-task:focus {
+.so-create-todo:focus {
   transition: 0.2s;
   outline: none;
   box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.1);
