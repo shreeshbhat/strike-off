@@ -33,10 +33,9 @@ export class AppRoot {
         </header>
 
         <main>
-
           <so-create-todo onInputSubmit={this.inputSubmitHandler}>
           </so-create-todo>
-          <ul class="todo-list">
+          <div class="todo-list">
             {this.list.map((item) => (
               <so-todo-item
                 onItemCheck={this.itemCheckedHandler}
@@ -46,7 +45,7 @@ export class AppRoot {
                 index={item.index}
               />
             ))}
-          </ul>
+          </div>
           <stencil-router>
             <stencil-route-switch scrollTopOffset={0}>
               <stencil-route url='/' component='app-home' exact={true} />
