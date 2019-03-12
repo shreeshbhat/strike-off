@@ -1,8 +1,7 @@
-
-import { Component, Prop, Event, EventEmitter } from '@stencil/core';
+import { Component, Prop, Event, EventEmitter } from "@stencil/core";
 
 @Component({
-  tag: 'so-todo-item',
+  tag: "so-todo-item",
   styleUrl: "so-todo-item.css",
   shadow: true
 })
@@ -18,11 +17,16 @@ export class SoTodoItem {
 
   render() {
     return (
-      <li class={this.checked ? 'completed' : ''}>
-        <input class="toggle" type="checkbox" checked={this.checked} onChange={this.handleOnCheck} />
+      <ion-card>
+        <input
+          class="toggle"
+          type="checkbox"
+          checked={this.checked}
+          onChange={this.handleOnCheck}
+        />
         <label>{this.text}</label>
-        <button class="destroy" onClick={this.handleOnRemove}></button>
-      </li>
+        <button class="destroy" onClick={this.handleOnRemove} />
+      </ion-card>
     );
   }
 }
