@@ -9,6 +9,8 @@ import '@stencil/core';
 
 import '@stencil/router';
 import '@stencil/state-tunnel';
+import '@ionic/core';
+import 'ionicons';
 import {
   MatchResults,
 } from '@stencil/router';

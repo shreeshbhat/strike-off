@@ -1,4 +1,5 @@
 import { Component, State } from '@stencil/core';
+import '@ionic/core';
 import { Todo } from '../../interfaces/Todo';
 
 
@@ -35,7 +36,7 @@ export class AppRoot {
         <main>
           <so-create-todo onInputSubmit={this.inputSubmitHandler}>
           </so-create-todo>
-          <div class="todo-list">
+          <ion-card class="todo-list">
             {this.list.map((item) => (
               <so-todo-item
                 onItemCheck={this.itemCheckedHandler}
@@ -45,7 +46,7 @@ export class AppRoot {
                 index={item.index}
               />
             ))}
-          </div>
+          </ion-card>
           <stencil-router>
             <stencil-route-switch scrollTopOffset={0}>
               <stencil-route url='/' component='app-home' exact={true} />

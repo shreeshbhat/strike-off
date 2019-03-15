@@ -1,3 +1,7 @@
 .destroy {
   display: none;
 }
+
+.label {
+ padding-left: 10px;
+}
