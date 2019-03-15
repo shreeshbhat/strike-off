@@ -17,16 +17,19 @@ export class SoTodoItem {
 
   render() {
     return (
-      <ion-card>
-        <input
+      <ion-item lines="none">
+        <ion-checkbox
           class="toggle"
-          type="checkbox"
+          aria-label="Strike off this task."
           checked={this.checked}
           onChange={this.handleOnCheck}
         />
-        <label>{this.text}</label>
-        <button class="destroy" onClick={this.handleOnRemove} />
-      </ion-card>
+        <ion-label class="label">{this.text}</ion-label>
+
+        {/* <ion-button fill="outline" class="delete" onClick={this.handleOnRemove}>
+          <ion-icon slot="icon-only" name="close" />
+        </ion-button> */}
+      </ion-item>
     );
   }
 }
