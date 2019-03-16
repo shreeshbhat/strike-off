@@ -7,10 +7,10 @@
 
 import '@stencil/core';
 
-import '@stencil/router';
-import '@stencil/state-tunnel';
 import '@ionic/core';
 import 'ionicons';
+import '@stencil/router';
+import '@stencil/state-tunnel';
 import {
   MatchResults,
 } from '@stencil/router';
