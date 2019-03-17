@@ -11,11 +11,13 @@
   },
   "dependencies": {
     "@ionic/core": "^4.1.1",
-    "@stencil/core": "0.18.1",
+    "@stencil/core": "0.18.0",
     "@stencil/router": "^0.3.3",
     "@stencil/sass": "^0.1.1",
     "pouchdb-browser": "^7.0.0"
   },
   "license": "MIT",
-  "devDependencies": {}
+  "devDependencies": {
+    "workbox-build": "3.4.1"
+  }
 }
