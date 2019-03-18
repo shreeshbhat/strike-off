@@ -11,22 +11,12 @@ import '@stencil/router';
 import '@stencil/state-tunnel';
 import '@ionic/core';
 import 'ionicons';
-import {
-  MatchResults,
-} from '@stencil/router';
 
 
 export namespace Components {
 
   interface AppHome {}
   interface AppHomeAttributes extends StencilHTMLAttributes {}
-
-  interface AppProfile {
-    'match': MatchResults;
-  }
-  interface AppProfileAttributes extends StencilHTMLAttributes {
-    'match'?: MatchResults;
-  }
 
   interface AppRoot {}
   interface AppRootAttributes extends StencilHTMLAttributes {}
@@ -53,7 +43,6 @@ export namespace Components {
 declare global {
   interface StencilElementInterfaces {
     'AppHome': Components.AppHome;
-    'AppProfile': Components.AppProfile;
     'AppRoot': Components.AppRoot;
     'SoCreateTodo': Components.SoCreateTodo;
     'SoTodoItem': Components.SoTodoItem;
@@ -61,7 +50,6 @@ declare global {
 
   interface StencilIntrinsicElements {
     'app-home': Components.AppHomeAttributes;
-    'app-profile': Components.AppProfileAttributes;
     'app-root': Components.AppRootAttributes;
     'so-create-todo': Components.SoCreateTodoAttributes;
     'so-todo-item': Components.SoTodoItemAttributes;
@@ -72,12 +60,6 @@ declare global {
   var HTMLAppHomeElement: {
     prototype: HTMLAppHomeElement;
     new (): HTMLAppHomeElement;
-  };
-
-  interface HTMLAppProfileElement extends Components.AppProfile, HTMLStencilElement {}
-  var HTMLAppProfileElement: {
-    prototype: HTMLAppProfileElement;
-    new (): HTMLAppProfileElement;
   };
 
   interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {}
@@ -100,7 +82,6 @@ declare global {
 
   interface HTMLElementTagNameMap {
     'app-home': HTMLAppHomeElement
-    'app-profile': HTMLAppProfileElement
     'app-root': HTMLAppRootElement
     'so-create-todo': HTMLSoCreateTodoElement
     'so-todo-item': HTMLSoTodoItemElement
@@ -108,7 +89,6 @@ declare global {
 
   interface ElementTagNameMap {
     'app-home': HTMLAppHomeElement;
-    'app-profile': HTMLAppProfileElement;
     'app-root': HTMLAppRootElement;
     'so-create-todo': HTMLSoCreateTodoElement;
     'so-todo-item': HTMLSoTodoItemElement;

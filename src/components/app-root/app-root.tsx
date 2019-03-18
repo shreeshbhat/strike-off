@@ -68,23 +68,25 @@ export class AppRoot {
 
         <main>
           <so-create-todo onInputSubmit={this.inputSubmitHandler} />
-          <ion-card class="todo-list">
-            {this.list.map(item => (
-              <so-todo-item
-                onItemCheck={this.itemCheckedHandler}
-                onItemRemove={this.itemRemoveHandler}
-                checked={item.checked}
-                text={item.text}
-                index={item.index}
-              />
-            ))}
-          </ion-card>
-          <stencil-router>
+          <div class="card-layout">
+            <ion-card class="card">
+              {this.list.map(item => (
+                <so-todo-item
+                  onItemCheck={this.itemCheckedHandler}
+                  onItemRemove={this.itemRemoveHandler}
+                  checked={item.checked}
+                  text={item.text}
+                  index={item.index}
+                />
+              ))}
+            </ion-card>
+          </div>
+          {/* <stencil-router>
             <stencil-route-switch scrollTopOffset={0}>
               <stencil-route url="/" component="app-home" exact={true} />
               <stencil-route url="/profile/:name" component="app-profile" />
             </stencil-route-switch>
-          </stencil-router>
+          </stencil-router> */}
         </main>
       </div>
     );

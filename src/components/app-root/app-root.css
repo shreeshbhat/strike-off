@@ -1,19 +1,31 @@
 header {
   background: var(--primary-color);
   color: white;
-  height: 56px;
+  height: 5.6rem;
   display: flex;
   align-items: center;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  box-shadow: 0 0.2rem 0.5rem 0 rgba(0, 0, 0, 0.26);
 }
 
 h1 {
-  font-size: 1.4rem;
+  font-size: 2.2rem;
   font-weight: 500;
-  color: #fff;
-  padding: 0 12px;
+  color: white;
+  padding: 0 1.2rem;
 }
 
 body {
   background: beige;
+}
+
+.card-layout {
+  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  max-width: 58rem;
+  width: 100%;
 }
