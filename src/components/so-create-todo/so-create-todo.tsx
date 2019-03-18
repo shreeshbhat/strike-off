@@ -31,10 +31,10 @@ export class SoCreateTodo {
       <div class="so-create-todo-wrapper">
         <input
           class="so-create-todo"
-          aria-label="Add a task."
+          aria-label="What needs to be done?."
           name="addTodo"
           id="addTodo"
-          placeholder="Add a task..."
+          placeholder="What needs to be done?"
           onInput={this.handleInputChange}
           ref={el => (this.textInput = el as HTMLInputElement)}
         />

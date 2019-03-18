@@ -1,27 +1,38 @@
 .so-create-todo-wrapper {
-  height: 50px;
-  padding: 15px 15px 15px 15px;
+  height: 5rem;
+  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .so-create-todo {
-  max-width: 600px;
-  height: 40px;
+  max-width: 60rem;
+  height: 4rem;
   width: 100%;
-  font-size: 20px;
-  padding-left: 12px;
-
-  border: 1px solid transparent;
-
-  border-radius: 2px;
+  font-size: 2rem;
+  padding-left: 1.2rem;
+  border: 0.1rem solid transparent;
+  border-radius: 0.2rem;
   border: none;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.08);
+  box-shadow: 0 0.2rem 0.2rem 0 rgba(0,0,0,0.16), 0 0 0 0.1rem rgba(0,0,0,0.08);
 }
 
 .so-create-todo:focus {
   transition: 0.2s;
   outline: none;
-  box-shadow: 0 3px 6px 0 rgba(0,0,0,0.2), 0 0 0 1px rgba(0,0,0,0.1);
+  box-shadow: 0 0.3rem 0.6rem 0 rgba(0,0,0,0.2), 0 0 0 0.1rem rgba(0,0,0,0.1);
+}
+
+.so-create-todo::-webkit-input-placeholder {
+  color: #454545;
+}
+.so-create-todo::-moz-placeholder {
+  color: #454545;
+}
+.so-create-todo:-ms-input-placeholder {
+  color: #454545;
+}
+.so-create-todo:-moz-placeholder {
+  color: #454545;
 }

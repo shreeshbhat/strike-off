@@ -1,7 +1,78 @@
+.card {
+  max-width: 60rem;
+  min-width: 38.4rem;
+}
+
+.item {
+  font-size:1.6rem;
+  --min-height: 4.8rem;
+  --padding-start: 1rem;
+}
+
+.wrapper {
+  position: relative;
+  margin-left: 0.6rem;
+}
+
+.wrapper input {
+  height: 4rem;
+  top: -1rem;
+  left: -1rem;
+  opacity: 0;
+  position: absolute;
+  width: 4rem;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.wrapper input + label::before {
+  border: 0.1rem solid #454545;
+  content: "";
+  height: 2rem;
+  top: 0;
+  left: 0;
+  position: absolute;
+  width: 2rem;
+}
+
+.wrapper input + label::after {
+  content: "";
+  border: 0.2rem solid #454545;
+  border-left: 0;
+  border-top: 0;
+  height: 1rem;
+  left: 0.7rem;
+  opacity: 0;
+  position: absolute;
+  top: 0.3rem;
+  transform: rotate(45deg);
+  transition: opacity 0.2s ease-in-out;
+  width: 0.6rem;
+}
+
+.wrapper input:checked + label::after {
+  opacity: 1;
+}
+
+.wrapper input:focus + label::before {
+  box-shadow: 0 0 0.3rem 0 black;
+  outline: 0.2rem solid black;
+}
+
+.toggle {
+  margin: 0;
+}
+
+.toggle:focus {
+
+}
+
+.label {
+  padding-left: 3rem;
+  font-size: 1.6rem;
+}
+
 .destroy {
   display: none;
 }
 
-.label {
- padding-left: 10px;
-}

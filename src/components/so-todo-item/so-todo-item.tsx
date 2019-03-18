@@ -17,18 +17,22 @@ export class SoTodoItem {
 
   render() {
     return (
-      <ion-item lines="none">
-        <ion-checkbox
-          class="toggle"
-          aria-label="Strike off this task."
-          checked={this.checked}
-          onChange={this.handleOnCheck}
-        />
-        <ion-label class="label">{this.text}</ion-label>
+      <ion-item class="item" lines="none">
+        <div class="wrapper">
+          <input
+            class="toggle"
+            type="checkbox"
+            aria-label="Mark task completed."
+            checked={this.checked}
+            onChange={this.handleOnCheck}
+          />
 
-        {/* <ion-button fill="outline" class="delete" onClick={this.handleOnRemove}>
+          <label class="label">{this.text}</label>
+
+          {/* <ion-button fill="outline" class="delete" onClick={this.handleOnRemove}>
           <ion-icon slot="icon-only" name="close" />
         </ion-button> */}
+        </div>
       </ion-item>
     );
   }
