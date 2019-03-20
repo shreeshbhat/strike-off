@@ -19,9 +19,10 @@
 }
 
 .so-create-todo:focus {
-  transition: 0.2s;
+  transition: 0.1s;
   outline: none;
-  box-shadow: 0 0.3rem 0.6rem 0 rgba(0,0,0,0.2), 0 0 0 0.1rem rgba(0,0,0,0.1);
+  box-shadow: 0 0 0 0.3rem hsla(212, 97%, 43%, 0.3);
+  border: 0.1rem solid hsl(212, 100%, 56%);
 }
 
 .so-create-todo::-webkit-input-placeholder {
