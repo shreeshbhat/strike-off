@@ -1,11 +1,15 @@
 import { Config } from '@stencil/core';
 import { sass } from '@stencil/sass';
+import builtins from 'rollup-plugin-node-builtins';
+import globals from 'rollup-plugin-node-globals';
 
 // https://stenciljs.com/docs/config
 
 export const config: Config = {
   plugins: [
-    sass()
+    sass(),
+    builtins(),
+    globals()
   ],
   globalStyle: 'src/global/app.css',
   globalScript: 'src/global/app.ts',
@@ -15,7 +19,7 @@ export const config: Config = {
       serviceWorker: {
         swSrc: 'src/sw.js',
         globPatterns: [
-          '**/*.{js,css,json,html,ico,png,svg}'
+          '**/*.{js,css,json,html,ico,png}'
         ]
       }
     }

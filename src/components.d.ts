@@ -7,8 +7,6 @@
 
 import '@stencil/core';
 
-import '@stencil/router';
-import '@stencil/state-tunnel';
 import '@ionic/core';
 import 'ionicons';
 
@@ -28,12 +26,12 @@ export namespace Components {
 
   interface SoTodoItem {
     'checked': boolean;
-    'index': string;
+    'id': string;
     'text': string;
   }
   interface SoTodoItemAttributes extends StencilHTMLAttributes {
     'checked'?: boolean;
-    'index'?: string;
+    'id'?: string;
     'onItemCheck'?: (event: CustomEvent) => void;
     'onItemRemove'?: (event: CustomEvent) => void;
     'text'?: string;

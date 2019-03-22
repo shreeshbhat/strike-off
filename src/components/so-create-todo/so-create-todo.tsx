@@ -22,22 +22,27 @@ export class SoCreateTodo {
   async keydown($event: KeyboardEvent) {
     if ($event.key.toLowerCase() === "enter") {
       this.inputSubmit.emit(this.value);
-      this.textInput.value = '';
+      this.textInput.value = "";
     }
   }
 
   render() {
     return (
-      <div class="so-create-todo-wrapper">
-        <input
-          class="so-create-todo"
-          aria-label="What needs to be done?."
-          name="addTodo"
-          id="addTodo"
-          placeholder="What needs to be done?"
-          onInput={this.handleInputChange}
-          ref={el => (this.textInput = el as HTMLInputElement)}
-        />
+      <div class="flex-center">
+        <div class="create-group">
+          <label class="label-wrapper" htmlFor="addTodo">
+            What needs to be done?
+          </label>
+          <div class="flex-center input-wrapper">
+            <input
+              class="so-create-todo"
+              name="addTodo"
+              id="addTodo"
+              onInput={this.handleInputChange}
+              ref={el => (this.textInput = el as HTMLInputElement)}
+            />
+          </div>
+        </div>
       </div>
     );
   }

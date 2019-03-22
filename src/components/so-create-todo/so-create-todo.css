@@ -1,9 +1,23 @@
-.so-create-todo-wrapper {
-  height: 5rem;
-  padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+.flex-center {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.create-group {
+  padding: 1rem 1.5rem 0 1.5rem;
+  width: 100%;
+  max-width: 60rem;
+}
+
+.input-wrapper {
+  height: 5rem;
+  margin-top: 0.5rem;
+}
+
+.label-wrapper {
+  padding: 0.5rem 0 0.5rem 0;
+  font-size: 2rem;
 }
 
 .so-create-todo {
@@ -21,6 +35,7 @@
 .so-create-todo:focus {
   transition: 0.1s;
   outline: none;
+  -webkit-appearance: none;
   box-shadow: 0 0 0 0.3rem hsla(212, 97%, 43%, 0.3);
   border: 0.1rem solid hsl(212, 100%, 56%);
 }
