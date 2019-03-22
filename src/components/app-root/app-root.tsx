@@ -1,5 +1,7 @@
+import "@ionic/core";
 import { Component, State, Listen, Prop } from "@stencil/core";
 import { Todo } from "../../interfaces/Todo";
+import { addTodo } from "../../utils/service";
 
 @Component({
   tag: "app-root",
@@ -35,20 +37,26 @@ export class AppRoot {
   }
 
   @State() list: Todo[] = [
-    { index: new Date().toISOString(), text: "Drink water", checked: false }
+    { id: new Date().toISOString(), text: "Drink water", checked: false }
   ];
 
+  componentWillLoad() {}
+
   inputSubmitHandler = (e: CustomEvent) => {
-    this.list = [
-      ...this.list,
-      { index: new Date().toISOString(), text: e.detail, checked: false }
-    ];
+    const item = {
+      id: new Date().toISOString(),
+      text: e.detail,
+      checked: false
+    };
+    addTodo(item);
+    this.list = [...this.list, item];
   };
 
   itemCheckedHandler = (e: CustomEvent) => {
     const list = [...this.list];
-    const item = list[e.detail];
-    list[e.detail] = Object.assign({}, item, { checked: !item.checked });
+    const index = this.list.findIndex(x => x.id === e.detail);
+    const item = list[index];
+    list[index] = Object.assign({}, item, { checked: !item.checked });
     this.list = list;
   };
 
@@ -76,7 +84,7 @@ export class AppRoot {
                   onItemRemove={this.itemRemoveHandler}
                   checked={item.checked}
                   text={item.text}
-                  index={item.index}
+                  id={item.id}
                 />
               ))}
             </ion-card>

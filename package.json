@@ -18,6 +18,8 @@
   },
   "license": "MIT",
   "devDependencies": {
+    "rollup-plugin-node-builtins": "^2.1.2",
+    "rollup-plugin-node-globals": "^1.4.0",
     "workbox-build": "3.4.1"
   }
 }

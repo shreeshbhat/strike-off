@@ -55,6 +55,7 @@
 }
 
 .wrapper input:focus + label::before {
+  -webkit-appearance: none;
   box-shadow: 0 0 0 0.3rem hsla(212, 97%, 43%, 0.3);
   border-color: hsl(212, 100%, 56%);
 }
