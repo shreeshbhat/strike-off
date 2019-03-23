@@ -1,7 +1,7 @@
 import "@ionic/core";
 import { Component, State, Listen, Prop } from "@stencil/core";
 import { Todo } from "../../interfaces/Todo";
-import { addTodo } from "../../utils/service";
+import { setTodos, getTodos } from "../../utils/service";
 
 @Component({
   tag: "app-root",
@@ -36,11 +36,14 @@ export class AppRoot {
     window.location.reload();
   }
 
-  @State() list: Todo[] = [
-    { id: new Date().toISOString(), text: "Drink water", checked: false }
-  ];
+  @State() list: Todo[] = [];
 
-  componentWillLoad() {}
+  componentWillLoad() {
+    getTodos().then(val => {
+      if(!!val)
+      this.list = val as Todo[];
+    });
+  }
 
   inputSubmitHandler = (e: CustomEvent) => {
     const item = {
@@ -48,8 +51,8 @@ export class AppRoot {
       text: e.detail,
       checked: false
     };
-    addTodo(item);
     this.list = [...this.list, item];
+    setTodos(this.list);
   };
 
   itemCheckedHandler = (e: CustomEvent) => {
@@ -58,6 +61,7 @@ export class AppRoot {
     const item = list[index];
     list[index] = Object.assign({}, item, { checked: !item.checked });
     this.list = list;
+    setTodos(list);
   };
 
   itemRemoveHandler = (e: CustomEvent) => {
