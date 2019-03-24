@@ -21,6 +21,7 @@
 }
 
 .so-create-todo {
+  -webkit-appearance: none;
   max-width: 60rem;
   height: 4rem;
   width: 100%;

@@ -26,15 +26,15 @@ export namespace Components {
 
   interface SoTodoItem {
     'checked': boolean;
-    'id': string;
     'text': string;
+    'todoId': number;
   }
   interface SoTodoItemAttributes extends StencilHTMLAttributes {
     'checked': boolean;
-    'id': string;
     'onItemCheck'?: (event: CustomEvent) => void;
     'onItemRemove'?: (event: CustomEvent) => void;
     'text': string;
+    'todoId': number;
   }
 }
 
