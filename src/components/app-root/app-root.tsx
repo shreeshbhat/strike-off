@@ -1,7 +1,7 @@
 import "@ionic/core";
 import { Component, State, Listen, Prop } from "@stencil/core";
 import { Todo } from "../../interfaces/Todo";
-import { setTodos, getTodos } from "../../utils/service";
+import { addTodo, getTodos, updateTodo } from "../../utils/service";
 
 @Component({
   tag: "app-root",
@@ -9,34 +9,31 @@ import { setTodos, getTodos } from "../../utils/service";
   shadow: true
 })
 export class AppRoot {
+  private counter = 1;
+  @State() list: Todo[] = [];
   @Prop({ connect: "ion-toast-controller" })
   toastCtrl?: HTMLIonToastControllerElement;
 
   @Listen("window:swUpdate")
   async onSWUpdate() {
     const registration = await navigator.serviceWorker.getRegistration();
-
     if (!registration || !registration.waiting) {
       // If there is no registration, this is the first service
       // worker to be installed. registration.waiting is the one
       // waiting to be activiated.
       return;
     }
-
     const toast = await this.toastCtrl.create({
       message: "New version available",
       showCloseButton: true,
       closeButtonText: "Reload"
     });
-
     await toast.present();
     await toast.onWillDismiss();
-
     registration.waiting.postMessage("skipWaiting");
     window.location.reload();
   }
 
-  @State() list: Todo[] = [];
 
   componentWillLoad() {
     getTodos().then(val => {
@@ -47,21 +44,21 @@ export class AppRoot {
 
   inputSubmitHandler = (e: CustomEvent) => {
     const item = {
-      id: new Date().toISOString(),
+      todoId: this.updateCounter(),
       text: e.detail,
       checked: false
     };
     this.list = [...this.list, item];
-    setTodos(this.list);
+    addTodo(item);
   };
 
   itemCheckedHandler = (e: CustomEvent) => {
     const list = [...this.list];
-    const index = this.list.findIndex(x => x.id === e.detail);
+    const index = this.list.findIndex(x => x.todoId === e.detail);
     const item = list[index];
     list[index] = Object.assign({}, item, { checked: !item.checked });
     this.list = list;
-    setTodos(list);
+    updateTodo(list[index]);
   };
 
   itemRemoveHandler = (e: CustomEvent) => {
@@ -70,6 +67,10 @@ export class AppRoot {
       ...this.list.slice(e.detail + 1)
     ];
   };
+
+  updateCounter(): number {
+    return this.counter++;
+  }
 
   render() {
     return (
@@ -88,7 +89,7 @@ export class AppRoot {
                   onItemRemove={this.itemRemoveHandler}
                   checked={item.checked}
                   text={item.text}
-                  id={item.id}
+                  todoId={item.todoId}
                 />
               ))}
             </ion-card>

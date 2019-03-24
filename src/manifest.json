@@ -20,6 +20,13 @@
     "sizes": "19x19",
     "type": "image/png"
   }],
+  "prefer_related_applications": true,
+  "related_applications": [
+    {
+      "platform": "play",
+      "id": "com.google.samples.apps.iosched"
+    }
+  ],
   "background_color": "#a14545",
   "theme_color": "#a14545"
 }
