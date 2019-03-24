@@ -30,11 +30,11 @@ export namespace Components {
     'text': string;
   }
   interface SoTodoItemAttributes extends StencilHTMLAttributes {
-    'checked'?: boolean;
-    'id'?: string;
+    'checked': boolean;
+    'id': string;
     'onItemCheck'?: (event: CustomEvent) => void;
     'onItemRemove'?: (event: CustomEvent) => void;
-    'text'?: string;
+    'text': string;
   }
 }
 
