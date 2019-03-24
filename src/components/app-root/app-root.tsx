@@ -10,7 +10,7 @@ import { setTodos, getTodos } from "../../utils/service";
 })
 export class AppRoot {
   @Prop({ connect: "ion-toast-controller" })
-  toastCtrl: HTMLIonToastControllerElement;
+  toastCtrl?: HTMLIonToastControllerElement;
 
   @Listen("window:swUpdate")
   async onSWUpdate() {

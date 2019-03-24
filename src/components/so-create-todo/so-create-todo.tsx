@@ -7,8 +7,8 @@ import { Component, Event, EventEmitter, State, Listen } from "@stencil/core";
 })
 export class SoCreateTodo {
   textInput!: HTMLInputElement;
-  @Event() inputSubmit: EventEmitter;
-  @State() value: string;
+  @Event() inputSubmit?: EventEmitter;
+  @State() value?: string;
 
   componentDidLoad() {
     window.addEventListener("appload", () => {
@@ -20,9 +20,9 @@ export class SoCreateTodo {
 
   @Listen("document:keydown", { passive: true })
   async keydown($event: KeyboardEvent) {
-    if ($event.key.toLowerCase() === "enter") {
+    if ($event.key.toLowerCase() === "enter" && !!this.textInput.value) {
       this.inputSubmit.emit(this.value);
-      this.textInput.value = "";
+      this.textInput.value = '';
     }
   }
 
