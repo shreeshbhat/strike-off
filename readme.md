@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/84a9cbe6-0868-44b7-a621-9b85c86731cc/deploy-status)](https://app.netlify.com/sites/strike-off/deploys)
+
 # Strike off
 
 Strike off is a progressive web app using Web Components & Indexed DB.
