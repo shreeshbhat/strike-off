@@ -1,4 +1,5 @@
 import { Component, Prop, Event, EventEmitter } from "@stencil/core";
+import 'ionicons';
 
 @Component({
   tag: "so-todo-item",
@@ -17,7 +18,7 @@ export class SoTodoItem {
 
   render() {
     return (
-      <ion-item class="item" lines="none">
+      <ion-item class="item" lines="full">
         <div class="wrapper">
           <input
             class="toggle"
@@ -26,13 +27,11 @@ export class SoTodoItem {
             checked={this.checked}
             onChange={this.handleOnCheck}
           />
-
           <label class="label">{this.text}</label>
-
-          {/* <ion-button fill="outline" class="delete" onClick={this.handleOnRemove}>
-          <ion-icon slot="icon-only" name="close" />
-        </ion-button> */}
         </div>
+        <button slot="end" class="delete" onClick={this.handleOnRemove}>
+          <ion-icon slot="icon-only" name="close" />
+        </button>
       </ion-item>
     );
   }
