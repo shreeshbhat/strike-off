@@ -2,7 +2,7 @@ import { openDB } from 'idb/with-async-ittr.js';
 
 export async function openDb() {
   const db = await openDB('Todos', 1, {
-    upgrade(db) {
+    upgrade(db: any) {
       const store = db.createObjectStore('todos', {
         keyPath: 'todoId'
       });

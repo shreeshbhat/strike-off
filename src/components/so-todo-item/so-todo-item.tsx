@@ -9,8 +9,8 @@ export class SoTodoItem {
   @Prop() checked!: boolean;
   @Prop() text!: string;
   @Prop() todoId!: number;
-  @Event() itemCheck?: EventEmitter;
-  @Event() itemRemove?: EventEmitter;
+  @Event() itemCheck!: EventEmitter;
+  @Event() itemRemove!: EventEmitter;
 
   handleOnCheck = () => this.itemCheck.emit(this.todoId);
   handleOnRemove = () => this.itemRemove.emit(this.todoId);

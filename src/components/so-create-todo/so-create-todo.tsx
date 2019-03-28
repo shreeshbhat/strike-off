@@ -7,8 +7,8 @@ import { Component, Event, EventEmitter, State, Listen } from "@stencil/core";
 })
 export class SoCreateTodo {
   textInput!: HTMLInputElement;
-  @Event() inputSubmit?: EventEmitter;
-  @State() value?: string;
+  @Event() inputSubmit!: EventEmitter;
+  @State() value!: string;
 
   componentDidLoad() {
     window.addEventListener("appload", () => {

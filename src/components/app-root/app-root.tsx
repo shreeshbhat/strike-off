@@ -12,7 +12,7 @@ export class AppRoot {
   private counter = 1;
   @State() list: Todo[] = [];
   @Prop({ connect: "ion-toast-controller" })
-  toastCtrl?: HTMLIonToastControllerElement;
+  toastCtrl!: HTMLIonToastControllerElement;
 
   @Listen("window:swUpdate")
   async onSWUpdate() {
