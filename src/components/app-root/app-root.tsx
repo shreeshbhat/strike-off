@@ -1,7 +1,7 @@
 import "@ionic/core";
 import { Component, State, Listen, Prop } from "@stencil/core";
 import { Todo } from "../../interfaces/Todo";
-import { addTodo, getTodos, updateTodo } from "../../utils/service";
+import { addTodo, getTodos, updateTodo, deleteTodo } from "../../utils/service";
 
 @Component({
   tag: "app-root",
@@ -62,9 +62,11 @@ export class AppRoot {
   };
 
   itemRemoveHandler = (e: CustomEvent) => {
+    const index = this.list.findIndex(x => x.todoId === e.detail);
+    deleteTodo(this.list[index]);
     this.list = [
-      ...this.list.slice(0, e.detail),
-      ...this.list.slice(e.detail + 1)
+      ...this.list.slice(0, index),
+      ...this.list.slice(index + 1)
     ];
   };
 

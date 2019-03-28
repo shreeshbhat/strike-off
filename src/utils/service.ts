@@ -26,3 +26,8 @@ export async function updateTodo(todo: any) {
   const db = await openDb();
   await db.put('todos', todo);
 }
+
+export async function deleteTodo(todo: any) {
+  const db = await openDb();
+  return db.delete('todos', todo.todoId);
+}
