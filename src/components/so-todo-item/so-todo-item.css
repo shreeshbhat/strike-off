@@ -7,7 +7,7 @@
   font-size:1.6rem;
   --min-height: 4.8rem;
   --padding-start: 1rem;
-  --inner-padding-end: 1rem;
+  --inner-padding-end: 0.7rem;
   --min-height: 5.5rem;
 }
 
@@ -94,7 +94,9 @@
 .delete:focus {
   -webkit-appearance: none;
   box-shadow: 0 0 0 0.3rem hsla(212, 97%, 43%, 0.3);
-  border-color: hsl(212, 100%, 56%);
+  border: 0.1rem solid hsl(212, 100%, 56%);
+  border-radius: 0.3rem;
+  outline: none;
 }
 
 .destroy {

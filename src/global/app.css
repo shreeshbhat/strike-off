@@ -27,3 +27,9 @@ body {
 *::after {
 	box-sizing: inherit;
 }
+
+* {
+  -webkit-backface-visibility:  hidden;
+  -webkit-tap-highlight-color:  transparent;
+  -webkit-appearance: none;
+}

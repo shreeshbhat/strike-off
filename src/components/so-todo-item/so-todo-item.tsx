@@ -18,7 +18,7 @@ export class SoTodoItem {
 
   render() {
     return (
-      <ion-item class="item" lines="full">
+      <ion-item class="item" lines="none">
         <div class="wrapper">
           <input
             class="toggle"
@@ -30,7 +30,7 @@ export class SoTodoItem {
           <label class="label">{this.text}</label>
         </div>
         <button slot="end" class="delete" onClick={this.handleOnRemove}>
-          <ion-icon slot="icon-only" name="close" />
+          <ion-icon slot="icon-only" mode="md" name="close" />
         </button>
       </ion-item>
     );
