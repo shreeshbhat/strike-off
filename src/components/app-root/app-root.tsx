@@ -9,7 +9,6 @@ import { addTodo, getTodos, updateTodo, deleteTodo } from "../../utils/service";
   shadow: true
 })
 export class AppRoot {
-  private counter = 1;
   @State() list: Todo[] = [];
   @Prop({ connect: "ion-toast-controller" })
   toastCtrl!: HTMLIonToastControllerElement;
@@ -71,7 +70,8 @@ export class AppRoot {
   };
 
   updateCounter(): number {
-    return this.counter++;
+    const listLength = this.list.length;
+    return listLength > 0 ? this.list[listLength - 1].todoId + 1 : 0;
   }
 
   render() {
