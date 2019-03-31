@@ -35,6 +35,7 @@
   left: 0;
   position: absolute;
   width: 2rem;
+  border-radius: 0.2rem;
 }
 
 .wrapper input + label::after {
@@ -58,8 +59,8 @@
 
 .wrapper input:focus + label::before {
   -webkit-appearance: none;
-  box-shadow: 0 0 0 0.3rem hsla(212, 97%, 43%, 0.3);
-  border-color: hsl(212, 100%, 56%);
+  box-shadow: 0 0 0 0.3rem var(--highlight-box-shadow-color);
+  border-color: var(--highlight-border-color);
 }
 
 .toggle {
@@ -93,8 +94,8 @@
 
 .delete:focus {
   -webkit-appearance: none;
-  box-shadow: 0 0 0 0.3rem hsla(212, 97%, 43%, 0.3);
-  border: 0.1rem solid hsl(212, 100%, 56%);
+  box-shadow: 0 0 0 0.3rem var(--highlight-box-shadow-color);
+  border: 0.1rem solid var(--highlight-border-color);
   border-radius: 0.3rem;
   outline: none;
 }

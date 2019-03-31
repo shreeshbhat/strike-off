@@ -1,3 +1,12 @@
 :root {
   --primary-color: hsla(0, 40%, 45%, 1);
+  --app-background-color: hsla(0, 45%, 98%, 1);
+  /* --highlight-box-shadow-color: hsla(212, 97%, 43%, 0.3);
+  --highlight-border-color: hsl(212, 100%, 56%); */
+
+
+
+  --highlight-box-shadow-color: hsla(20, 80%, 70%, 0.4);
+  --highlight-border-color: hsla(20, 75%, 55%, 1);
+
 }

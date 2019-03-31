@@ -37,8 +37,8 @@
   transition: 0.1s;
   outline: none;
   -webkit-appearance: none;
-  box-shadow: 0 0 0 0.3rem hsla(212, 97%, 43%, 0.3);
-  border: 0.1rem solid hsl(212, 100%, 56%);
+  box-shadow: 0 0 0 0.3rem var(--highlight-box-shadow-color);
+  border: 0.1rem solid var(--highlight-border-color);
 }
 
 .so-create-todo::-webkit-input-placeholder {
