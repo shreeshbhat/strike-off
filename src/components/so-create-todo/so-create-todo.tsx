@@ -1,4 +1,4 @@
-import { Component, Event, EventEmitter, State, Listen } from "@stencil/core";
+import { Component, Event, EventEmitter, State, Listen, h } from "@stencil/core";
 
 @Component({
   tag: "so-create-todo",
