@@ -10,8 +10,8 @@
     "test.watch": "stencil test --spec --e2e --watchAll"
   },
   "dependencies": {
-    "@ionic/core": "^4.1.1",
-    "@stencil/core": "0.18.0",
+    "@ionic/core": "4.2.0-dev.201904021846.8883b72",
+    "@stencil/core": "1.0.0-alpha.4",
     "@stencil/router": "^0.3.3",
     "@stencil/sass": "^0.1.1",
     "idb": "^4.0.0",

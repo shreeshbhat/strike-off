@@ -5,54 +5,64 @@
  */
 
 
-import '@stencil/core';
-
-import '@ionic/core';
-import 'ionicons';
+import { JSXBase } from '@stencil/core/internal';
+import { JSX } from '@stencil/core';
 
 
 export namespace Components {
-
   interface AppHome {}
-  interface AppHomeAttributes extends StencilHTMLAttributes {}
-
   interface AppRoot {}
-  interface AppRootAttributes extends StencilHTMLAttributes {}
-
   interface SoCreateTodo {}
-  interface SoCreateTodoAttributes extends StencilHTMLAttributes {
-    'onInputSubmit'?: (event: CustomEvent) => void;
-  }
-
   interface SoTodoItem {
     'checked': boolean;
     'text': string;
     'todoId': number;
   }
-  interface SoTodoItemAttributes extends StencilHTMLAttributes {
+}
+
+interface HTMLStencilElement extends HTMLElement {
+  componentOnReady(): Promise<this>;
+  forceUpdate(): void;
+}
+
+declare namespace LocalJSX {
+  interface AppHome extends JSXBase.HTMLAttributes {}
+  interface AppRoot extends JSXBase.HTMLAttributes {}
+  interface SoCreateTodo extends JSXBase.HTMLAttributes {
+    'onInputSubmit'?: (event: CustomEvent<any>) => void;
+  }
+  interface SoTodoItem extends JSXBase.HTMLAttributes {
     'checked': boolean;
-    'onItemCheck'?: (event: CustomEvent) => void;
-    'onItemRemove'?: (event: CustomEvent) => void;
+    'onItemCheck'?: (event: CustomEvent<any>) => void;
+    'onItemRemove'?: (event: CustomEvent<any>) => void;
     'text': string;
     'todoId': number;
   }
-}
 
-declare global {
-  interface StencilElementInterfaces {
+  interface ElementInterfaces {
     'AppHome': Components.AppHome;
     'AppRoot': Components.AppRoot;
     'SoCreateTodo': Components.SoCreateTodo;
     'SoTodoItem': Components.SoTodoItem;
   }
 
-  interface StencilIntrinsicElements {
-    'app-home': Components.AppHomeAttributes;
-    'app-root': Components.AppRootAttributes;
-    'so-create-todo': Components.SoCreateTodoAttributes;
-    'so-todo-item': Components.SoTodoItemAttributes;
+  interface IntrinsicElements {
+    'AppHome': LocalJSX.AppHome;
+    'AppRoot': LocalJSX.AppRoot;
+    'SoCreateTodo': LocalJSX.SoCreateTodo;
+    'SoTodoItem': LocalJSX.SoTodoItem;
   }
+}
+export { LocalJSX as JSX };
 
+declare module "@stencil/core" {
+  export namespace JSX {
+    interface ElementInterfaces extends LocalJSX.ElementInterfaces {}
+    interface IntrinsicElements extends LocalJSX.IntrinsicElements {}
+  }
+}
+
+declare global {
 
   interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {}
   var HTMLAppHomeElement: {
@@ -77,7 +87,6 @@ declare global {
     prototype: HTMLSoTodoItemElement;
     new (): HTMLSoTodoItemElement;
   };
-
   interface HTMLElementTagNameMap {
     'app-home': HTMLAppHomeElement
     'app-root': HTMLAppRootElement
@@ -91,14 +100,5 @@ declare global {
     'so-create-todo': HTMLSoCreateTodoElement;
     'so-todo-item': HTMLSoTodoItemElement;
   }
-
-
-  export namespace JSX {
-    export interface Element {}
-    export interface IntrinsicElements extends StencilIntrinsicElements {
-      [tagName: string]: any;
-    }
-  }
-  export interface HTMLAttributes extends StencilHTMLAttributes {}
-
 }
+
