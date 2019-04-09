@@ -1,3 +1,8 @@
+:host {
+  display: flex;
+  height: 100%;
+}
+
 header {
   background: var(--primary-color);
   color: white;
@@ -8,24 +13,40 @@ header {
 }
 
 h1 {
-  font-size: 2.2rem;
-  font-weight: 500;
+  font-variation-settings: 'wght' 600, 'wdth' 100;
+  font-size: 2.4rem;
   color: white;
   padding: 0 1.2rem;
 }
 
-body {
-  background: beige;
+.menu-button {
+  margin-left: 0.7rem;
+  --highlight-box-shadow-color: hsla(0, 0%, 80%, 0.4);
+  --highlight-border-color: hsl(0, 0%, 90%);
 }
 
-.card-layout {
-  padding: 0.7rem 1.5rem 1.5rem 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.card {
-  max-width: 58rem;
+.content {
+  height: 100%;
   width: 100%;
+}
+
+.menu-icon {
+  color: white;
+}
+
+app-menu {
+  transition: margin-left 0.4s cubic-bezier(0.4,0.0,0.2,1);
+  display: block;
+}
+
+.show-menu {
+  margin-left: 0;
+  height: auto;
+
+}
+
+.hide-menu {
+  /* display: none; */
+  margin-left: -28.1rem;
+  height: 0;
 }

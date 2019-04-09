@@ -1,7 +1,6 @@
 import "@ionic/core";
-import { Component, State, Listen, Prop, h } from "@stencil/core";
-import { Todo } from "../../interfaces/Todo";
-import { addTodo, getTodos, updateTodo, deleteTodo } from "../../utils/service";
+import { Component, Element, Host, Listen, Method, Prop, State, h } from "@stencil/core";
+import { addToDB, getFromDB } from "../../utils/service";
 
 @Component({
   tag: "app-root",
@@ -9,11 +8,13 @@ import { addTodo, getTodos, updateTodo, deleteTodo } from "../../utils/service";
   shadow: true
 })
 export class AppRoot {
-  @State() list: Todo[] = [];
+  @Element() el!: HTMLAppRootElement;
+  @State() hideMenu: boolean = true;
+  @State() darkTheme: boolean = false;
   @Prop({ connect: "ion-toast-controller" })
   toastCtrl!: HTMLIonToastControllerElement;
 
-  @Listen("window:swUpdate")
+  @Listen('swUpdate', { target: 'window' })
   async onSWUpdate() {
     const registration = await navigator.serviceWorker.getRegistration();
     if (!registration || !registration.waiting) {
@@ -33,77 +34,56 @@ export class AppRoot {
     window.location.reload();
   }
 
-
-  componentWillLoad() {
-    getTodos().then(val => {
-      if(!!val)
-      this.list = val as Todo[];
-    });
+  @Method()
+  async openMenu() {
+    this.hideMenu = !this.hideMenu;
   }
 
-  inputSubmitHandler = (e: CustomEvent) => {
-    const item = {
-      todoId: this.updateCounter(),
-      text: e.detail,
-      checked: false
-    };
-    this.list = [...this.list, item];
-    addTodo(item);
-  };
+  @Method()
+  async changeTheme() {
+    this.darkTheme = !this.darkTheme;
+    addToDB('darkTheme', this.darkTheme);
+    this.setDarkThemeClass();
+  }
 
-  itemCheckedHandler = (e: CustomEvent) => {
-    const list = [...this.list];
-    const index = this.list.findIndex(x => x.todoId === e.detail);
-    const item = list[index];
-    list[index] = Object.assign({}, item, { checked: !item.checked });
-    this.list = list;
-    updateTodo(list[index]);
-  };
+  private setDarkThemeClass() {
+    if(this.darkTheme) {
+      this.el.parentElement.classList.add('dark');
+      this.el.parentElement.classList.remove('light');
+    }
+    else {
+      this.el.parentElement.classList.add('light');
+      this.el.parentElement.classList.remove('dark');
+    }
+  }
 
-  itemRemoveHandler = (e: CustomEvent) => {
-    const index = this.list.findIndex(x => x.todoId === e.detail);
-    deleteTodo(this.list[index]);
-    this.list = [
-      ...this.list.slice(0, index),
-      ...this.list.slice(index + 1)
-    ];
-  };
-
-  updateCounter(): number {
-    const listLength = this.list.length;
-    return listLength > 0 ? this.list[listLength - 1].todoId + 1 : 0;
+  componentWillLoad() {
+    getFromDB('darkTheme').then(val => {
+      if (!!val)
+        this.darkTheme = val as boolean;
+        this.setDarkThemeClass();
+    });
   }
 
   render() {
     return (
-      <div>
-        <header>
-          <h1>Strike off</h1>
-        </header>
-
-        <main>
-          <so-create-todo onInputSubmit={this.inputSubmitHandler} />
-          <div class="card-layout">
-            <ion-card class="card">
-              {this.list.map(item => (
-                <so-todo-item
-                  onItemCheck={this.itemCheckedHandler}
-                  onItemRemove={this.itemRemoveHandler}
-                  checked={item.checked}
-                  text={item.text}
-                  todoId={item.todoId}
-                />
-              ))}
-            </ion-card>
-          </div>
-          {/* <stencil-router>
-            <stencil-route-switch scrollTopOffset={0}>
-              <stencil-route url="/" component="app-home" exact={true} />
-              <stencil-route url="/profile/:name" component="app-profile" />
-            </stencil-route-switch>
-          </stencil-router> */}
-        </main>
-      </div>
+      <Host>
+        <app-menu
+          class={this.hideMenu ? "hide-menu" : "show-menu"}
+          onDarkThemeClick={() => this.changeTheme()}
+        />
+        <div class="content">
+          <header>
+            <so-clear-button class="menu-button" onButtonClick={() => this.openMenu()}>
+              <ion-icon name="menu" class="menu-icon"></ion-icon>
+            </so-clear-button>
+            <h1>Strike off</h1>
+          </header>
+          <main>
+            <app-home></app-home>
+          </main>
+        </div>
+      </Host>
     );
   }
 }
