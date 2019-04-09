@@ -28,7 +28,8 @@
 }
 
 .wrapper input + label::before {
-  border: 0.1rem solid #505050;
+  border: 0.1rem solid var(--check-color);
+  font-variation-settings: inherit;
   content: "";
   height: 2rem;
   top: 0;
@@ -40,7 +41,7 @@
 
 .wrapper input + label::after {
   content: "";
-  border: 0.2rem solid #505050;
+  border: 0.2rem solid var(--check-color);
   border-left: 0;
   border-top: 0;
   height: 1rem;
@@ -57,7 +58,7 @@
   opacity: 1;
 }
 
-.wrapper input:focus + label::before {
+.wrapper input:focus + label::before, .wrapper input:hover + label::before {
   -webkit-appearance: none;
   box-shadow: 0 0 0 0.3rem var(--highlight-box-shadow-color);
   border-color: var(--highlight-border-color);
@@ -67,40 +68,9 @@
   margin: 0;
 }
 
-.toggle:focus {
-
-}
-
 .label {
   padding-left: 3rem;
-  font-size: 1.6rem;
-}
-
-.delete {
-  height: 4rem;
-  width: 4rem;
-  color: #505050;
-  border: 0;
-  padding: 0;
-  font: unset;
-  cursor: pointer;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 2.3rem;
-  background-color: transparent;
-  -webkit-appearance: none;
-}
-
-.delete:focus {
-  -webkit-appearance: none;
-  box-shadow: 0 0 0 0.3rem var(--highlight-box-shadow-color);
-  border: 0.1rem solid var(--highlight-border-color);
-  border-radius: 0.3rem;
-  outline: none;
-}
-
-.destroy {
-  display: none;
+  font-size: 1.9rem;
+  color: var(--text-color);
 }
 

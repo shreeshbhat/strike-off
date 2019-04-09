@@ -5,13 +5,18 @@
  */
 
 
-import { JSXBase } from '@stencil/core/internal';
+import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
 import { JSX } from '@stencil/core';
 
 
 export namespace Components {
   interface AppHome {}
-  interface AppRoot {}
+  interface AppMenu {}
+  interface AppRoot {
+    'changeTheme': () => Promise<void>;
+    'openMenu': () => Promise<void>;
+  }
+  interface SoClearButton {}
   interface SoCreateTodo {}
   interface SoTodoItem {
     'checked': boolean;
@@ -20,14 +25,15 @@ export namespace Components {
   }
 }
 
-interface HTMLStencilElement extends HTMLElement {
-  componentOnReady(): Promise<this>;
-  forceUpdate(): void;
-}
-
 declare namespace LocalJSX {
   interface AppHome extends JSXBase.HTMLAttributes {}
+  interface AppMenu extends JSXBase.HTMLAttributes {
+    'onDarkThemeClick'?: (event: CustomEvent<any>) => void;
+  }
   interface AppRoot extends JSXBase.HTMLAttributes {}
+  interface SoClearButton extends JSXBase.HTMLAttributes {
+    'onButtonClick'?: (event: CustomEvent<any>) => void;
+  }
   interface SoCreateTodo extends JSXBase.HTMLAttributes {
     'onInputSubmit'?: (event: CustomEvent<any>) => void;
   }
@@ -41,14 +47,18 @@ declare namespace LocalJSX {
 
   interface ElementInterfaces {
     'AppHome': Components.AppHome;
+    'AppMenu': Components.AppMenu;
     'AppRoot': Components.AppRoot;
+    'SoClearButton': Components.SoClearButton;
     'SoCreateTodo': Components.SoCreateTodo;
     'SoTodoItem': Components.SoTodoItem;
   }
 
   interface IntrinsicElements {
     'AppHome': LocalJSX.AppHome;
+    'AppMenu': LocalJSX.AppMenu;
     'AppRoot': LocalJSX.AppRoot;
+    'SoClearButton': LocalJSX.SoClearButton;
     'SoCreateTodo': LocalJSX.SoCreateTodo;
     'SoTodoItem': LocalJSX.SoTodoItem;
   }
@@ -64,16 +74,34 @@ declare module "@stencil/core" {
 
 declare global {
 
+  // Adding a global JSX for backcompatibility with legacy dependencies
+  export namespace JSX {
+    export interface Element {}
+  }
+
+
   interface HTMLAppHomeElement extends Components.AppHome, HTMLStencilElement {}
   var HTMLAppHomeElement: {
     prototype: HTMLAppHomeElement;
     new (): HTMLAppHomeElement;
   };
 
+  interface HTMLAppMenuElement extends Components.AppMenu, HTMLStencilElement {}
+  var HTMLAppMenuElement: {
+    prototype: HTMLAppMenuElement;
+    new (): HTMLAppMenuElement;
+  };
+
   interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {}
   var HTMLAppRootElement: {
     prototype: HTMLAppRootElement;
     new (): HTMLAppRootElement;
+  };
+
+  interface HTMLSoClearButtonElement extends Components.SoClearButton, HTMLStencilElement {}
+  var HTMLSoClearButtonElement: {
+    prototype: HTMLSoClearButtonElement;
+    new (): HTMLSoClearButtonElement;
   };
 
   interface HTMLSoCreateTodoElement extends Components.SoCreateTodo, HTMLStencilElement {}
@@ -89,14 +117,18 @@ declare global {
   };
   interface HTMLElementTagNameMap {
     'app-home': HTMLAppHomeElement
+    'app-menu': HTMLAppMenuElement
     'app-root': HTMLAppRootElement
+    'so-clear-button': HTMLSoClearButtonElement
     'so-create-todo': HTMLSoCreateTodoElement
     'so-todo-item': HTMLSoTodoItemElement
   }
 
   interface ElementTagNameMap {
     'app-home': HTMLAppHomeElement;
+    'app-menu': HTMLAppMenuElement;
     'app-root': HTMLAppRootElement;
+    'so-clear-button': HTMLSoClearButtonElement;
     'so-create-todo': HTMLSoCreateTodoElement;
     'so-todo-item': HTMLSoTodoItemElement;
   }

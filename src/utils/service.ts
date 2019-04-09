@@ -7,6 +7,7 @@ export async function openDb() {
         keyPath: 'todoId'
       });
       store.createIndex('tags', 'tags');
+      db.createObjectStore('settings');
     },
   });
   return db;
@@ -30,4 +31,16 @@ export async function updateTodo(todo: any) {
 export async function deleteTodo(todo: any) {
   const db = await openDb();
   return await db.delete('todos', todo.todoId);
+}
+
+export async function addToDB(key: string, value: any) {
+  const db = await openDb();
+  const store = db.transaction('settings', 'readwrite').objectStore('settings');
+  await store.put(value,key);
+}
+
+export async function getFromDB(key: string) {
+  const db = await openDb();
+  const store = db.transaction('settings').objectStore('settings');
+  return await store.get(key);
 }

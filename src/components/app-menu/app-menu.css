@@ -1,0 +1,27 @@
+header {
+  background: var(--primary-color);
+  color: white;
+  height: 5.6rem;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 0.2rem 0.5rem 0 rgba(0, 0, 0, 0.26);
+}
+
+h1 {
+  font-variation-settings: 'wght' 600, 'wdth' 100;
+  font-size: 2.4rem;
+  color: white;
+  padding: 0 1.2rem;
+}
+
+
+:host {
+  width: 280px;
+  border-right: 1px solid var(--menu-border-color);
+}
+
+ion-item {
+  --background: var(--app-bg-color);
+  --ion-item-color: var(--text-color);
+  font-weight: var(--text-weight);
+}

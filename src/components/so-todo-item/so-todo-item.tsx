@@ -29,9 +29,9 @@ export class SoTodoItem {
           />
           <label class="label">{this.text}</label>
         </div>
-        <button slot="end" class="delete" onClick={this.handleOnRemove}>
-          <ion-icon slot="icon-only" mode="md" name="close" />
-        </button>
+        <so-clear-button slot="end" class="delete" onButtonClick={this.handleOnRemove}>
+          <ion-icon name="close"/>
+        </so-clear-button>
       </ion-item>
     );
   }

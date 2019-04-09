@@ -18,7 +18,7 @@ export class SoCreateTodo {
 
   handleInputChange = (event: any) => (this.value = event.target.value);
 
-  @Listen("document:keydown", { passive: true })
+  @Listen('keydown', { target: 'document' })
   async keydown($event: KeyboardEvent) {
     if ($event.key.toLowerCase() === "enter" && !!this.textInput.value) {
       this.inputSubmit.emit(this.value);
@@ -31,7 +31,7 @@ export class SoCreateTodo {
       <div class="flex-center">
         <div class="create-group">
           <label class="label-wrapper" htmlFor="addTodo">
-            What needs to be done?
+            What would you like to do?
           </label>
           <div class="flex-center input-wrapper">
             <input
