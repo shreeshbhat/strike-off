@@ -1,5 +1,5 @@
 // change to the version you get from `npm ls workbox-build`
-importScripts("workbox-v3.4.1/workbox-sw.js");
+importScripts("workbox-v4.2.0/workbox-sw.js");
 
 self.addEventListener('message', ({ data }) => {
   if (data === 'skipWaiting') {
