@@ -16,15 +16,10 @@
 }
 
 @font-face {
-  font-family: 'quicksand';
-  src: url('../assets/fonts/Quicksand-Regular.ttf');
-  font-display: swap;
-}
-
-
-@font-face {
   font-family: 'plex';
-  src: url('../assets/fonts/woff2/IBMPlexSansVar-Roman.woff2') format('truetype');
+  src: local('plex'),
+        url('../assets/fonts/woff2/IBMPlexSansVar-Roman.woff2') format('woff2'),
+        url('../assets/fonts/ttf/IBMPlexSansVar-Roman.ttf') format('truetype');
   font-weight: 1 999;
   font-display: swap;
 }
