@@ -17,6 +17,6 @@
   },
   "license": "MIT",
   "devDependencies": {
-    "workbox-build": "4.2.0"
+    "workbox-build": "3.4.1"
   }
 }
