@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@ionic/core": "4.2.0-dev.201904092340.3a643a3",
-    "@stencil/core": "1.0.0-alpha.9",
+    "@stencil/core": "1.0.0-alpha.8",
     "idb": "^4.0.3",
     "ionicons": "^4.5.6"
   },
