@@ -16,7 +16,8 @@ h1 {
 
 
 :host {
-  width: 280px;
+  width: 28rem;
+  min-width: 28rem;
   border-right: 1px solid var(--menu-border-color);
 }
 

@@ -41,8 +41,8 @@ body {
 }
 
 * {
-  -webkit-backface-visibility:  hidden;
-  -webkit-tap-highlight-color:  transparent;
+  -webkit-backface-visibility: hidden;
+  -webkit-tap-highlight-color: transparent;
   -webkit-appearance: none;
 }
 
