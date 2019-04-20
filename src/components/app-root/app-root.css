@@ -46,7 +46,6 @@ app-menu {
 }
 
 .hide-menu {
-  /* display: none; */
   margin-left: -28.1rem;
   height: 0;
 }
