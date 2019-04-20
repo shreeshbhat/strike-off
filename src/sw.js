@@ -7,13 +7,5 @@ self.addEventListener('message', ({ data }) => {
   }
 });
 
-// self.addEventListener('fetch', function(event) {
-//   event.respondWith(
-//     caches.match(event.request).then(function(response) {
-//       return response || fetch(event.request);
-//     })
-//   );
-// });
-
 // the precache manifest will be injected into the following line
 self.workbox.precaching.precacheAndRoute([]);
