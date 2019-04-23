@@ -10,13 +10,13 @@
     "test.watch": "stencil test --spec --e2e --watchAll"
   },
   "dependencies": {
-    "@ionic/core": "4.2.0-dev.201904092340.3a643a3",
-    "@stencil/core": "1.0.0-alpha.9",
+    "@ionic/core": "4.4.0-dev.201905072249.02badf9",
+    "@stencil/core": "1.0.0-alpha.23",
     "idb": "^4.0.3",
     "ionicons": "^4.5.6"
   },
   "license": "MIT",
   "devDependencies": {
-    "workbox-build": "3.4.1"
+    "workbox-build": "4.3.1"
   }
 }
