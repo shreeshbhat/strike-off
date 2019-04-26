@@ -70,6 +70,7 @@ export class AppRoot {
       <Host>
         <app-menu
           class={this.hideMenu ? "hide-menu" : "show-menu"}
+          darkTheme={this.darkTheme}
           onDarkThemeClick={() => this.changeTheme()}
         />
         <div class="content">
