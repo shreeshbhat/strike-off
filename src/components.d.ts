@@ -11,7 +11,9 @@ import { JSX } from '@stencil/core';
 
 export namespace Components {
   interface AppHome {}
-  interface AppMenu {}
+  interface AppMenu {
+    'darkTheme': boolean;
+  }
   interface AppRoot {
     'changeTheme': () => Promise<void>;
     'openMenu': () => Promise<void>;
@@ -28,6 +30,7 @@ export namespace Components {
 declare namespace LocalJSX {
   interface AppHome extends JSXBase.HTMLAttributes {}
   interface AppMenu extends JSXBase.HTMLAttributes {
+    'darkTheme'?: boolean;
     'onDarkThemeClick'?: (event: CustomEvent<any>) => void;
   }
   interface AppRoot extends JSXBase.HTMLAttributes {}

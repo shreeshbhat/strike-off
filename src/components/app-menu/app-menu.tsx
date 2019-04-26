@@ -1,5 +1,5 @@
 
-import { Event, EventEmitter, Component, Host, h } from '@stencil/core';
+import { Event, EventEmitter, Component, Host, Listen, Prop, h } from '@stencil/core';
 
 @Component({
   tag: 'app-menu',
@@ -7,8 +7,16 @@ import { Event, EventEmitter, Component, Host, h } from '@stencil/core';
   shadow: true
 })
 export class AppMenu {
+  @Prop() darkTheme: boolean;
   @Event() darkThemeClick!: EventEmitter;
+
   handleOnDarkThemeClick = () => this.darkThemeClick.emit();
+
+  @Listen('ionChange')
+  handleIonChange(e) {
+    const toggle = e.target as HTMLIonToggleElement;
+    this.darkThemeClick.emit(toggle);
+  }
 
   render() {
     return (
@@ -19,7 +27,7 @@ export class AppMenu {
         <main>
           <ion-item>
             <ion-label>Dark Theme</ion-label>
-            <ion-toggle onClick={this.handleOnDarkThemeClick}></ion-toggle>
+            <ion-toggle checked={this.darkTheme}></ion-toggle>
           </ion-item>
         </main>
       </Host>
