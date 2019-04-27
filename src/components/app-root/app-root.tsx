@@ -40,14 +40,16 @@ export class AppRoot {
   }
 
   @Method()
-  async changeTheme() {
-    this.darkTheme = !this.darkTheme;
-    addToDB('darkTheme', this.darkTheme);
-    this.setDarkThemeClass();
+  async changeTheme(event: CustomEvent) {
+    if (event.detail !== this.darkTheme) {
+      this.darkTheme = !this.darkTheme;
+      addToDB('darkTheme', this.darkTheme);
+      this.setDarkThemeClass();
+    }
   }
 
   private setDarkThemeClass() {
-    if(this.darkTheme) {
+    if (this.darkTheme) {
       this.el.parentElement.classList.add('dark');
       this.el.parentElement.classList.remove('light');
     }
@@ -61,7 +63,7 @@ export class AppRoot {
     getFromDB('darkTheme').then(val => {
       if (!!val)
         this.darkTheme = val as boolean;
-        this.setDarkThemeClass();
+      this.setDarkThemeClass();
     });
   }
 
@@ -71,7 +73,7 @@ export class AppRoot {
         <app-menu
           class={this.hideMenu ? "hide-menu" : "show-menu"}
           darkTheme={this.darkTheme}
-          onDarkThemeClick={() => this.changeTheme()}
+          onDarkThemeClick={(e: CustomEvent) => this.changeTheme(e)}
         />
         <div class="content">
           <header>
