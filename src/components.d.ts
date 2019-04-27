@@ -15,7 +15,7 @@ export namespace Components {
     'darkTheme': boolean;
   }
   interface AppRoot {
-    'changeTheme': () => Promise<void>;
+    'changeTheme': (event: CustomEvent<any>) => Promise<void>;
     'openMenu': () => Promise<void>;
   }
   interface SoClearButton {}

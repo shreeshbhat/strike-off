@@ -13,9 +13,9 @@ export class AppMenu {
   handleOnDarkThemeClick = () => this.darkThemeClick.emit();
 
   @Listen('ionChange')
-  handleIonChange(e) {
-    const toggle = e.target as HTMLIonToggleElement;
-    this.darkThemeClick.emit(toggle);
+  handleIonChange(e: CustomEvent) {
+    // const toggle = e.target as HTMLIonToggleElement;
+    this.darkThemeClick.emit(e.detail.checked);
   }
 
   render() {
