@@ -8,7 +8,7 @@ Key features :
 * Fast
 * Simple
 * Keyboard accessible
-* Screenreader supported
+* Screenreader supported (Work in progress)
 * Locally stored with no sync
 
 Strike off uses StencilJS, which combines the best concepts of the most popular frontend frameworks into a compile-time rather than run-time tool.
