@@ -23,11 +23,11 @@ export class SoTodoItem {
           <input
             class="toggle"
             type="checkbox"
-            aria-label="Mark task completed."
+            id={"todo" + this.todoId.toString()}
             checked={this.checked}
             onChange={this.handleOnCheck}
           />
-          <label class="label">{this.text}</label>
+          <label htmlFor={"todo" + this.todoId.toString()} class="label">{this.text}</label>
         </div>
         <so-clear-button slot="end" class="delete" onButtonClick={this.handleOnRemove}>
           <ion-icon name="close"/>
