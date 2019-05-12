@@ -30,7 +30,7 @@ export class SoCreateTodo {
     return (
       <div class="flex-center">
         <div class="create-group">
-          <label class="label-wrapper" htmlFor="addTodo">
+          <label class="label-wrapper overflow-ellipsis" htmlFor="addTodo">
             What would you like to do?
           </label>
           <div class="flex-center input-wrapper">
