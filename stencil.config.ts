@@ -8,6 +8,7 @@ export const config: Config = {
   outputTargets: [
     {
       type: 'www',
+      baseUrl: 'https://www.strikeoff.app/',
       serviceWorker: {
         swSrc: 'src/sw.js',
         globPatterns: [
