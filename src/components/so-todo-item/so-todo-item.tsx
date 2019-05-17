@@ -27,9 +27,11 @@ export class SoTodoItem {
             checked={this.checked}
             onChange={this.handleOnCheck}
           />
-          <label htmlFor={"todo" + this.todoId.toString()} class="label">{this.text}</label>
+          <label htmlFor={"todo" + this.todoId.toString()}
+                class="label">{this.text}</label>
         </div>
-        <so-clear-button slot="end" class="delete" onButtonClick={this.handleOnRemove}>
+        <so-clear-button slot="end" class="delete"
+            onButtonClick={this.handleOnRemove}>
           <ion-icon name="close"/>
         </so-clear-button>
       </div>
