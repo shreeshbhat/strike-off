@@ -28,7 +28,7 @@ export class SoTodoItem {
             onChange={this.handleOnCheck}
           />
           <label htmlFor={"todo" + this.todoId.toString()}
-                class="label">{this.text}</label>
+                class="label overflow-ellipsis">{this.text}</label>
         </div>
         <so-clear-button slot="end" class="delete"
             onButtonClick={this.handleOnRemove}>

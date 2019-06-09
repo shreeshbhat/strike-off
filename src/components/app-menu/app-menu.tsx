@@ -1,10 +1,9 @@
-
 import { Event, EventEmitter, Component, Host, Listen, Prop, h } from '@stencil/core';
 
 @Component({
   tag: 'app-menu',
   styleUrl: 'app-menu.css',
-  shadow: true
+  shadow: false
 })
 export class AppMenu {
   @Prop() darkTheme: boolean;
@@ -21,15 +20,14 @@ export class AppMenu {
   render() {
     return (
       <Host>
-        <header>
-          <h1>Menu</h1>
-        </header>
-        <main>
-          <ion-item>
-            <ion-label>Dark Theme</ion-label>
-            <ion-toggle checked={this.darkTheme}></ion-toggle>
-          </ion-item>
-        </main>
+        <aside>
+          <nav>
+            <ion-item>
+              <ion-label>Dark Theme</ion-label>
+              <ion-toggle checked={this.darkTheme}></ion-toggle>
+            </ion-item>
+          </nav>
+        </aside>
       </Host>
     );
   }

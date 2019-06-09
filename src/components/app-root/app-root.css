@@ -1,6 +1,7 @@
-:host {
+app-root {
   display: flex;
   height: 100%;
+  flex-direction: column;
 }
 
 header {
@@ -28,6 +29,14 @@ h1 {
 .content {
   height: 100%;
   width: 100%;
+  display: flex;
+  overflow: auto;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+  border-left: 0.1rem solid var(--menu-border-color);
 }
 
 .menu-icon {
@@ -35,8 +44,10 @@ h1 {
 }
 
 app-menu {
-  transition: margin-left 0.4s cubic-bezier(0.4,0.0,0.2,1);
-  display: block;
+  transition-property: margin-left, visibility;
+  transition-duration: 0.4s;
+  transition-timing-function: cubic-bezier(0.4,0.0,0.2,1);
+  padding: 1rem;
 }
 
 .show-menu {
@@ -46,7 +57,7 @@ app-menu {
 }
 
 .hide-menu {
-  /* display: none; */
-  margin-left: -28.1rem;
+  margin-left: -28rem;
   height: 0;
+  visibility: hidden;
 }

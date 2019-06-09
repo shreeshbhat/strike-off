@@ -11,8 +11,9 @@
     "prerender": "stencil build --prerender"
   },
   "dependencies": {
-    "@ionic/core": "one",
-    "@stencil/core": "one",
+    "@ionic/core": "4.5.0-dev.201905311531.e014c6a",
+    "@stencil/core": "1.0.2",
+    "@stencil/router": "^0.3.3",
     "idb": "^4.0.3",
     "ionicons": "^4.5.6"
   },
