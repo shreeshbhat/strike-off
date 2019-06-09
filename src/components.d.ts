@@ -6,7 +6,6 @@
 
 
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
-import { JSX } from '@stencil/core';
 
 
 export namespace Components {
@@ -18,60 +17,15 @@ export namespace Components {
     'changeTheme': (event: CustomEvent<any>) => Promise<void>;
     'openMenu': () => Promise<void>;
   }
+  interface AppTheme {
+    'darkTheme': boolean;
+  }
   interface SoClearButton {}
   interface SoCreateTodo {}
   interface SoTodoItem {
     'checked': boolean;
     'text': string;
     'todoId': number;
-  }
-}
-
-declare namespace LocalJSX {
-  interface AppHome extends JSXBase.HTMLAttributes {}
-  interface AppMenu extends JSXBase.HTMLAttributes {
-    'darkTheme'?: boolean;
-    'onDarkThemeClick'?: (event: CustomEvent<any>) => void;
-  }
-  interface AppRoot extends JSXBase.HTMLAttributes {}
-  interface SoClearButton extends JSXBase.HTMLAttributes {
-    'onButtonClick'?: (event: CustomEvent<any>) => void;
-  }
-  interface SoCreateTodo extends JSXBase.HTMLAttributes {
-    'onInputSubmit'?: (event: CustomEvent<any>) => void;
-  }
-  interface SoTodoItem extends JSXBase.HTMLAttributes {
-    'checked': boolean;
-    'onItemCheck'?: (event: CustomEvent<any>) => void;
-    'onItemRemove'?: (event: CustomEvent<any>) => void;
-    'text': string;
-    'todoId': number;
-  }
-
-  interface ElementInterfaces {
-    'AppHome': Components.AppHome;
-    'AppMenu': Components.AppMenu;
-    'AppRoot': Components.AppRoot;
-    'SoClearButton': Components.SoClearButton;
-    'SoCreateTodo': Components.SoCreateTodo;
-    'SoTodoItem': Components.SoTodoItem;
-  }
-
-  interface IntrinsicElements {
-    'AppHome': LocalJSX.AppHome;
-    'AppMenu': LocalJSX.AppMenu;
-    'AppRoot': LocalJSX.AppRoot;
-    'SoClearButton': LocalJSX.SoClearButton;
-    'SoCreateTodo': LocalJSX.SoCreateTodo;
-    'SoTodoItem': LocalJSX.SoTodoItem;
-  }
-}
-export { LocalJSX as JSX };
-
-declare module "@stencil/core" {
-  export namespace JSX {
-    interface ElementInterfaces extends LocalJSX.ElementInterfaces {}
-    interface IntrinsicElements extends LocalJSX.IntrinsicElements {}
   }
 }
 
@@ -101,6 +55,12 @@ declare global {
     new (): HTMLAppRootElement;
   };
 
+  interface HTMLAppThemeElement extends Components.AppTheme, HTMLStencilElement {}
+  var HTMLAppThemeElement: {
+    prototype: HTMLAppThemeElement;
+    new (): HTMLAppThemeElement;
+  };
+
   interface HTMLSoClearButtonElement extends Components.SoClearButton, HTMLStencilElement {}
   var HTMLSoClearButtonElement: {
     prototype: HTMLSoClearButtonElement;
@@ -119,21 +79,59 @@ declare global {
     new (): HTMLSoTodoItemElement;
   };
   interface HTMLElementTagNameMap {
-    'app-home': HTMLAppHomeElement
-    'app-menu': HTMLAppMenuElement
-    'app-root': HTMLAppRootElement
-    'so-clear-button': HTMLSoClearButtonElement
-    'so-create-todo': HTMLSoCreateTodoElement
-    'so-todo-item': HTMLSoTodoItemElement
-  }
-
-  interface ElementTagNameMap {
     'app-home': HTMLAppHomeElement;
     'app-menu': HTMLAppMenuElement;
     'app-root': HTMLAppRootElement;
+    'app-theme': HTMLAppThemeElement;
     'so-clear-button': HTMLSoClearButtonElement;
     'so-create-todo': HTMLSoCreateTodoElement;
     'so-todo-item': HTMLSoTodoItemElement;
   }
 }
+
+declare namespace LocalJSX {
+  interface AppHome extends JSXBase.HTMLAttributes<HTMLAppHomeElement> {}
+  interface AppMenu extends JSXBase.HTMLAttributes<HTMLAppMenuElement> {
+    'darkTheme'?: boolean;
+    'onDarkThemeClick'?: (event: CustomEvent<any>) => void;
+  }
+  interface AppRoot extends JSXBase.HTMLAttributes<HTMLAppRootElement> {}
+  interface AppTheme extends JSXBase.HTMLAttributes<HTMLAppThemeElement> {
+    'darkTheme'?: boolean;
+    'onDarkThemeClick'?: (event: CustomEvent<any>) => void;
+  }
+  interface SoClearButton extends JSXBase.HTMLAttributes<HTMLSoClearButtonElement> {
+    'onButtonClick'?: (event: CustomEvent<any>) => void;
+  }
+  interface SoCreateTodo extends JSXBase.HTMLAttributes<HTMLSoCreateTodoElement> {
+    'onInputSubmit'?: (event: CustomEvent<any>) => void;
+  }
+  interface SoTodoItem extends JSXBase.HTMLAttributes<HTMLSoTodoItemElement> {
+    'checked': boolean;
+    'onItemCheck'?: (event: CustomEvent<any>) => void;
+    'onItemRemove'?: (event: CustomEvent<any>) => void;
+    'text': string;
+    'todoId': number;
+  }
+
+  interface IntrinsicElements {
+    'app-home': AppHome;
+    'app-menu': AppMenu;
+    'app-root': AppRoot;
+    'app-theme': AppTheme;
+    'so-clear-button': SoClearButton;
+    'so-create-todo': SoCreateTodo;
+    'so-todo-item': SoTodoItem;
+  }
+}
+
+export { LocalJSX as JSX };
+
+
+declare module "@stencil/core" {
+  export namespace JSX {
+    interface IntrinsicElements extends LocalJSX.IntrinsicElements {}
+  }
+}
+
 

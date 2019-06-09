@@ -5,7 +5,7 @@ import { addToDB, getFromDB } from "../../utils/service";
 @Component({
   tag: "app-root",
   styleUrl: "app-root.css",
-  shadow: true
+  shadow: false
 })
 export class AppRoot {
   @Element() el!: HTMLAppRootElement;
@@ -37,6 +37,8 @@ export class AppRoot {
   @Method()
   async openMenu() {
     this.hideMenu = !this.hideMenu;
+    const content = document.getElementById('content');
+    content.classList.add('animation')
   }
 
   @Method()
@@ -70,20 +72,27 @@ export class AppRoot {
   render() {
     return (
       <Host>
-        <app-menu
-          class={this.hideMenu ? "hide-menu" : "show-menu"}
-          darkTheme={this.darkTheme}
-          onDarkThemeClick={(e: CustomEvent) => this.changeTheme(e)}
-        />
-        <div class="content">
-          <header>
-            <so-clear-button class="menu-button" onButtonClick={() => this.openMenu()}>
-              <ion-icon name="menu" class="menu-icon"></ion-icon>
-            </so-clear-button>
-            <h1>Strike off</h1>
-          </header>
+
+        <header>
+          <so-clear-button class="menu-button" onButtonClick={() => this.openMenu()}>
+            <ion-icon name="menu" class="menu-icon"></ion-icon>
+          </so-clear-button>
+          <h1>Strike off</h1>
+        </header>
+        <div class="content" id="content">
+          <app-menu
+            class={this.hideMenu ? "hide-menu" : "show-menu"}
+            darkTheme={this.darkTheme}
+            onDarkThemeClick={(e: CustomEvent) => this.changeTheme(e)}
+          />
           <main>
             <app-home></app-home>
+            <stencil-router>
+              <stencil-route-switch scrollTopOffset={0}>
+                <stencil-route url='/' component='app-home' exact={true} />
+                <stencil-route url='/themes/' component='app-theme' />
+              </stencil-route-switch>
+            </stencil-router>
           </main>
         </div>
       </Host>
