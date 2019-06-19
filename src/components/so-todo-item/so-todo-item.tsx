@@ -32,7 +32,7 @@ export class SoTodoItem {
         </div>
         <so-clear-button slot="end" class="delete"
             onButtonClick={this.handleOnRemove}>
-          <ion-icon name="close"/>
+          <ion-icon name="md-trash"/>
         </so-clear-button>
       </div>
     );

@@ -12,8 +12,8 @@
 }
 
 .label-wrapper {
-  font-variation-settings: 'wght' 600, 'wdth' 100;
-  padding: 0.5rem 0 0.5rem 0;
+  font-variation-settings: 'wght' 600, 'wdth' 90;
+  line-height: 3.5rem;
   font-size: 2.5rem;
   color: var(--text-color);
   font-family: inherit;
@@ -26,7 +26,7 @@
   background: var(--card-bg-color);
   color: var(--text-color);
   font-variation-settings: 'wght' 600, 'wdth' 100;
-  height: 4rem;
+  height: 4.4rem;
   width: 100%;
   font-size: 2rem;
   font-family: inherit;

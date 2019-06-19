@@ -38,6 +38,7 @@ export class SoCreateTodo {
               class="so-create-todo"
               name="addTodo"
               id="addTodo"
+              maxLength={50}
               onInput={this.handleInputChange}
               ref={el => (this.textInput = el as HTMLInputElement)}
             />
