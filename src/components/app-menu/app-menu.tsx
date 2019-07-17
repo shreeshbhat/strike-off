@@ -1,4 +1,4 @@
-import { Event, EventEmitter, Component, Host, Listen, Prop, h } from '@stencil/core';
+import { Component, Host, Prop, h } from '@stencil/core';
 
 @Component({
   tag: 'app-menu',
@@ -6,25 +6,26 @@ import { Event, EventEmitter, Component, Host, Listen, Prop, h } from '@stencil/
   shadow: false
 })
 export class AppMenu {
-  @Prop() darkTheme: boolean;
-  @Event() darkThemeClick!: EventEmitter;
-
-  handleOnDarkThemeClick = () => this.darkThemeClick.emit();
-
-  @Listen('ionChange')
-  handleIonChange(e: CustomEvent) {
-    // const toggle = e.target as HTMLIonToggleElement;
-    this.darkThemeClick.emit(e.detail.checked);
-  }
+  @Prop() theme: number;
 
   render() {
     return (
       <Host>
         <aside>
           <nav>
+          <ion-item>
+              <stencil-route-link
+                class="link-wrapper"
+                url="/">
+                Home
+              </stencil-route-link>
+            </ion-item>
             <ion-item>
-              <ion-label>Dark Theme</ion-label>
-              <ion-toggle checked={this.darkTheme}></ion-toggle>
+              <stencil-route-link
+                class="link-wrapper"
+                url={"/themes/" + this.theme}>
+                Themes
+              </stencil-route-link>
             </ion-item>
           </nav>
         </aside>

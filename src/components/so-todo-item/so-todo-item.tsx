@@ -1,9 +1,9 @@
-import { Component, Prop, Event, EventEmitter, h } from "@stencil/core";
+import { Component, Prop, Event, EventEmitter, h } from '@stencil/core';
 import 'ionicons';
 
 @Component({
-  tag: "so-todo-item",
-  styleUrl: "so-todo-item.css",
+  tag: 'so-todo-item',
+  styleUrl: 'so-todo-item.css',
   shadow: true
 })
 export class SoTodoItem {
@@ -23,11 +23,11 @@ export class SoTodoItem {
           <input
             class="toggle"
             type="checkbox"
-            id={"todo" + this.todoId.toString()}
+            id={'todo' + this.todoId.toString()}
             checked={this.checked}
             onChange={this.handleOnCheck}
           />
-          <label htmlFor={"todo" + this.todoId.toString()}
+          <label htmlFor={'todo' + this.todoId.toString()}
                 class="label overflow-ellipsis">{this.text}</label>
         </div>
         <so-clear-button slot="end" class="delete"

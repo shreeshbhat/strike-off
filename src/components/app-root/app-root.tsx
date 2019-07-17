@@ -1,17 +1,18 @@
-import "@ionic/core";
-import { Component, Element, Host, Listen, Method, Prop, State, h } from "@stencil/core";
-import { addToDB, getFromDB } from "../../utils/service";
+import '@ionic/core';
+import { Component, Element, Host, Listen, Method, Prop, State, h } from '@stencil/core';
+import { addToDB, getFromDB } from '../../utils/service';
+import { Theme } from '../../interfaces/Theme';
 
 @Component({
-  tag: "app-root",
-  styleUrl: "app-root.css",
+  tag: 'app-root',
+  styleUrl: 'app-root.css',
   shadow: false
 })
 export class AppRoot {
   @Element() el!: HTMLAppRootElement;
   @State() hideMenu: boolean = true;
-  @State() darkTheme: boolean = false;
-  @Prop({ connect: "ion-toast-controller" })
+  @State() theme: number = Theme.dark;
+  @Prop({ connect: 'ion-toast-controller' })
   toastCtrl!: HTMLIonToastControllerElement;
 
   @Listen('swUpdate', { target: 'window' })
@@ -24,13 +25,13 @@ export class AppRoot {
       return;
     }
     const toast = await this.toastCtrl.create({
-      message: "New version available",
+      message: 'New version available',
       showCloseButton: true,
-      closeButtonText: "Reload"
+      closeButtonText: 'Reload'
     });
     await toast.present();
     await toast.onWillDismiss();
-    registration.waiting.postMessage("skipWaiting");
+    registration.waiting.postMessage('skipWaiting');
     window.location.reload();
   }
 
@@ -41,17 +42,15 @@ export class AppRoot {
     content.classList.add('animation')
   }
 
-  @Method()
+  @Listen('themeClick')
   async changeTheme(event: CustomEvent) {
-    if (event.detail !== this.darkTheme) {
-      this.darkTheme = !this.darkTheme;
-      addToDB('darkTheme', this.darkTheme);
-      this.setDarkThemeClass();
-    }
+    this.theme = event.detail;
+    addToDB('theme', this.theme);
+    this.setThemeClass(this.theme);
   }
 
-  private setDarkThemeClass() {
-    if (this.darkTheme) {
+  private setThemeClass(value: number) {
+    if (value === Theme.dark) {
       this.el.parentElement.classList.add('dark');
       this.el.parentElement.classList.remove('light');
     }
@@ -62,35 +61,35 @@ export class AppRoot {
   }
 
   componentWillLoad() {
-    getFromDB('darkTheme').then(val => {
+    getFromDB('theme').then(val => {
       if (!!val)
-        this.darkTheme = val as boolean;
-      this.setDarkThemeClass();
+        this.theme = val as number;
+      this.setThemeClass(this.theme);
     });
   }
 
   render() {
     return (
       <Host>
-
         <header>
-          <so-clear-button class="menu-button" onButtonClick={() => this.openMenu()}>
+          <so-clear-button class="menu-button"
+            onButtonClick={() => this.openMenu()}>
             <ion-icon name="menu" class="menu-icon"></ion-icon>
           </so-clear-button>
           <h1>Strike off</h1>
         </header>
         <div class="content" id="content">
           <app-menu
-            class={this.hideMenu ? "hide-menu" : "show-menu"}
-            darkTheme={this.darkTheme}
-            onDarkThemeClick={(e: CustomEvent) => this.changeTheme(e)}
+            class={this.hideMenu ? 'hide-menu' : 'show-menu'}
+            theme={this.theme}
           />
           <main>
-            <app-home></app-home>
             <stencil-router>
               <stencil-route-switch scrollTopOffset={0}>
-                <stencil-route url='/' component='app-home' exact={true} />
-                <stencil-route url='/themes/' component='app-theme' />
+                <stencil-route url='/'
+                  component='app-home' exact={true} />
+                <stencil-route url='/themes/:theme'
+                  component='app-theme' />
               </stencil-route-switch>
             </stencil-router>
           </main>

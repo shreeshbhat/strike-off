@@ -1,6 +1,6 @@
 import { Component, State, h, Host } from '@stencil/core';
-import { Todo } from "../../interfaces/Todo";
-import { addTodo, getTodos, updateTodo, deleteTodo } from "../../utils/service";
+import { Todo } from '../../interfaces/Todo';
+import { addTodo, getTodos, updateTodo, deleteTodo } from '../../utils/service';
 
 @Component({
   tag: 'app-home',

@@ -8,6 +8,9 @@ export const config: Config = {
   outputTargets: [
     {
       type: 'www',
+      copy: [
+        { src: 'netlify', dest: '' }
+      ],
       serviceWorker: {
         swSrc: 'src/sw.js',
         globPatterns: [

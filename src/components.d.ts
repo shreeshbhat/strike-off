@@ -6,19 +6,20 @@
 
 
 import { HTMLStencilElement, JSXBase } from '@stencil/core/internal';
-
+import {
+  MatchResults,
+} from '@stencil/router';
 
 export namespace Components {
   interface AppHome {}
   interface AppMenu {
-    'darkTheme': boolean;
+    'theme': number;
   }
   interface AppRoot {
-    'changeTheme': (event: CustomEvent<any>) => Promise<void>;
     'openMenu': () => Promise<void>;
   }
   interface AppTheme {
-    'darkTheme': boolean;
+    'match': MatchResults;
   }
   interface SoClearButton {}
   interface SoCreateTodo {}
@@ -87,13 +88,12 @@ declare global {
 declare namespace LocalJSX {
   interface AppHome extends JSXBase.HTMLAttributes<HTMLAppHomeElement> {}
   interface AppMenu extends JSXBase.HTMLAttributes<HTMLAppMenuElement> {
-    'darkTheme'?: boolean;
-    'onDarkThemeClick'?: (event: CustomEvent<any>) => void;
+    'theme'?: number;
   }
   interface AppRoot extends JSXBase.HTMLAttributes<HTMLAppRootElement> {}
   interface AppTheme extends JSXBase.HTMLAttributes<HTMLAppThemeElement> {
-    'darkTheme'?: boolean;
-    'onDarkThemeClick'?: (event: CustomEvent<any>) => void;
+    'match'?: MatchResults;
+    'onThemeClick'?: (event: CustomEvent<any>) => void;
   }
   interface SoClearButton extends JSXBase.HTMLAttributes<HTMLSoClearButtonElement> {
     'onButtonClick'?: (event: CustomEvent<any>) => void;

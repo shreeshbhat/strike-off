@@ -11,17 +11,17 @@
     "prerender": "stencil build --prerender"
   },
   "dependencies": {
-    "@ionic/core": "4.5.0-dev.201905311531.e014c6a",
-    "@stencil/core": "1.0.6",
-    "@stencil/router": "^0.3.3",
-    "idb": "^4.0.3",
-    "ionicons": "^4.5.6"
+    "@ionic/core": "4.6.2",
+    "@stencil/core": "1.1.7",
+    "@stencil/router": "1.0.1",
+    "idb": "4.0.4",
+    "ionicons": "4.6.1"
   },
   "license": "MIT",
   "devDependencies": {
     "@stencil/eslint-plugin": "0.0.3",
-    "@typescript-eslint/parser": "^1.10.2",
-    "eslint": "^5.16.0",
+    "@typescript-eslint/parser": "^1.12.0",
+    "eslint": "6.0.1",
     "workbox-build": "4.3.1"
   }
 }

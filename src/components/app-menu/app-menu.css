@@ -7,5 +7,31 @@ app-menu {
 ion-item {
   --background: var(--app-bg-color);
   --ion-item-color: var(--text-color);
+  --min-height: 5.4rem;
+  --padding-start: 0;
   font-weight: var(--text-weight);
+}
+
+.link-wrapper {
+  padding: 1rem;
+  outline: none;
+  margin-left: 1rem;
+  border: 0.1rem solid transparent;
+}
+
+a {
+  font-variation-settings: 'wght' 400, 'wdth' 90;
+  font-size: 2rem;
+  color: var(--text-color);
+  font-family: inherit;
+  outline: none;
+  margin-left: 1rem;
+  border: 0.1rem solid transparent;
+  text-decoration: unset;
+}
+
+a:focus, a:hover {
+  -webkit-appearance: none;
+  border-bottom: 0.2rem solid var(--primary-color);
+  padding-bottom: 0.3rem;
 }
