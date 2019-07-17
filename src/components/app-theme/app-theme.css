@@ -1,0 +1,11 @@
+.theme-wrapper {
+  padding: 20px;
+  display: flex;
+}
+
+label {
+  font-size: 1.9rem;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+}

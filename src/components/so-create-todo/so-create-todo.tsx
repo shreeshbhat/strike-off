@@ -1,8 +1,8 @@
-import { Component, Event, EventEmitter, State, Listen, h } from "@stencil/core";
+import { Component, Event, EventEmitter, State, Listen, h } from '@stencil/core';
 
 @Component({
-  tag: "so-create-todo",
-  styleUrl: "so-create-todo.css",
+  tag: 'so-create-todo',
+  styleUrl: 'so-create-todo.css',
   shadow: true
 })
 export class SoCreateTodo {
@@ -11,7 +11,7 @@ export class SoCreateTodo {
   @State() value!: string;
 
   componentDidLoad() {
-    window.addEventListener("appload", () => {
+    window.addEventListener('appload', () => {
       this.textInput.focus();
     });
   }
@@ -20,7 +20,7 @@ export class SoCreateTodo {
 
   @Listen('keydown', { target: 'document' })
   async keydown($event: KeyboardEvent) {
-    if ($event.key.toLowerCase() === "enter" && !!this.textInput.value) {
+    if ($event.key.toLowerCase() === 'enter' && !!this.textInput.value) {
       this.inputSubmit.emit(this.value);
       this.textInput.value = '';
     }

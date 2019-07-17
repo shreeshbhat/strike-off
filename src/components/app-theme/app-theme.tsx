@@ -1,28 +1,31 @@
-import { Event, EventEmitter, Component, Host, Prop, h } from '@stencil/core';
+import { Event, EventEmitter, Component, Host, Prop, h, Listen } from '@stencil/core';
+import { MatchResults } from '@stencil/router';
 
 @Component({
   tag: 'app-theme',
   styleUrl: 'app-theme.css',
-  shadow: true
+  shadow: false
 })
 export class AppTheme {
-  @Prop() darkTheme: boolean;
-  @Event() darkThemeClick!: EventEmitter;
+  @Prop() match: MatchResults;
+  @Event() themeClick!: EventEmitter;
 
-  handleOnDarkThemeClick = () => this.darkThemeClick.emit();
+  handleOnThemeClick = () => this.themeClick.emit();
+
+  @Listen('ionChange')
+  handleIonChange(e: CustomEvent) {
+    const value = e.detail.checked? 1 : 2;
+    this.themeClick.emit(value);
+  }
 
   render() {
+    const theme = Number(this.match.params.theme);
     return (
       <Host>
-        <header>
-          <h1>Menu</h1>
-        </header>
-        <main>
-          <ion-item>
-            <ion-label>Dark Theme</ion-label>
-            <ion-toggle checked={this.darkTheme}></ion-toggle>
-          </ion-item>
-        </main>
+        <div class="theme-wrapper">
+          <label>Dark Theme</label>
+          <ion-toggle checked={theme == 1? true : false}></ion-toggle>
+        </div>
       </Host>
     );
   }

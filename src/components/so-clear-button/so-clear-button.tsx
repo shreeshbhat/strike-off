@@ -1,8 +1,8 @@
-import { Component, Event, EventEmitter, h} from "@stencil/core";
+import { Component, Event, EventEmitter, h} from '@stencil/core';
 
 @Component({
-  tag: "so-clear-button",
-  styleUrl: "so-clear-button.css",
+  tag: 'so-clear-button',
+  styleUrl: 'so-clear-button.css',
   shadow: true
 })
 export class SoClearButton {
