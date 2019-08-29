@@ -5,6 +5,8 @@
     "declaration": false,
     "experimentalDecorators": true,
     "lib": [
+      "esnext.asynciterable",
+      "es2018",
       "dom",
       "es2015"
     ],
