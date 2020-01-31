@@ -26,7 +26,7 @@
 }
 
 .dark {
-  --highlight-box-shadow-color: hsla(0, 5%, 40%, 0.7);
+  --highlight-box-shadow-color: hsla(0, 20%, 80%, 0.7);
   --highlight-border-color: hsla(0, 0%, 15%, 0.7);
   --app-bg-color: hsl(240, 2%, 15%);
   --text-color: hsl(15, 25%, 84%);
