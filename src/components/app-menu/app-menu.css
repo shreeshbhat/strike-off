@@ -4,12 +4,13 @@ app-menu {
   min-width: 28rem;
 }
 
-ion-item {
-  --background: var(--app-bg-color);
-  --ion-item-color: var(--text-color);
-  --min-height: 5.4rem;
-  --padding-start: 0;
+.item {
+  display: flex;
+  background: var(--app-bg-color);
+  color: var(--text-color);
   font-weight: var(--text-weight);
+  border-bottom: 1px solid var(--text-color);
+  min-height: 5.4rem;
 }
 
 .link-wrapper {

@@ -27,7 +27,8 @@ export class AppRoot {
     const toast = await this.toastCtrl.create({
       message: 'New version available',
       showCloseButton: true,
-      closeButtonText: 'Reload'
+      closeButtonText: 'Reload',
+      position: 'top'
     });
     await toast.present();
     await toast.onWillDismiss();
@@ -88,8 +89,9 @@ export class AppRoot {
               <stencil-route-switch scrollTopOffset={0}>
                 <stencil-route url='/'
                   component='app-home' exact={true} />
-                <stencil-route url='/themes/:theme'
-                  component='app-theme' />
+                <stencil-route url='/themes/'
+                  component='app-theme'
+                  componentProps={{ theme: this.theme }} />
               </stencil-route-switch>
             </stencil-router>
           </main>

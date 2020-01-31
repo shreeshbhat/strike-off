@@ -13,20 +13,20 @@ export class AppMenu {
       <Host>
         <aside>
           <nav>
-          <ion-item>
+          <div class="item">
               <stencil-route-link
                 class="link-wrapper"
                 url="/">
                 Home
               </stencil-route-link>
-            </ion-item>
-            <ion-item>
+            </div>
+            <div class="item">
               <stencil-route-link
                 class="link-wrapper"
-                url={"/themes/" + this.theme}>
+                url={"/themes/"}>
                 Themes
               </stencil-route-link>
-            </ion-item>
+            </div>
           </nav>
         </aside>
       </Host>

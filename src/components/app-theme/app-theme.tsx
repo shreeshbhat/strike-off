@@ -1,5 +1,5 @@
 import { Event, EventEmitter, Component, Host, Prop, h, Listen } from '@stencil/core';
-import { MatchResults } from '@stencil/router';
+import { Theme } from '../../interfaces/Theme';
 
 @Component({
   tag: 'app-theme',
@@ -7,24 +7,48 @@ import { MatchResults } from '@stencil/router';
   shadow: false
 })
 export class AppTheme {
-  @Prop() match: MatchResults;
   @Event() themeClick!: EventEmitter;
+  @Prop() theme: number;
 
-  handleOnThemeClick = () => this.themeClick.emit();
-
-  @Listen('ionChange')
-  handleIonChange(e: CustomEvent) {
-    const value = e.detail.checked? 1 : 2;
+  @Listen('onChange')
+  handleThemeChange(e) {
+    const value = Number(e.target.value);
     this.themeClick.emit(value);
   }
 
   render() {
-    const theme = Number(this.match.params.theme);
     return (
       <Host>
         <div class="theme-wrapper">
-          <label>Dark Theme</label>
-          <ion-toggle checked={theme == 1? true : false}></ion-toggle>
+          <form>
+            <fieldset>
+              <legend>
+                Choose your theme
+							</legend>
+              <div class="radio-group">
+                <input type="radio" name="theme"
+                  class="n-radio" id="theme_1"
+                  value="1"
+                  checked={this.theme == Theme.dark? true : false}
+                  onChange={ev => this.handleThemeChange(ev)}
+                />
+								<label htmlFor="theme_1">
+									Dark
+								</label>
+							</div>
+              <div class="radio-group">
+                <input type="radio" name="theme"
+                  class="n-radio" id="theme_2"
+                  value="2"
+                  checked={this.theme == Theme.light? true : false}
+                  onChange={ev => this.handleThemeChange(ev)}
+                  />
+								<label htmlFor="theme_2">
+                  Light
+								</label>
+							</div>
+            </fieldset>
+          </form>
         </div>
       </Host>
     );

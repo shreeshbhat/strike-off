@@ -55,7 +55,8 @@ export class AppHome {
       <Host>
         <so-create-todo onInputSubmit={this.inputSubmitHandler} />
         <div class="card-layout">
-          <ion-card class="card">
+          {!!this.list && this.list.length > 0
+            ? <div class="card">
             {this.list.map(item => (
               <so-todo-item
                 onItemCheck={this.itemCheckedHandler}
@@ -65,7 +66,10 @@ export class AppHome {
                 todoId={item.todoId}
               />
             ))}
-          </ion-card>
+          </div>
+          : <div></div>
+          }
+
         </div>
       </Host>
     );
