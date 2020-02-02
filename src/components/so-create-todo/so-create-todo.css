@@ -7,8 +7,11 @@
 }
 
 .input-wrapper {
-  height: 5rem;
+  height: 10rem;
+  width: 100%;
   margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
 }
 
 .label-wrapper {
@@ -21,6 +24,7 @@
 }
 
 .so-create-todo {
+  box-sizing: border-box;
   -webkit-appearance: none;
   max-width: 60rem;
   background: var(--card-bg-color);
@@ -38,9 +42,30 @@
 }
 
 .so-create-todo:focus, .so-create-todo:hover {
-  transition: 0.1s;
+  transition: 0.25s;
   outline: none;
   -webkit-appearance: none;
   box-shadow: 0 0 0 0.3rem var(--highlight-box-shadow-color);
   border: 0.1rem solid var(--highlight-border-color);
+}
+
+.add-button {
+  --background: var(--primary-color);
+  --background-activated: var(--primary-color);
+  --background-hover: var(--primary-color);
+  --background-focused: var(--primary-color);
+  width: 12rem;
+  height: 4rem;
+  font-size: 1.6rem;
+  margin-top: 1rem;
+  text-transform: none;
+}
+
+.add-button:focus, .add-button:hover, .add-button:focus-within {
+  -webkit-appearance: none;
+  transition: 0.25s;
+  box-shadow: 0 0 0 0.3rem var(--highlight-box-shadow-color);
+  border-color: var(--highlight-border-color);
+  outline: none;
+  border-radius: 0.4rem;
 }
