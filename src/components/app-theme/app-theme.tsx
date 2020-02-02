@@ -28,9 +28,9 @@ export class AppTheme {
               <div class="radio-group">
                 <input type="radio" name="theme"
                   class="n-radio" id="theme_1"
-                  value="1"
                   checked={this.theme == Theme.dark? true : false}
                   onChange={ev => this.handleThemeChange(ev)}
+                  value="1"
                 />
 								<label htmlFor="theme_1">
 									Dark
@@ -39,9 +39,9 @@ export class AppTheme {
               <div class="radio-group">
                 <input type="radio" name="theme"
                   class="n-radio" id="theme_2"
-                  value="2"
                   checked={this.theme == Theme.light? true : false}
                   onChange={ev => this.handleThemeChange(ev)}
+                  value="2"
                   />
 								<label htmlFor="theme_2">
                   Light

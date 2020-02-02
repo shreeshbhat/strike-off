@@ -1,7 +1,6 @@
 :root {
-  --primary-color: hsla(0, 40%, 45%, 1);
-
-  --app-bg-color: hsl(0, 0%, 98%);
+  --primary-color: hsl(0, 40%, 45%);
+  --app-bg-color: hsl(0, 33%, 98%);
   --highlight-box-shadow-color: hsla(20, 80%, 70%, 0.4);
   --highlight-border-color: hsl(20, 75%, 55%);
   --text-color: hsl(0, 0%, 30%);
@@ -13,7 +12,7 @@
 }
 
 .light{
-  --app-bg-color: hsl(0, 0%, 98%);
+  --app-bg-color: hsl(0, 33%, 98%);
   --highlight-box-shadow-color: hsla(20, 80%, 70%, 0.4);
   --highlight-border-color: hsl(20, 75%, 55%);
   --text-color: hsl(0, 0%, 30%);

@@ -21,11 +21,11 @@ export class SoTodoItem {
       <div class="item">
         <div class="wrapper">
           <input
+            id={'todo' + this.todoId.toString()}
             class="toggle"
             type="checkbox"
-            id={'todo' + this.todoId.toString()}
-            checked={this.checked}
             onChange={this.handleOnCheck}
+            checked={this.checked}
           />
           <label htmlFor={'todo' + this.todoId.toString()}
                 class="label overflow-ellipsis">{this.text}</label>

@@ -20,7 +20,13 @@ export class SoCreateTodo {
 
   @Listen('keydown', { target: 'document' })
   async keydown($event: KeyboardEvent) {
-    if ($event.key.toLowerCase() === 'enter' && !!this.textInput.value) {
+    if ($event.key.toLowerCase() === 'enter') {
+      this.emitInput();
+    }
+  }
+
+  emitInput() {
+    if(!!this.textInput.value) {
       this.inputSubmit.emit(this.value);
       this.textInput.value = '';
     }
@@ -33,7 +39,7 @@ export class SoCreateTodo {
           <label class="label-wrapper overflow-ellipsis" htmlFor="addTodo">
             What would you like to do?
           </label>
-          <div class="flex-center input-wrapper">
+          <div class="input-wrapper">
             <input
               class="so-create-todo"
               name="addTodo"
@@ -42,6 +48,11 @@ export class SoCreateTodo {
               onInput={this.handleInputChange}
               ref={el => (this.textInput = el as HTMLInputElement)}
             />
+            <ion-button
+              class="add-button"
+              onClick={this.emitInput.bind(this)}>
+                Add a task
+            </ion-button>
           </div>
         </div>
       </div>
