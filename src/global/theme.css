@@ -5,8 +5,8 @@
   --highlight-border-color: hsl(20, 75%, 55%);
   --text-color: hsl(0, 0%, 30%);
   --text-weight: 600;
-  --card-bg-color: hsl(0, 0%, 99%);
-  --ion-item-background: hsl(0, 0%, 99%);
+  --card-bg-color: hsl(0, 0%, 98%);
+  --ion-item-background: hsl(0, 0%, 98%);
   --check-color: hsl(0, 0%, 30%);
   --button-icon-color: hsl(0, 0%, 30%);
 }
@@ -17,8 +17,8 @@
   --highlight-border-color: hsl(20, 75%, 55%);
   --text-color: hsl(0, 0%, 30%);
   --text-weight: 600;
-  --card-bg-color: hsl(0, 0%, 99%);
-  --ion-item-background: hsl(0, 0%, 99%);
+  --card-bg-color: hsl(0, 0%, 98%);
+  --ion-item-background: hsl(0, 0%, 98%);
   --check-color: hsl(0, 0%, 30%);
   --button-icon-color: hsl(0, 0%, 30%);
   --menu-border-color: hsl(0, 0%, 80%);
@@ -30,8 +30,8 @@
   --app-bg-color: hsl(240, 2%, 15%);
   --text-color: hsl(15, 25%, 84%);
   --text-weight: 200;
-  --card-bg-color: hsl(300, 5%, 25%);
-  --ion-item-background: hsl(300, 5%, 25%);
+  --card-bg-color: hsl(300, 5%, 22%);
+  --ion-item-background: hsl(300, 5%, 22%);
   --check-color: hsl(0, 0%, 75%);
   --button-icon-color: hsl(0, 0%, 80%);
   --menu-border-color: hsl(300, 1%, 25%);

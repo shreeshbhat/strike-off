@@ -2,10 +2,10 @@ import { Component, Event, EventEmitter, State, Listen, h } from '@stencil/core'
 
 @Component({
   tag: 'so-create-todo',
-  styleUrl: 'so-create-todo.css',
+  styleUrl: 'create-todo.css',
   shadow: true
 })
-export class SoCreateTodo {
+export class CreateTodo {
   textInput!: HTMLInputElement;
   @Event() inputSubmit!: EventEmitter;
   @State() value!: string;
@@ -50,6 +50,7 @@ export class SoCreateTodo {
             />
             <ion-button
               class="add-button"
+              mode="md"
               onClick={this.emitInput.bind(this)}>
                 Add a task
             </ion-button>

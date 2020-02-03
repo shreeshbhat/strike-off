@@ -1,6 +1,7 @@
 .theme-wrapper {
-  padding: 20px;
+  padding: 2rem;
   display: flex;
+  justify-content: center;
 }
 
 legend, label {
@@ -65,7 +66,26 @@ legend, label {
 	}
 } */
 
+.radio-wrapper {
+  display: flex;
+  margin: 1rem;
+  border: 1px solid var(--menu-border-color);
+}
+
 .radio-group {
   display: flex;
   align-items: center;
+  padding-left: 1.2rem;
+  /* width: 15rem; */
+  width: 100%;
+  min-width: 10rem;
+  max-width: 15rem;
+  background: var(--card-bg-color);
+  border-right: 1px solid var(--menu-border-color);
+}
+
+fieldset {
+  width: 99%;
+  border: 1px solid var(--text-color);
+  border-radius: 0.2rem;
 }

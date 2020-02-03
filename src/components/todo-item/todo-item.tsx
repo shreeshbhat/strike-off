@@ -3,10 +3,10 @@ import 'ionicons';
 
 @Component({
   tag: 'so-todo-item',
-  styleUrl: 'so-todo-item.css',
+  styleUrl: 'todo-item.css',
   shadow: true
 })
-export class SoTodoItem {
+export class TodoItem {
   @Prop() checked!: boolean;
   @Prop() text!: string;
   @Prop() todoId!: number;

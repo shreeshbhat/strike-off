@@ -25,28 +25,42 @@ export class AppTheme {
               <legend>
                 Choose your theme
 							</legend>
-              <div class="radio-group">
-                <input type="radio" name="theme"
-                  class="n-radio" id="theme_1"
-                  checked={this.theme == Theme.dark? true : false}
-                  onChange={ev => this.handleThemeChange(ev)}
-                  value="1"
-                />
-								<label htmlFor="theme_1">
-									Dark
-								</label>
-							</div>
-              <div class="radio-group">
-                <input type="radio" name="theme"
-                  class="n-radio" id="theme_2"
-                  checked={this.theme == Theme.light? true : false}
-                  onChange={ev => this.handleThemeChange(ev)}
-                  value="2"
+              <div class="radio-wrapper">
+                <div class="radio-group">
+                  <input type="radio" name="theme"
+                    class="n-radio" id="theme_1"
+                    checked={this.theme == Theme.dark ? true : false}
+                    onChange={ev => this.handleThemeChange(ev)}
+                    value="1"
                   />
-								<label htmlFor="theme_2">
-                  Light
+                  <label htmlFor="theme_1">
+                    Dark
+                  </label>
+                </div>
+                <so-preview-theme
+                  sidebar-background="#a14545"
+                  main-background="#252527"
+                  card-background="#3b353b"></so-preview-theme>
+              </div>
+
+
+              <div class="radio-wrapper">
+                <div class="radio-group">
+                  <input type="radio" name="theme"
+                    class="n-radio" id="theme_2"
+                    checked={this.theme == Theme.light ? true : false}
+                    onChange={ev => this.handleThemeChange(ev)}
+                    value="2"
+                  />
+                  <label htmlFor="theme_2">
+                    Light
 								</label>
-							</div>
+                </div>
+                <so-preview-theme
+                  sidebar-background="#a14545"
+                  main-background="#fcf8f8"
+                  card-background="#fafafa"></so-preview-theme>
+              </div>
             </fieldset>
           </form>
         </div>
