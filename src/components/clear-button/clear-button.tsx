@@ -2,10 +2,10 @@ import { Component, Event, EventEmitter, h} from '@stencil/core';
 
 @Component({
   tag: 'so-clear-button',
-  styleUrl: 'so-clear-button.css',
+  styleUrl: 'clear-button.css',
   shadow: true
 })
-export class SoClearButton {
+export class ClearButton {
   @Event() buttonClick!: EventEmitter;
 
   handleOnClick = () => this.buttonClick.emit();

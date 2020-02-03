@@ -1,7 +1,12 @@
 
 app-menu {
   width: 28rem;
-  min-width: 28rem;
+  min-width: 15rem;
+}
+@media only screen and (max-width: 750px){
+  app-menu {
+    width: 15rem;
+  }
 }
 
 .item {
