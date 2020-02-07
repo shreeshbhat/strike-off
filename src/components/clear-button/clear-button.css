@@ -1,4 +1,8 @@
 
+so-clear-button {
+  outline: none;
+}
+
 .clear-button {
   transition: 0.25s;
   height: 4.4rem;
@@ -21,9 +25,5 @@
   box-shadow: 0 0 0 0.3rem var(--highlight-box-shadow-color);
   border: 0.1rem solid var(--highlight-border-color);
   border-radius: 0.3rem;
-  outline: none;
-}
-
-:host {
   outline: none;
 }

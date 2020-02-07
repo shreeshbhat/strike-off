@@ -4,7 +4,7 @@ import 'ionicons';
 @Component({
   tag: 'so-todo-item',
   styleUrl: 'todo-item.css',
-  shadow: true
+  shadow: false
 })
 export class TodoItem {
   @Prop() checked!: boolean;
@@ -18,7 +18,7 @@ export class TodoItem {
 
   render() {
     return (
-      <div class="item">
+      <div class="todo-item">
         <div class="wrapper">
           <input
             id={'todo' + this.todoId.toString()}

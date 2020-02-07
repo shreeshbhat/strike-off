@@ -11,6 +11,7 @@ header {
   display: flex;
   align-items: center;
   box-shadow: 0 0.2rem 0.5rem 0 rgba(0, 0, 0, 0.26);
+  z-index: 1;
 }
 
 h1 {
@@ -36,7 +37,8 @@ h1 {
 main {
   flex: 1;
   width: 100%;
-  overflow-y: scroll;
+  overflow-y: auto;
+  padding: 1rem 1.5rem 0 1.5rem;
 }
 
 .menu-icon {
@@ -44,6 +46,7 @@ main {
 }
 
 app-menu {
+  background-color: var(--menu-bg-color);
   transition-property: margin-left, visibility;
   transition-duration: 0.4s;
   transition-timing-function: cubic-bezier(0.4,0.0,0.2,1);
@@ -69,12 +72,10 @@ app-menu {
 }
 .show-menu {
   margin-left: 0;
-  height: auto;
   border-right: 0.1rem solid var(--menu-border-color);
 }
 
 .hide-menu {
-  height: 0;
   visibility: hidden;
 }
 

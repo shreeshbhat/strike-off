@@ -1,6 +1,6 @@
 .item {
   display: flex;
-  background: var(--app-bg-color);
+  background: var(--menu-bg-color);
   color: var(--text-color);
   font-weight: var(--text-weight);
   border-bottom: 1px solid var(--menu-border-color);
@@ -12,6 +12,7 @@
   outline: none;
   margin-left: 1rem;
   border: 0.1rem solid transparent;
+  width: 100%;
 }
 
 a {
