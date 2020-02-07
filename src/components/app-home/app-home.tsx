@@ -5,7 +5,7 @@ import { addTodo, getTodos, updateTodo, deleteTodo } from '../../utils/service';
 @Component({
   tag: 'app-home',
   styleUrl: 'app-home.css',
-  shadow: true
+  shadow: false
 })
 export class AppHome {
   @State() list: Todo[] = [];

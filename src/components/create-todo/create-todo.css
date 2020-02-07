@@ -1,7 +1,6 @@
 @import url("../../global/utils.css");
 
 .create-group {
-  padding: 1rem 1.5rem 0 1.5rem;
   width: 100%;
   max-width: 60rem;
 }
@@ -27,6 +26,7 @@
   box-sizing: border-box;
   -webkit-appearance: none;
   max-width: 60rem;
+  min-width: 28rem;
   background: var(--card-bg-color);
   color: var(--text-color);
   font-variation-settings: 'wght' 600, 'wdth' 100;

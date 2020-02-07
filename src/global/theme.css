@@ -1,27 +1,29 @@
 :root {
   --primary-color: hsl(0, 40%, 45%);
-  --app-bg-color: hsl(0, 33%, 98%);
+  --app-bg-color: hsl(0, 1%, 96%);
   --highlight-box-shadow-color: hsla(20, 80%, 70%, 0.4);
   --highlight-border-color: hsl(20, 75%, 55%);
   --text-color: hsl(0, 0%, 30%);
   --text-weight: 600;
   --card-bg-color: hsl(0, 0%, 98%);
-  --ion-item-background: hsl(0, 0%, 98%);
+  --item-bg-color: hsl(0, 0%, 98%);
   --check-color: hsl(0, 0%, 30%);
   --button-icon-color: hsl(0, 0%, 30%);
+  --menu-bg-color: hsl(0, 0%, 98%);
 }
 
 .light{
-  --app-bg-color: hsl(0, 33%, 98%);
+  --app-bg-color: hsl(0, 1%, 96%);
   --highlight-box-shadow-color: hsla(20, 80%, 70%, 0.4);
   --highlight-border-color: hsl(20, 75%, 55%);
   --text-color: hsl(0, 0%, 30%);
   --text-weight: 600;
   --card-bg-color: hsl(0, 0%, 98%);
-  --ion-item-background: hsl(0, 0%, 98%);
+  --item-bg-color: hsl(0, 0%, 98%);
   --check-color: hsl(0, 0%, 30%);
   --button-icon-color: hsl(0, 0%, 30%);
   --menu-border-color: hsl(0, 0%, 80%);
+  --menu-bg-color: hsl(0, 0%, 98%);
 }
 
 .dark {
@@ -31,8 +33,9 @@
   --text-color: hsl(15, 25%, 84%);
   --text-weight: 200;
   --card-bg-color: hsl(300, 5%, 22%);
-  --ion-item-background: hsl(300, 5%, 22%);
+  --item-bg-color: hsl(300, 5%, 22%);
   --check-color: hsl(0, 0%, 75%);
   --button-icon-color: hsl(0, 0%, 80%);
   --menu-border-color: hsl(300, 1%, 25%);
+  --menu-bg-color: hsl(240, 2%, 15%);
 }

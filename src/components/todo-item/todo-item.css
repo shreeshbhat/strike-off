@@ -1,19 +1,8 @@
 @import url("../../global/utils.css");
 
-.card {
-  max-width: 60rem;
-  min-width: 38.4rem;
-}
-
-.item {
-  font-size:1.6rem;
-  --min-height: 4.8rem;
-  --padding-start: 1rem;
-  --inner-padding-end: 0.7rem;
-  --min-height: 5.5rem;
+.todo-item {
+  background-color: inherit;
   display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .wrapper {
@@ -28,12 +17,9 @@
 }
 
 .wrapper input {
-  /* top: -0.5rem;
-  left: -0.5rem;
-  position: absolute; */
   height: 4.4rem;
-  opacity: 0;
   width: 4.4rem;
+  opacity: 0;
   z-index: 1;
   cursor: pointer;
 }

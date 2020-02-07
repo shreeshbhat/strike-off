@@ -58,7 +58,7 @@ export class AppTheme {
                 </div>
                 <so-preview-theme
                   sidebar-background="#a14545"
-                  main-background="#fcf8f8"
+                  main-background="#f5f5f5"
                   card-background="#fafafa"></so-preview-theme>
               </div>
             </fieldset>

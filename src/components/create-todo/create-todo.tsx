@@ -3,7 +3,7 @@ import { Component, Event, EventEmitter, State, Listen, h } from '@stencil/core'
 @Component({
   tag: 'so-create-todo',
   styleUrl: 'create-todo.css',
-  shadow: true
+  shadow: false
 })
 export class CreateTodo {
   textInput!: HTMLInputElement;
