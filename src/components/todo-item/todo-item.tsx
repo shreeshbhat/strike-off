@@ -30,7 +30,7 @@ export class TodoItem {
           <label htmlFor={'todo' + this.todoId.toString()}
                 class="label overflow-ellipsis">{this.text}</label>
         </div>
-        <so-clear-button slot="end" class="delete"
+        <so-clear-button slot="end" class="flex-center delete"
             onButtonClick={this.handleOnRemove}>
           <ion-icon name="md-trash"/>
         </so-clear-button>

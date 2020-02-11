@@ -43,6 +43,11 @@ export class AppRoot {
     content.classList.add('animation')
   }
 
+  @Listen('menuLinkClicked')
+  menuLinkClickedHandler() {
+    this.openMenu();
+  }
+
   @Listen('themeClick')
   async changeTheme(event: CustomEvent) {
     this.theme = event.detail;
