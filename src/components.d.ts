@@ -99,6 +99,7 @@ declare global {
 declare namespace LocalJSX {
   interface AppHome {}
   interface AppMenu {
+    'onMenuLinkClicked'?: (event: CustomEvent<any>) => void;
     'theme'?: number;
   }
   interface AppRoot {}

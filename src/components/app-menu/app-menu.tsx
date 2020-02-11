@@ -1,4 +1,4 @@
-import { Component, Host, Prop, h } from '@stencil/core';
+import { Component, Event, EventEmitter, Host, Prop, h } from '@stencil/core';
 
 @Component({
   tag: 'app-menu',
@@ -8,6 +8,14 @@ import { Component, Host, Prop, h } from '@stencil/core';
 export class AppMenu {
   @Prop() theme: number;
 
+  @Event() menuLinkClicked: EventEmitter;
+
+  urlChanged() {
+    if (window.innerWidth <= 510) {
+      this.menuLinkClicked.emit();
+    }
+  }
+
   render() {
     return (
       <Host>
@@ -16,14 +24,16 @@ export class AppMenu {
           <div class="item">
               <stencil-route-link
                 class="link-wrapper"
-                url="/">
+                url="/"
+                onClick={() => this.urlChanged()}>
                 Home
               </stencil-route-link>
             </div>
             <div class="item">
               <stencil-route-link
                 class="link-wrapper"
-                url={"/themes/"}>
+                url={"/themes/"}
+                onClick={() => this.urlChanged()}>
                 Themes
               </stencil-route-link>
             </div>
