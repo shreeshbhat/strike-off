@@ -8,6 +8,7 @@ export const config: Config = {
   outputTargets: [
     {
       type: 'www',
+      baseUrl: 'https://strikeoff.app/',
       copy: [
         { src: 'netlify', dest: '' }
       ],
@@ -17,6 +18,10 @@ export const config: Config = {
           '**/*.{js,css,json,html,ico,png}'
         ]
       }
+    },
+    {
+      type: 'dist-hydrate-script',
+      dir: 'dist/prerender'
     }
   ]
 };

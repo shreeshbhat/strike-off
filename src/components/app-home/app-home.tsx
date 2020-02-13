@@ -1,4 +1,4 @@
-import { Component, State, h, Host } from '@stencil/core';
+import { Build, Component, Host, State, h } from '@stencil/core';
 import { Todo } from '../../interfaces/Todo';
 import { addTodo, getTodos, updateTodo, deleteTodo } from '../../utils/service';
 
@@ -11,10 +11,12 @@ export class AppHome {
   @State() list: Todo[] = [];
 
   componentWillLoad() {
-    getTodos().then(val => {
-      if (!!val)
-        this.list = val as Todo[];
-    });
+    if (Build.isBrowser) {
+      getTodos().then(val => {
+        if (!!val)
+          this.list = val as Todo[];
+      });
+    }
   }
 
   inputSubmitHandler = (e: CustomEvent) => {
@@ -57,17 +59,17 @@ export class AppHome {
         <div class="card-layout">
           {!!this.list && this.list.length > 0
             ? <div class="card">
-            {this.list.map(item => (
-              <so-todo-item
-                onItemCheck={this.itemCheckedHandler}
-                onItemRemove={this.itemRemoveHandler}
-                checked={item.checked}
-                text={item.text}
-                todoId={item.todoId}
-              />
-            ))}
-          </div>
-          : <div></div>
+              {this.list.map(item => (
+                <so-todo-item
+                  onItemCheck={this.itemCheckedHandler}
+                  onItemRemove={this.itemRemoveHandler}
+                  checked={item.checked}
+                  text={item.text}
+                  todoId={item.todoId}
+                />
+              ))}
+            </div>
+            : <div></div>
           }
 
         </div>
