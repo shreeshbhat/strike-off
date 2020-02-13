@@ -31,35 +31,37 @@ export class AppMenu {
       <Host>
         <aside>
           <nav>
-          {links.map((link) =>
-            <div class="item">
-              <stencil-route-link
-                class="link-wrapper"
-                url={link.url}
-                onClick={() => this.urlChanged()}>
-                {link.name}
-              </stencil-route-link>
-            </div>
-          )}
-          <div class="item link-layout">
-            <a class="social-link"
-              href="https://github.com/shreeshbhat/strike-off"
-              target="_blank"
-              rel="noopener">
+            {links.map((link) =>
+              <div class="item">
+                <stencil-route-link
+                  class="link-wrapper"
+                  url={link.url}
+                  onClick={() => this.urlChanged()}>
+                  {link.name}
+                </stencil-route-link>
+              </div>
+            )}
+            <div class="item link-layout">
+              <a
+                class="contact-link"
+                href="https://github.com/shreeshbhat/strike-off"
+                target="_blank"
+                rel="noopener">
                 Github
               </a>
-            {/* <ion-icon name="logo-github" class="social-icon"></ion-icon> */}
-          </div>
+              <ion-icon name="logo-github" class="logo-icon"></ion-icon>
+            </div>
 
-          <div class="item link-layout">
-            <a class="social-link"
+            <div class="item link-layout">
+              <a
+                class="contact-link"
                 href="https://twitter.com/shreeshbhat"
                 target="_blank"
                 rel="noopener">
-                  Twitter
+                Twitter
             </a>
-            {/* <ion-icon name="logo-twitter" class="social-icon"></ion-icon> */}
-          </div>
+              <ion-icon name="logo-twitter" class="logo-icon"></ion-icon>
+            </div>
           </nav>
         </aside>
       </Host>

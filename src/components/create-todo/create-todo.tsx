@@ -10,12 +10,6 @@ export class CreateTodo {
   @Event() inputSubmit!: EventEmitter;
   @State() value!: string;
 
-  componentDidLoad() {
-    window.addEventListener('appload', () => {
-      this.textInput.focus();
-    });
-  }
-
   handleInputChange = (event: any) => (this.value = event.target.value);
 
   @Listen('keydown', { target: 'document' })

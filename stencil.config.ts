@@ -12,11 +12,12 @@ export const config: Config = {
       copy: [
         { src: 'netlify', dest: '' }
       ],
+      prerenderConfig: './prerender.config.js',
       serviceWorker: {
         swSrc: 'src/sw.js',
         globPatterns: [
           '**/*.{js,css,json,html,ico,png,woff2}',
-          '**/{cloud-download-outline,menu-outline,trash-outline,logo-twitter,logo-github}.svg'
+          '**/{download,menu-outline,md-trash,logo-twitter,logo-github}.svg'
         ]
       }
     },
