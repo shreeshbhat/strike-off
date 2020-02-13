@@ -1,4 +1,4 @@
-import { openDB } from 'idb/with-async-ittr.js';
+import { openDB } from 'idb';
 
 export async function openDb() {
   const db = await openDB('Todos', 1, {

@@ -13,6 +13,7 @@ log.txt
 *.sublime-workspace
 package-lock.json
 
+.history/
 .stencil/
 .idea/
 .vscode/

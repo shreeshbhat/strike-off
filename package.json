@@ -8,22 +8,22 @@
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
-    "prerender": "stencil build --prerender",
+    "prerender": "stencil build && stencil prerender dist/prerender/index.js",
     "generate": "stencil generate"
   },
   "dependencies": {
-    "@ionic/core": "4.11.10",
-    "@stencil/core": "1.8.11",
+    "@ionic/core": "5.0.5",
+    "@stencil/core": "1.10.3",
     "@stencil/router": "1.0.1",
     "idb": "4.0.4",
-    "ionicons": "5.0.1",
+    "ionicons": "4.6.3",
     "ts-debounce": "2.0.1"
   },
   "license": "MIT",
   "devDependencies": {
-    "@stencil/eslint-plugin": "0.2.1",
-    "@types/jest": "25.1.1",
-    "@typescript-eslint/parser": "2.22.0",
+    "@stencil/eslint-plugin": "0.3.1",
+    "@types/jest": "25.1.4",
+    "@typescript-eslint/parser": "2.23.0",
     "eslint": "6.8.0",
     "workbox-build": "4.3.1"
   }
