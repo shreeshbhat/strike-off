@@ -1,5 +1,5 @@
 import '@ionic/core';
-import { Component, Element, Host, Listen, Method, Prop, State, h } from '@stencil/core';
+import { Build, Component, Element, Host, Listen, Method, Prop, State, h } from '@stencil/core';
 import { addToDB, getFromDB } from '../../utils/service';
 import { Theme } from '../../interfaces/Theme';
 
@@ -67,11 +67,15 @@ export class AppRoot {
   }
 
   componentWillLoad() {
-    getFromDB('theme').then(val => {
-      if (!!val)
-        this.theme = val as number;
-      this.setThemeClass(this.theme);
-    });
+    if (Build.isBrowser) {
+      getFromDB('theme').then(val => {
+        if (!!val)
+          this.theme = val as number;
+        this.setThemeClass(this.theme);
+      });
+    } else {
+      this.theme = Theme.dark;
+    }
   }
 
   render() {
