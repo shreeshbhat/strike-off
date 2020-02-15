@@ -48,12 +48,11 @@ export class CreateTodo {
               onInput={this.handleInputChange}
               ref={el => (this.textInput = el as HTMLInputElement)}
             />
-            <ion-button
+            <so-fill-button
               class="add-button"
-              mode="md"
               onClick={this.emitInput.bind(this)}>
                 Add a task
-            </ion-button>
+            </so-fill-button>
           </div>
         </div>
       </div>

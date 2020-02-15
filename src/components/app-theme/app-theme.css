@@ -20,13 +20,13 @@ legend, label {
 		0 0 0 2px hsl(300, 5%, 25%),
 		inset 0 0 0 0px hsl(300, 5%, 25%);
 	display: inline-block;
-	height: 1.25em;
+	height: 1.2rem;
 	margin-right: .25em;
 	transition:
 		border-color .2s ease-in-out,
 		box-shadow .2s ease-in-out;
 	vertical-align: text-bottom;
-  width: 1.25em;
+  width: 1.2rem;
   outline: none;
   margin-top: 0px;
   margin-right: 10px;

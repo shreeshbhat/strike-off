@@ -22,6 +22,7 @@ export namespace Components {
   }
   interface SoClearButton {}
   interface SoCreateTodo {}
+  interface SoFillButton {}
   interface SoPreviewTheme {
     'cardBackground': string;
     'mainBackground': string;
@@ -73,6 +74,12 @@ declare global {
     new (): HTMLSoCreateTodoElement;
   };
 
+  interface HTMLSoFillButtonElement extends Components.SoFillButton, HTMLStencilElement {}
+  var HTMLSoFillButtonElement: {
+    prototype: HTMLSoFillButtonElement;
+    new (): HTMLSoFillButtonElement;
+  };
+
   interface HTMLSoPreviewThemeElement extends Components.SoPreviewTheme, HTMLStencilElement {}
   var HTMLSoPreviewThemeElement: {
     prototype: HTMLSoPreviewThemeElement;
@@ -91,6 +98,7 @@ declare global {
     'app-theme': HTMLAppThemeElement;
     'so-clear-button': HTMLSoClearButtonElement;
     'so-create-todo': HTMLSoCreateTodoElement;
+    'so-fill-button': HTMLSoFillButtonElement;
     'so-preview-theme': HTMLSoPreviewThemeElement;
     'so-todo-item': HTMLSoTodoItemElement;
   }
@@ -113,6 +121,9 @@ declare namespace LocalJSX {
   interface SoCreateTodo {
     'onInputSubmit'?: (event: CustomEvent<any>) => void;
   }
+  interface SoFillButton {
+    'onButtonClick'?: (event: CustomEvent<any>) => void;
+  }
   interface SoPreviewTheme {
     'cardBackground'?: string;
     'mainBackground'?: string;
@@ -133,6 +144,7 @@ declare namespace LocalJSX {
     'app-theme': AppTheme;
     'so-clear-button': SoClearButton;
     'so-create-todo': SoCreateTodo;
+    'so-fill-button': SoFillButton;
     'so-preview-theme': SoPreviewTheme;
     'so-todo-item': SoTodoItem;
   }
@@ -150,6 +162,7 @@ declare module "@stencil/core" {
       'app-theme': LocalJSX.AppTheme & JSXBase.HTMLAttributes<HTMLAppThemeElement>;
       'so-clear-button': LocalJSX.SoClearButton & JSXBase.HTMLAttributes<HTMLSoClearButtonElement>;
       'so-create-todo': LocalJSX.SoCreateTodo & JSXBase.HTMLAttributes<HTMLSoCreateTodoElement>;
+      'so-fill-button': LocalJSX.SoFillButton & JSXBase.HTMLAttributes<HTMLSoFillButtonElement>;
       'so-preview-theme': LocalJSX.SoPreviewTheme & JSXBase.HTMLAttributes<HTMLSoPreviewThemeElement>;
       'so-todo-item': LocalJSX.SoTodoItem & JSXBase.HTMLAttributes<HTMLSoTodoItemElement>;
     }
