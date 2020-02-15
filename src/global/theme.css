@@ -9,7 +9,7 @@
   --item-bg-color: hsl(0, 0%, 98%);
   --check-color: hsl(0, 0%, 30%);
   --button-icon-color: hsl(0, 0%, 30%);
-  --menu-bg-color: hsl(0, 0%, 98%);
+  --menu-bg-color: hsl(0, 0%, 97%);
 }
 
 .light{
@@ -23,7 +23,7 @@
   --check-color: hsl(0, 0%, 30%);
   --button-icon-color: hsl(0, 0%, 30%);
   --menu-border-color: hsl(0, 0%, 80%);
-  --menu-bg-color: hsl(0, 0%, 98%);
+  --menu-bg-color: hsl(0, 0%, 97%);
 }
 
 .dark {

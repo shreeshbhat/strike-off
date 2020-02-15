@@ -1,5 +1,5 @@
-import '@ionic/core';
-import { Build, Component, Element, Host, Listen, Method, Prop, State, h } from '@stencil/core';
+import 'ionicons';
+import { Build, Component, Element, Host, Listen, Method, State, h } from '@stencil/core';
 import { addToDB, getFromDB } from '../../utils/service';
 import { Theme } from '../../interfaces/Theme';
 
@@ -12,8 +12,8 @@ export class AppRoot {
   @Element() el!: HTMLAppRootElement;
   @State() hideMenu: boolean = true;
   @State() theme: number = Theme.dark;
-  @Prop({ connect: 'ion-toast-controller' })
-  toastCtrl!: HTMLIonToastControllerElement;
+
+  showUpdate: boolean = false;
 
   @Listen('swUpdate', { target: 'window' })
   async onSWUpdate() {
@@ -22,18 +22,10 @@ export class AppRoot {
       // If there is no registration, this is the first service
       // worker to be installed. registration.waiting is the one
       // waiting to be activiated.
+      this.showUpdate = false;
       return;
     }
-    const toast = await this.toastCtrl.create({
-      message: 'New version available',
-      showCloseButton: true,
-      closeButtonText: 'Reload',
-      position: 'top'
-    });
-    await toast.present();
-    await toast.onWillDismiss();
-    registration.waiting.postMessage('skipWaiting');
-    window.location.reload();
+    this.showUpdate = true;
   }
 
   @Method()
@@ -66,6 +58,19 @@ export class AppRoot {
     }
   }
 
+  async update() {
+    const registration = await navigator.serviceWorker.getRegistration();
+    if (!registration || !registration.waiting) {
+      // If there is no registration, this is the first service
+      // worker to be installed. registration.waiting is the one
+      // waiting to be activiated.
+      return;
+    }
+    registration.waiting.postMessage('skipWaiting');
+    window.location.reload();
+    this.showUpdate = false;
+  }
+
   componentWillLoad() {
     if (Build.isBrowser) {
       getFromDB('theme').then(val => {
@@ -87,6 +92,13 @@ export class AppRoot {
             <ion-icon name="menu" class="menu-icon"></ion-icon>
           </so-clear-button>
           <h1>Strike off</h1>
+          {this.showUpdate
+            ? <so-clear-button class="update-button"
+                onButtonClick={() => this.update()}>
+              <ion-icon name="download" class="menu-icon"></ion-icon>
+              </so-clear-button>
+            : <div></div>
+          }
         </header>
         <div class="content" id="content">
           <app-menu
