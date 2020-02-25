@@ -16,7 +16,7 @@ export const config: Config = {
         swSrc: 'src/sw.js',
         globPatterns: [
           '**/*.{js,css,json,html,ico,png,woff2}',
-          '**/*{menu.svg,trash.svg}'
+          '**/md-{menu.svg,trash.svg}'
         ]
       }
     },
