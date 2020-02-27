@@ -10,7 +10,8 @@ export const config: Config = {
       type: 'www',
       baseUrl: 'https://strikeoff.app/',
       copy: [
-        { src: 'netlify', dest: '' }
+        { src: 'netlify', dest: '' },
+        { src: 'sitemap.xml', dest: '' }
       ],
       serviceWorker: {
         swSrc: 'src/sw.js',
