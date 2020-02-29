@@ -56,31 +56,16 @@ app-menu {
   transition-duration: 0.4s;
   transition-timing-function: cubic-bezier(0.4,0.0,0.2,1);
   padding: 1rem;
+  width: 200px;
 }
 
-@media only screen and (max-width: 510px){
-  app-menu {
-    width: 510px;
-  }
-  .hide-menu {
-    margin-left: -510px;
-  }
-}
-
-@media only screen and (min-width: 510px){
-  app-menu {
-    width: 200px;
-  }
-  .hide-menu {
-    margin-left: -200px;
-  }
-}
 .show-menu {
   margin-left: 0;
   border-right: 0.1rem solid var(--menu-border-color);
 }
 
 .hide-menu {
+  margin-left: -200px;
   visibility: hidden;
 }
 
