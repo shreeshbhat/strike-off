@@ -56,7 +56,7 @@ app-menu {
   transition-duration: 0.4s;
   transition-timing-function: cubic-bezier(0.4,0.0,0.2,1);
   padding: 1rem;
-  width: 200px;
+  width: 20rem;
 }
 
 .show-menu {
@@ -65,7 +65,7 @@ app-menu {
 }
 
 .hide-menu {
-  margin-left: -200px;
+  margin-left: -20rem;
   visibility: hidden;
 }
 

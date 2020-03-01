@@ -17,26 +17,30 @@ export class AppMenu {
   }
 
   render() {
+    const links = [
+      {
+        url: '/',
+        name: 'Home'
+      },
+      {
+        url: '/preferences/',
+        name: 'Preferences'
+      }
+    ];
     return (
       <Host>
         <aside>
           <nav>
-          <div class="item">
-              <stencil-route-link
-                class="link-wrapper"
-                url="/"
-                onClick={() => this.urlChanged()}>
-                Home
-              </stencil-route-link>
-            </div>
+          {links.map((link) =>
             <div class="item">
               <stencil-route-link
                 class="link-wrapper"
-                url={"/themes/"}
+                url={link.url}
                 onClick={() => this.urlChanged()}>
-                Themes
+                {link.name}
               </stencil-route-link>
             </div>
+          )}
           </nav>
         </aside>
       </Host>

@@ -14,11 +14,11 @@ export namespace Components {
   interface AppMenu {
     'theme': number;
   }
+  interface AppPreferences {
+    'theme': number;
+  }
   interface AppRoot {
     'openMenu': () => Promise<void>;
-  }
-  interface AppTheme {
-    'theme': number;
   }
   interface SoClearButton {}
   interface SoCreateTodo {}
@@ -33,6 +33,7 @@ export namespace Components {
     'text': string;
     'todoId': number;
   }
+  interface SoZoom {}
 }
 
 declare global {
@@ -50,16 +51,16 @@ declare global {
     new (): HTMLAppMenuElement;
   };
 
+  interface HTMLAppPreferencesElement extends Components.AppPreferences, HTMLStencilElement {}
+  var HTMLAppPreferencesElement: {
+    prototype: HTMLAppPreferencesElement;
+    new (): HTMLAppPreferencesElement;
+  };
+
   interface HTMLAppRootElement extends Components.AppRoot, HTMLStencilElement {}
   var HTMLAppRootElement: {
     prototype: HTMLAppRootElement;
     new (): HTMLAppRootElement;
-  };
-
-  interface HTMLAppThemeElement extends Components.AppTheme, HTMLStencilElement {}
-  var HTMLAppThemeElement: {
-    prototype: HTMLAppThemeElement;
-    new (): HTMLAppThemeElement;
   };
 
   interface HTMLSoClearButtonElement extends Components.SoClearButton, HTMLStencilElement {}
@@ -91,16 +92,23 @@ declare global {
     prototype: HTMLSoTodoItemElement;
     new (): HTMLSoTodoItemElement;
   };
+
+  interface HTMLSoZoomElement extends Components.SoZoom, HTMLStencilElement {}
+  var HTMLSoZoomElement: {
+    prototype: HTMLSoZoomElement;
+    new (): HTMLSoZoomElement;
+  };
   interface HTMLElementTagNameMap {
     'app-home': HTMLAppHomeElement;
     'app-menu': HTMLAppMenuElement;
+    'app-preferences': HTMLAppPreferencesElement;
     'app-root': HTMLAppRootElement;
-    'app-theme': HTMLAppThemeElement;
     'so-clear-button': HTMLSoClearButtonElement;
     'so-create-todo': HTMLSoCreateTodoElement;
     'so-fill-button': HTMLSoFillButtonElement;
     'so-preview-theme': HTMLSoPreviewThemeElement;
     'so-todo-item': HTMLSoTodoItemElement;
+    'so-zoom': HTMLSoZoomElement;
   }
 }
 
@@ -110,11 +118,11 @@ declare namespace LocalJSX {
     'onMenuLinkClicked'?: (event: CustomEvent<any>) => void;
     'theme'?: number;
   }
-  interface AppRoot {}
-  interface AppTheme {
+  interface AppPreferences {
     'onThemeClick'?: (event: CustomEvent<any>) => void;
     'theme'?: number;
   }
+  interface AppRoot {}
   interface SoClearButton {
     'onButtonClick'?: (event: CustomEvent<any>) => void;
   }
@@ -136,17 +144,19 @@ declare namespace LocalJSX {
     'text': string;
     'todoId': number;
   }
+  interface SoZoom {}
 
   interface IntrinsicElements {
     'app-home': AppHome;
     'app-menu': AppMenu;
+    'app-preferences': AppPreferences;
     'app-root': AppRoot;
-    'app-theme': AppTheme;
     'so-clear-button': SoClearButton;
     'so-create-todo': SoCreateTodo;
     'so-fill-button': SoFillButton;
     'so-preview-theme': SoPreviewTheme;
     'so-todo-item': SoTodoItem;
+    'so-zoom': SoZoom;
   }
 }
 
@@ -158,13 +168,14 @@ declare module "@stencil/core" {
     interface IntrinsicElements {
       'app-home': LocalJSX.AppHome & JSXBase.HTMLAttributes<HTMLAppHomeElement>;
       'app-menu': LocalJSX.AppMenu & JSXBase.HTMLAttributes<HTMLAppMenuElement>;
+      'app-preferences': LocalJSX.AppPreferences & JSXBase.HTMLAttributes<HTMLAppPreferencesElement>;
       'app-root': LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
-      'app-theme': LocalJSX.AppTheme & JSXBase.HTMLAttributes<HTMLAppThemeElement>;
       'so-clear-button': LocalJSX.SoClearButton & JSXBase.HTMLAttributes<HTMLSoClearButtonElement>;
       'so-create-todo': LocalJSX.SoCreateTodo & JSXBase.HTMLAttributes<HTMLSoCreateTodoElement>;
       'so-fill-button': LocalJSX.SoFillButton & JSXBase.HTMLAttributes<HTMLSoFillButtonElement>;
       'so-preview-theme': LocalJSX.SoPreviewTheme & JSXBase.HTMLAttributes<HTMLSoPreviewThemeElement>;
       'so-todo-item': LocalJSX.SoTodoItem & JSXBase.HTMLAttributes<HTMLSoTodoItemElement>;
+      'so-zoom': LocalJSX.SoZoom & JSXBase.HTMLAttributes<HTMLSoZoomElement>;
     }
   }
 }
