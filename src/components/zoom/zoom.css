@@ -1,0 +1,130 @@
+so-zoom {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.accessibility-wrapper {
+  display:flex;
+  flex-direction: column;
+  width: 35rem;
+  padding: 1rem;
+  border-radius: 0.4rem;
+}
+
+.accessibility-wrapper:focus-within {
+  box-shadow: 0 0 0 0.3rem var(--highlight-box-shadow-color);
+  border: 0.1rem solid var(--highlight-border-color);
+  -webkit-appearance: none;
+  outline: none;
+}
+
+.text-zoom-label {
+  font-variation-settings: 'wght' 400, 'wdth' 90;
+  font-size: 2rem;
+  color: var(--text-color);
+}
+
+.text-zoom {
+  background-color: transparent;
+}
+
+.range-wrapper {
+  display: flex;
+}
+
+.decrease-button {
+  margin-right: 2rem;
+}
+
+.decrease-button > button {
+  font-size: 1.6rem;
+}
+
+.increase-button {
+  margin-left: 2rem;
+}
+
+.increase-button > button {
+  font-size: 2.6rem;
+}
+
+/* http://danielstern.ca/range.css/#/ */
+input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  margin: 1.1rem 0;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 0.8rem;
+  cursor: pointer;
+  background: #a14545;
+  border-radius: 1.5rem;
+  border: 0px solid #000000;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 0.5px 0.5px 1px #000000, 0px 0px 0.5px #0d0d0d;
+  border: 1px solid #acacad;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 3rem;
+  background: #fafafa;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -1.1rem;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 0.8rem;
+  cursor: pointer;
+  background: #a14545;
+  border-radius: 1.5rem;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 0.5px 0.5px 1px #000000, 0px 0px 0.5px #0d0d0d;
+  border: 1px solid #acacad;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 3rem;
+  background: #fafafa;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 0.8rem;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #8c3c3c;
+  border-radius: 3rem;
+}
+input[type=range]::-ms-fill-upper {
+  background: #a14545;
+  border-radius: 3rem;
+}
+input[type=range]::-ms-thumb {
+  box-shadow: 0.5px 0.5px 1px #000000, 0px 0px 0.5px #0d0d0d;
+  border: 1px solid #acacad;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 3rem;
+  background: #fafafa;
+  cursor: pointer;
+  height: 0.8rem;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #a14545;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #b45050;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  /* background: #7a3030; */
+}

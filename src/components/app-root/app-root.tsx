@@ -110,8 +110,8 @@ export class AppRoot {
               <stencil-route-switch scrollTopOffset={0}>
                 <stencil-route url='/'
                   component='app-home' exact={true} />
-                <stencil-route url='/themes/'
-                  component='app-theme'
+                <stencil-route url='/preferences/'
+                  component='app-preferences'
                   componentProps={{ theme: this.theme }} />
               </stencil-route-switch>
             </stencil-router>

@@ -2,11 +2,11 @@ import { Event, EventEmitter, Component, Host, Prop, h, Listen } from '@stencil/
 import { Theme } from '../../interfaces/Theme';
 
 @Component({
-  tag: 'app-theme',
-  styleUrl: 'app-theme.css',
+  tag: 'app-preferences',
+  styleUrl: 'app-preferences.css',
   shadow: false
 })
-export class AppTheme {
+export class AppPreferences {
   @Event() themeClick!: EventEmitter;
   @Prop() theme: number;
 
@@ -63,6 +63,7 @@ export class AppTheme {
               </div>
             </fieldset>
           </form>
+          <so-zoom></so-zoom>
         </div>
       </Host>
     );
