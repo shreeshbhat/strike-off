@@ -41,6 +41,25 @@ export class AppMenu {
               </stencil-route-link>
             </div>
           )}
+          <div class="item link-layout">
+            <a class="social-link"
+              href="https://github.com/shreeshbhat/strike-off"
+              target="_blank"
+              rel="noopener">
+                Github
+              </a>
+            {/* <ion-icon name="logo-github" class="social-icon"></ion-icon> */}
+          </div>
+
+          <div class="item link-layout">
+            <a class="social-link"
+                href="https://twitter.com/shreeshbhat"
+                target="_blank"
+                rel="noopener">
+                  Twitter
+            </a>
+            {/* <ion-icon name="logo-twitter" class="social-icon"></ion-icon> */}
+          </div>
           </nav>
         </aside>
       </Host>

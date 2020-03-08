@@ -18,6 +18,7 @@
 a {
   font-variation-settings: 'wght' 400, 'wdth' 90;
   font-size: 2rem;
+  line-height: 3rem;
   color: var(--text-color);
   font-family: inherit;
   outline: none;
@@ -30,4 +31,28 @@ a:focus, a:hover {
   -webkit-appearance: none;
   border-bottom: 0.2rem solid var(--primary-color);
   padding-bottom: 0.3rem;
+}
+
+.link-layout {
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+}
+
+.social-link {
+  border-bottom: 0.2rem solid transparent;
+  margin-left: 2rem;
+  line-height: 2rem;
+  padding-bottom: 0.3rem;
+}
+
+.social-link:focus, .social-link:hover {
+  -webkit-appearance: none;
+  border-bottom: 0.2rem solid var(--primary-color);
+}
+
+.social-icon {
+  color: var(--text-color);
+  margin-left: 1.5rem;
+  font-size: 2.5rem;
 }
