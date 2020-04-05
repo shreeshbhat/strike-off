@@ -45,8 +45,7 @@ export class AppMenu {
               <a
                 class="contact-link"
                 href="https://github.com/shreeshbhat/strike-off"
-                target="_blank"
-                rel="noopener">
+                >
                 Github
               </a>
               <ion-icon name="logo-github" class="logo-icon"></ion-icon>
@@ -56,8 +55,7 @@ export class AppMenu {
               <a
                 class="contact-link"
                 href="https://twitter.com/shreeshbhat"
-                target="_blank"
-                rel="noopener">
+                >
                 Twitter
             </a>
               <ion-icon name="logo-twitter" class="logo-icon"></ion-icon>
