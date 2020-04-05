@@ -8,12 +8,12 @@
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
-    "prerender": "stencil build && stencil prerender dist/prerender/index.js",
+    "prerender": "stencil build --prerender --config stencil.config.ts",
     "generate": "stencil generate"
   },
   "dependencies": {
     "@ionic/core": "5.0.5",
-    "@stencil/core": "1.10.3",
+    "@stencil/core": "1.12.2",
     "@stencil/router": "1.0.1",
     "idb": "4.0.4",
     "ionicons": "4.6.3",
