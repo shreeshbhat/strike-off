@@ -18,8 +18,7 @@
 @font-face {
   font-family: 'plex';
   src: local('plex'),
-        url('../assets/fonts/woff2/IBMPlexSansVar-Roman.woff2') format('woff2'),
-        url('../assets/fonts/ttf/IBMPlexSansVar-Roman.ttf') format('truetype');
+        url('../assets/fonts/woff2/IBMPlexSansVar-Roman.woff2') format('woff2');
   font-weight: 1 999;
   font-display: swap;
 }
