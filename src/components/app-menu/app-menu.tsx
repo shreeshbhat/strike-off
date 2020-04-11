@@ -3,7 +3,7 @@ import { Component, Event, EventEmitter, Host, Prop, h } from '@stencil/core';
 @Component({
   tag: 'app-menu',
   styleUrl: 'app-menu.css',
-  shadow: false
+  shadow: false,
 })
 export class AppMenu {
   @Prop() theme: number;
@@ -20,44 +20,35 @@ export class AppMenu {
     const links = [
       {
         url: '/',
-        name: 'Home'
+        name: 'Home',
       },
       {
         url: '/preferences/',
-        name: 'Preferences'
-      }
+        name: 'Preferences',
+      },
     ];
     return (
       <Host>
         <aside>
           <nav>
-            {links.map((link) =>
+            {links.map(link => (
               <div class="item">
-                <stencil-route-link
-                  class="link-wrapper"
-                  url={link.url}
-                  onClick={() => this.urlChanged()}>
+                <stencil-route-link class="link-wrapper" url={link.url} onClick={() => this.urlChanged()}>
                   {link.name}
                 </stencil-route-link>
               </div>
-            )}
+            ))}
             <div class="item link-layout">
-              <a
-                class="contact-link"
-                href="https://github.com/shreeshbhat/strike-off"
-                >
+              <a class="contact-link" href="https://github.com/shreeshbhat/strike-off">
                 Github
               </a>
               <ion-icon name="logo-github" class="logo-icon"></ion-icon>
             </div>
 
             <div class="item link-layout">
-              <a
-                class="contact-link"
-                href="https://twitter.com/shreeshbhat"
-                >
+              <a class="contact-link" href="https://twitter.com/shreeshbhat">
                 Twitter
-            </a>
+              </a>
               <ion-icon name="logo-twitter" class="logo-icon"></ion-icon>
             </div>
           </nav>
@@ -66,4 +57,3 @@ export class AppMenu {
     );
   }
 }
-

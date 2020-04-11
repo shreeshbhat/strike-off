@@ -7,7 +7,7 @@
 
   Any global CSS variables should also be applied here.
 */
-@import url("theme.css");
+@import url('theme.css');
 
 :root {
   font-size: 62.5%;
@@ -17,8 +17,7 @@
 
 @font-face {
   font-family: 'plex';
-  src: local('plex'),
-        url('../assets/fonts/woff2/IBMPlexSansVar-Roman.woff2') format('woff2');
+  src: local('plex'), url('../assets/fonts/woff2/IBMPlexSansVar-Roman.woff2') format('woff2');
   font-weight: 1 999;
   font-display: swap;
 }
@@ -28,7 +27,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: plex,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-family: plex, -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
   font-variation-settings: 'wght' 430, 'wdth' 100;
   background-color: var(--app-bg-color);
 }
@@ -36,7 +35,7 @@ body {
 *,
 *::before,
 *::after {
-	box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 * {
@@ -44,4 +43,3 @@ body {
   -webkit-tap-highlight-color: transparent;
   -webkit-appearance: none;
 }
-

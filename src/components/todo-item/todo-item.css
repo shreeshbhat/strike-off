@@ -1,4 +1,4 @@
-@import url("../../global/utils.css");
+@import url('../../global/utils.css');
 
 .todo-item {
   background-color: inherit;
@@ -27,7 +27,7 @@
 .wrapper input + label::before {
   border: 0.1rem solid var(--check-color);
   font-variation-settings: inherit;
-  content: "";
+  content: '';
   height: 2rem;
   top: 1.65rem;
   left: 1rem;
@@ -37,7 +37,7 @@
 }
 
 .wrapper input + label::after {
-  content: "";
+  content: '';
   border: 0.2rem solid var(--check-color);
   border-left: 0;
   border-top: 0;
@@ -55,7 +55,8 @@
   opacity: 1;
 }
 
-.wrapper input:focus + label::before, .wrapper input:hover + label::before {
+.wrapper input:focus + label::before,
+.wrapper input:hover + label::before {
   -webkit-appearance: none;
   transition: 0.25s;
   box-shadow: 0 0 0 0.3rem var(--highlight-box-shadow-color);

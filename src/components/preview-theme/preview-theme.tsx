@@ -3,7 +3,7 @@ import { Component, Host, h, Prop } from '@stencil/core';
 @Component({
   tag: 'so-preview-theme',
   styleUrl: 'preview-theme.css',
-  shadow: false
+  shadow: false,
 })
 export class PreviewTheme {
   @Prop() sidebarBackground: string;
@@ -12,21 +12,18 @@ export class PreviewTheme {
 
   getStyleObj(backgroundValue: string) {
     return {
-      background: backgroundValue
+      background: backgroundValue,
     };
   }
 
   render() {
     return (
       <Host>
-        <div class="sidebar" style={this.getStyleObj(this.sidebarBackground)}>
-        </div>
+        <div class="sidebar" style={this.getStyleObj(this.sidebarBackground)}></div>
         <div class="main flex-center" style={this.getStyleObj(this.mainBackground)}>
-          <div class="preview-card" style={this.getStyleObj(this.cardBackground)}>
-          </div>
+          <div class="preview-card" style={this.getStyleObj(this.cardBackground)}></div>
         </div>
       </Host>
     );
   }
-
 }

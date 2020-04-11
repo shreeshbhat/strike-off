@@ -5,7 +5,7 @@ so-zoom {
 }
 
 .accessibility-wrapper {
-  display:flex;
+  display: flex;
   flex-direction: column;
   width: 35rem;
   padding: 1rem;
@@ -50,15 +50,15 @@ so-zoom {
 }
 
 /* http://danielstern.ca/range.css/#/ */
-input[type=range] {
+input[type='range'] {
   -webkit-appearance: none;
   width: 100%;
   margin: 1.1rem 0;
 }
-input[type=range]:focus {
+input[type='range']:focus {
   outline: none;
 }
-input[type=range]::-webkit-slider-runnable-track {
+input[type='range']::-webkit-slider-runnable-track {
   width: 100%;
   height: 0.8rem;
   cursor: pointer;
@@ -66,7 +66,7 @@ input[type=range]::-webkit-slider-runnable-track {
   border-radius: 1.5rem;
   border: 0px solid #000000;
 }
-input[type=range]::-webkit-slider-thumb {
+input[type='range']::-webkit-slider-thumb {
   box-shadow: 0.5px 0.5px 1px #000000, 0px 0px 0.5px #0d0d0d;
   border: 1px solid #acacad;
   height: 3rem;
@@ -77,14 +77,14 @@ input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
   margin-top: -1.1rem;
 }
-input[type=range]::-moz-range-track {
+input[type='range']::-moz-range-track {
   width: 100%;
   height: 0.8rem;
   cursor: pointer;
   background: #a14545;
   border-radius: 1.5rem;
 }
-input[type=range]::-moz-range-thumb {
+input[type='range']::-moz-range-thumb {
   box-shadow: 0.5px 0.5px 1px #000000, 0px 0px 0.5px #0d0d0d;
   border: 1px solid #acacad;
   height: 3rem;
@@ -93,7 +93,7 @@ input[type=range]::-moz-range-thumb {
   background: #fafafa;
   cursor: pointer;
 }
-input[type=range]::-ms-track {
+input[type='range']::-ms-track {
   width: 100%;
   height: 0.8rem;
   cursor: pointer;
@@ -101,15 +101,15 @@ input[type=range]::-ms-track {
   border-color: transparent;
   color: transparent;
 }
-input[type=range]::-ms-fill-lower {
+input[type='range']::-ms-fill-lower {
   background: #8c3c3c;
   border-radius: 3rem;
 }
-input[type=range]::-ms-fill-upper {
+input[type='range']::-ms-fill-upper {
   background: #a14545;
   border-radius: 3rem;
 }
-input[type=range]::-ms-thumb {
+input[type='range']::-ms-thumb {
   box-shadow: 0.5px 0.5px 1px #000000, 0px 0px 0.5px #0d0d0d;
   border: 1px solid #acacad;
   height: 3rem;
@@ -119,12 +119,12 @@ input[type=range]::-ms-thumb {
   cursor: pointer;
   height: 0.8rem;
 }
-input[type=range]:focus::-ms-fill-lower {
+input[type='range']:focus::-ms-fill-lower {
   background: #a14545;
 }
-input[type=range]:focus::-ms-fill-upper {
+input[type='range']:focus::-ms-fill-upper {
   background: #b45050;
 }
-input[type=range]:focus::-webkit-slider-runnable-track {
+input[type='range']:focus::-webkit-slider-runnable-track {
   /* background: #7a3030; */
 }

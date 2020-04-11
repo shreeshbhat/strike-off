@@ -4,7 +4,7 @@ export async function openDb() {
   const db = await openDB('Todos', 1, {
     upgrade(db: any) {
       const store = db.createObjectStore('todos', {
-        keyPath: 'todoId'
+        keyPath: 'todoId',
       });
       store.createIndex('tags', 'tags');
       db.createObjectStore('settings');
@@ -36,7 +36,7 @@ export async function deleteTodo(todo: any) {
 export async function addToDB(key: string, value: any) {
   const db = await openDb();
   const store = db.transaction('settings', 'readwrite').objectStore('settings');
-  await store.put(value,key);
+  await store.put(value, key);
 }
 
 export async function getFromDB(key: string) {

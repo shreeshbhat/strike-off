@@ -13,7 +13,7 @@
   --menu-border-color: hsl(300, 1%, 25%);
 }
 
-.light{
+.light {
   --app-bg-color: hsl(0, 1%, 96%);
   --highlight-box-shadow-color: hsla(20, 80%, 70%, 0.4);
   --highlight-border-color: hsl(20, 75%, 55%);

@@ -54,7 +54,7 @@ app-menu {
   background-color: var(--menu-bg-color);
   transition-property: margin-left, visibility;
   transition-duration: 0.4s;
-  transition-timing-function: cubic-bezier(0.4,0.0,0.2,1);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   padding: 1rem;
   width: 20rem;
 }

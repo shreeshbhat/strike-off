@@ -4,7 +4,7 @@ import 'ionicons';
 @Component({
   tag: 'so-todo-item',
   styleUrl: 'todo-item.css',
-  shadow: false
+  shadow: false,
 })
 export class TodoItem {
   @Prop() checked!: boolean;
@@ -20,19 +20,13 @@ export class TodoItem {
     return (
       <div class="todo-item">
         <div class="wrapper">
-          <input
-            id={'todo' + this.todoId.toString()}
-            class="toggle"
-            type="checkbox"
-            onChange={this.handleOnCheck}
-            checked={this.checked}
-          />
-          <label htmlFor={'todo' + this.todoId.toString()}
-                class="label overflow-ellipsis">{this.text}</label>
+          <input id={'todo' + this.todoId.toString()} class="toggle" type="checkbox" onChange={this.handleOnCheck} checked={this.checked} />
+          <label htmlFor={'todo' + this.todoId.toString()} class="label overflow-ellipsis">
+            {this.text}
+          </label>
         </div>
-        <so-clear-button slot="end" class="flex-center delete"
-            onButtonClick={this.handleOnRemove}>
-          <ion-icon name="md-trash"/>
+        <so-clear-button slot="end" class="flex-center delete" onButtonClick={this.handleOnRemove}>
+          <ion-icon name="md-trash" />
         </so-clear-button>
       </div>
     );

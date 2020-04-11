@@ -4,29 +4,26 @@
   align-items: center;
 }
 
-legend, label {
+legend,
+label {
   font-variation-settings: 'wght' 400, 'wdth' 90;
   font-size: 2rem;
   color: var(--text-color);
 }
 
 .n-radio {
-	-moz-appearance: none;
-	-webkit-appearance: none;
-	appearance: none; /* in case this ever gets supported */
-	background: #fff;
-	border-radius: 100%;
-	border: 1px solid transparent;
-	box-shadow:
-		0 0 0 2px hsl(300, 5%, 25%),
-		inset 0 0 0 0px hsl(300, 5%, 25%);
-	display: inline-block;
-	height: 1.2rem;
-	margin-right: .25em;
-	transition:
-		border-color .2s ease-in-out,
-		box-shadow .2s ease-in-out;
-	vertical-align: text-bottom;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none; /* in case this ever gets supported */
+  background: #fff;
+  border-radius: 100%;
+  border: 1px solid transparent;
+  box-shadow: 0 0 0 2px hsl(300, 5%, 25%), inset 0 0 0 0px hsl(300, 5%, 25%);
+  display: inline-block;
+  height: 1.2rem;
+  margin-right: 0.25em;
+  transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  vertical-align: text-bottom;
   width: 1.2rem;
   outline: none;
   margin-top: 0px;
@@ -34,28 +31,22 @@ legend, label {
 }
 
 .n-radio:focus {
-	border-color: transparent;
-	box-shadow:
-		0 0 0 2px hsl(300, 5%, 25%),
-		inset 0 0 0 0px hsl(300, 5%, 25%);
+  border-color: transparent;
+  box-shadow: 0 0 0 2px hsl(300, 5%, 25%), inset 0 0 0 0px hsl(300, 5%, 25%);
 }
 
 .n-radio:checked {
-	border-color: hsl(0, 0%, 69%);
-	box-shadow:
-		0 0 0 2px hsl(210, 18%, 30%),
-		inset 0 0 0 6px hsl(210, 18%, 23%);
+  border-color: hsl(0, 0%, 69%);
+  box-shadow: 0 0 0 2px hsl(210, 18%, 30%), inset 0 0 0 6px hsl(210, 18%, 23%);
 }
 
 .n-radio:checked:focus {
-	box-shadow:
-		0 0 0 3px hsl(300, 5%, 25%),
-		inset 0 0 0 3px hsl(300, 5%, 25%);
+  box-shadow: 0 0 0 3px hsl(300, 5%, 25%), inset 0 0 0 3px hsl(300, 5%, 25%);
 }
 
 .n-radio[disabled],
 .n-radio[disabled] + span {
-	opacity: .4;
+  opacity: 0.4;
 }
 
 /*

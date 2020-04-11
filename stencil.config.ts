@@ -9,21 +9,16 @@ export const config: Config = {
     {
       type: 'www',
       baseUrl: 'https://strikeoff.app/',
-      copy: [
-        { src: 'netlify', dest: '' }
-      ],
+      copy: [{ src: 'netlify', dest: '' }],
       prerenderConfig: './prerender.config.js',
       serviceWorker: {
         swSrc: 'src/sw.js',
-        globPatterns: [
-          '**/*.{js,css,json,html,ico,png,woff2}',
-          '**/{download,md-menu,md-trash,logo-twitter,logo-github}.svg'
-        ]
-      }
+        globPatterns: ['**/*.{js,css,json,html,ico,png,woff2}', '**/{download,md-menu,md-trash,logo-twitter,logo-github}.svg'],
+      },
     },
     {
       type: 'dist-hydrate-script',
-      dir: 'dist/prerender'
-    }
-  ]
+      dir: 'dist/prerender',
+    },
+  ],
 };

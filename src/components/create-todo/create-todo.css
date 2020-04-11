@@ -1,4 +1,4 @@
-@import url("../../global/utils.css");
+@import url('../../global/utils.css');
 
 .create-group {
   width: 100%;
@@ -38,10 +38,11 @@
   border: 0.1rem solid transparent;
   border-radius: 0.2rem;
   border: none;
-  box-shadow: 0 0.2rem 0.2rem 0 rgba(0,0,0,0.16), 0 0 0 0.1rem rgba(0,0,0,0.08);
+  box-shadow: 0 0.2rem 0.2rem 0 rgba(0, 0, 0, 0.16), 0 0 0 0.1rem rgba(0, 0, 0, 0.08);
 }
 
-.so-create-todo:focus, .so-create-todo:hover {
+.so-create-todo:focus,
+.so-create-todo:hover {
   transition: 0.25s;
   outline: none;
   -webkit-appearance: none;
@@ -56,4 +57,3 @@
   margin-top: 1rem;
   text-transform: none;
 }
-

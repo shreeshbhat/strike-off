@@ -1,4 +1,3 @@
-
 so-fill-button {
   outline: none;
 }
@@ -21,7 +20,8 @@ so-fill-button {
   background: var(--primary-color);
 }
 
-.fill-button:focus, .fill-button:hover {
+.fill-button:focus,
+.fill-button:hover {
   -webkit-appearance: none;
   box-shadow: 0 0 0 0.3rem var(--highlight-box-shadow-color);
   border: 0.1rem solid var(--highlight-border-color);
