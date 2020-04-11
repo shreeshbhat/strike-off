@@ -3,7 +3,7 @@ import { Component, Event, EventEmitter, State, Listen, h } from '@stencil/core'
 @Component({
   tag: 'so-create-todo',
   styleUrl: 'create-todo.css',
-  shadow: false
+  shadow: false,
 })
 export class CreateTodo {
   textInput!: HTMLInputElement;
@@ -20,7 +20,7 @@ export class CreateTodo {
   }
 
   emitInput() {
-    if(!!this.textInput.value) {
+    if (!!this.textInput.value) {
       this.inputSubmit.emit(this.value);
       this.textInput.value = '';
     }
@@ -43,10 +43,8 @@ export class CreateTodo {
               onInput={this.handleInputChange}
               ref={el => (this.textInput = el as HTMLInputElement)}
             />
-            <so-fill-button
-              class="add-button"
-              onClick={this.emitInput.bind(this)}>
-                Add a task
+            <so-fill-button class="add-button" onClick={this.emitInput.bind(this)}>
+              Add a task
             </so-fill-button>
           </div>
         </div>

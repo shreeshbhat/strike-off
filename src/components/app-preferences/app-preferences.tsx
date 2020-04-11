@@ -4,7 +4,7 @@ import { Theme } from '../../interfaces/Theme';
 @Component({
   tag: 'app-preferences',
   styleUrl: 'app-preferences.css',
-  shadow: false
+  shadow: false,
 })
 export class AppPreferences {
   @Event() themeClick!: EventEmitter;
@@ -22,44 +22,37 @@ export class AppPreferences {
         <div class="theme-wrapper">
           <form>
             <fieldset>
-              <legend>
-                Choose your theme
-							</legend>
+              <legend>Choose your theme</legend>
               <div class="radio-wrapper">
                 <div class="radio-group">
-                  <input type="radio" name="theme"
-                    class="n-radio" id="theme_1"
+                  <input
+                    type="radio"
+                    name="theme"
+                    class="n-radio"
+                    id="theme_1"
                     checked={this.theme == Theme.dark ? true : false}
                     onChange={ev => this.handleThemeChange(ev)}
                     value="1"
                   />
-                  <label htmlFor="theme_1">
-                    Dark
-                  </label>
+                  <label htmlFor="theme_1">Dark</label>
                 </div>
-                <so-preview-theme
-                  sidebar-background="#a14545"
-                  main-background="#252527"
-                  card-background="#3b353b"></so-preview-theme>
+                <so-preview-theme sidebar-background="#a14545" main-background="#252527" card-background="#3b353b"></so-preview-theme>
               </div>
-
 
               <div class="radio-wrapper">
                 <div class="radio-group">
-                  <input type="radio" name="theme"
-                    class="n-radio" id="theme_2"
+                  <input
+                    type="radio"
+                    name="theme"
+                    class="n-radio"
+                    id="theme_2"
                     checked={this.theme == Theme.light ? true : false}
                     onChange={ev => this.handleThemeChange(ev)}
                     value="2"
                   />
-                  <label htmlFor="theme_2">
-                    Light
-								</label>
+                  <label htmlFor="theme_2">Light</label>
                 </div>
-                <so-preview-theme
-                  sidebar-background="#a14545"
-                  main-background="#f5f5f5"
-                  card-background="#fafafa"></so-preview-theme>
+                <so-preview-theme sidebar-background="#a14545" main-background="#f5f5f5" card-background="#fafafa"></so-preview-theme>
               </div>
             </fieldset>
           </form>
@@ -69,4 +62,3 @@ export class AppPreferences {
     );
   }
 }
-

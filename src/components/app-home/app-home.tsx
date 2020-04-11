@@ -5,7 +5,7 @@ import { addTodo, getTodos, updateTodo, deleteTodo } from '../../utils/service';
 @Component({
   tag: 'app-home',
   styleUrl: 'app-home.css',
-  shadow: false
+  shadow: false,
 })
 export class AppHome {
   @State() list: Todo[] = [];
@@ -13,8 +13,7 @@ export class AppHome {
   componentWillLoad() {
     if (Build.isBrowser) {
       getTodos().then(val => {
-        if (!!val)
-          this.list = val as Todo[];
+        if (!!val) this.list = val as Todo[];
       });
     }
   }
@@ -23,7 +22,7 @@ export class AppHome {
     const item = {
       todoId: this.updateCounter(),
       text: e.detail,
-      checked: false
+      checked: false,
     };
     this.list = [...this.list, item];
     addTodo(item);
@@ -41,10 +40,7 @@ export class AppHome {
   itemRemoveHandler = (e: CustomEvent) => {
     const index = this.list.findIndex(x => x.todoId === e.detail);
     deleteTodo(this.list[index]);
-    this.list = [
-      ...this.list.slice(0, index),
-      ...this.list.slice(index + 1)
-    ];
+    this.list = [...this.list.slice(0, index), ...this.list.slice(index + 1)];
   };
 
   updateCounter(): number {
@@ -57,21 +53,15 @@ export class AppHome {
       <Host>
         <so-create-todo onInputSubmit={this.inputSubmitHandler} />
         <div class="card-layout">
-          {!!this.list && this.list.length > 0
-            ? <div class="card">
+          {!!this.list && this.list.length > 0 ? (
+            <div class="card">
               {this.list.map(item => (
-                <so-todo-item
-                  onItemCheck={this.itemCheckedHandler}
-                  onItemRemove={this.itemRemoveHandler}
-                  checked={item.checked}
-                  text={item.text}
-                  todoId={item.todoId}
-                />
+                <so-todo-item onItemCheck={this.itemCheckedHandler} onItemRemove={this.itemRemoveHandler} checked={item.checked} text={item.text} todoId={item.todoId} />
               ))}
             </div>
-            : <div></div>
-          }
-
+          ) : (
+            <div></div>
+          )}
         </div>
       </Host>
     );

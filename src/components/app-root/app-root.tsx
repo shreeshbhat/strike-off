@@ -6,7 +6,7 @@ import { Theme } from '../../interfaces/Theme';
 @Component({
   tag: 'app-root',
   styleUrl: 'app-root.css',
-  shadow: false
+  shadow: false,
 })
 export class AppRoot {
   @Element() el!: HTMLAppRootElement;
@@ -32,7 +32,7 @@ export class AppRoot {
   async openMenu() {
     this.hideMenu = !this.hideMenu;
     const content = document.getElementById('content');
-    content.classList.add('animation')
+    content.classList.add('animation');
   }
 
   @Listen('menuLinkClicked')
@@ -51,8 +51,7 @@ export class AppRoot {
     if (value === Theme.dark) {
       this.el.parentElement.classList.add('dark');
       this.el.parentElement.classList.remove('light');
-    }
-    else {
+    } else {
       this.el.parentElement.classList.add('light');
       this.el.parentElement.classList.remove('dark');
     }
@@ -74,8 +73,7 @@ export class AppRoot {
   componentWillLoad() {
     if (Build.isBrowser) {
       getFromDB('theme').then(val => {
-        if (!!val)
-          this.theme = val as number;
+        if (!!val) this.theme = val as number;
         this.setThemeClass(this.theme);
       });
     } else {
@@ -87,32 +85,25 @@ export class AppRoot {
     return (
       <Host>
         <header>
-          <so-clear-button class="menu-button"
-            onButtonClick={() => this.openMenu()}>
+          <so-clear-button class="menu-button" onButtonClick={() => this.openMenu()}>
             <ion-icon name="menu" class="menu-icon"></ion-icon>
           </so-clear-button>
           <h1>Strike off</h1>
-          {this.showUpdate
-            ? <so-clear-button class="update-button"
-                onButtonClick={() => this.update()}>
+          {this.showUpdate ? (
+            <so-clear-button class="update-button" onButtonClick={() => this.update()}>
               <ion-icon name="download" class="menu-icon"></ion-icon>
-              </so-clear-button>
-            : <div></div>
-          }
+            </so-clear-button>
+          ) : (
+            <div></div>
+          )}
         </header>
         <div class="content" id="content">
-          <app-menu
-            class={this.hideMenu ? 'hide-menu' : 'show-menu'}
-            theme={this.theme}
-          />
+          <app-menu class={this.hideMenu ? 'hide-menu' : 'show-menu'} theme={this.theme} />
           <main>
             <stencil-router>
               <stencil-route-switch scrollTopOffset={0}>
-                <stencil-route url='/'
-                  component='app-home' exact={true} />
-                <stencil-route url='/preferences/'
-                  component='app-preferences'
-                  componentProps={{ theme: this.theme }} />
+                <stencil-route url="/" component="app-home" exact={true} />
+                <stencil-route url="/preferences/" component="app-preferences" componentProps={{ theme: this.theme }} />
               </stencil-route-switch>
             </stencil-router>
           </main>

@@ -1,4 +1,3 @@
-
 so-clear-button {
   outline: none;
 }
@@ -20,7 +19,8 @@ so-clear-button {
   -webkit-appearance: none;
 }
 
-.clear-button:focus, .clear-button:hover {
+.clear-button:focus,
+.clear-button:hover {
   -webkit-appearance: none;
   box-shadow: 0 0 0 0.3rem var(--highlight-box-shadow-color);
   border: 0.1rem solid var(--highlight-border-color);

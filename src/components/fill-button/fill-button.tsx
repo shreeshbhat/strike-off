@@ -1,9 +1,9 @@
-import { Component, Event, EventEmitter, h} from '@stencil/core';
+import { Component, Event, EventEmitter, h } from '@stencil/core';
 
 @Component({
   tag: 'so-fill-button',
   styleUrl: 'fill-button.css',
-  shadow: false
+  shadow: false,
 })
 export class FillButton {
   @Event() buttonClick!: EventEmitter;

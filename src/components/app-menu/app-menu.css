@@ -27,7 +27,8 @@ a {
   text-decoration: unset;
 }
 
-a:focus, a:hover {
+a:focus,
+a:hover {
   -webkit-appearance: none;
   border-bottom: 0.2rem solid var(--primary-color);
   padding-bottom: 0.3rem;
@@ -46,7 +47,8 @@ a:focus, a:hover {
   padding-bottom: 0.3rem;
 }
 
-.contact-link:focus, .contact-link:hover {
+.contact-link:focus,
+.contact-link:hover {
   -webkit-appearance: none;
   border-bottom: 0.2rem solid var(--primary-color);
 }
