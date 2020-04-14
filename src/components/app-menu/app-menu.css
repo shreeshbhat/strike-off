@@ -58,3 +58,9 @@ a:hover {
   margin-left: 1.5rem;
   font-size: 2.5rem;
 }
+
+.menu-label {
+  margin-left: 2rem;
+  line-height: 2rem;
+  font-size: 2rem;
+}
