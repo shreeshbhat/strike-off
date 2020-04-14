@@ -1,5 +1,5 @@
 import { Component, Event, EventEmitter, Host, Prop, h } from '@stencil/core';
-
+import { version } from '../../../package.json';
 @Component({
   tag: 'app-menu',
   styleUrl: 'app-menu.css',
@@ -50,6 +50,9 @@ export class AppMenu {
                 Twitter
               </a>
               <ion-icon name="logo-twitter" class="logo-icon"></ion-icon>
+            </div>
+            <div class="item link-layout">
+              <span class="menu-label">Version {version}</span>
             </div>
           </nav>
         </aside>
