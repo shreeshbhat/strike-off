@@ -1,7 +1,7 @@
 {
   "name": "strike-off",
   "private": true,
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "A fast progressive web app to organize your to-do items and strike em off.",
   "scripts": {
     "build": "stencil build",
