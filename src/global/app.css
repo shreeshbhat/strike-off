@@ -8,6 +8,8 @@
   Any global CSS variables should also be applied here.
 */
 @import url('theme.css');
+@import url('normalize.css');
+
 
 :root {
   font-size: 62.5%;

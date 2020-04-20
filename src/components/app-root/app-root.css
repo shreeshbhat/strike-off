@@ -14,7 +14,7 @@ header {
   z-index: 1;
 }
 
-h1 {
+.app-header {
   font-variation-settings: 'wght' 600, 'wdth' 100;
   flex: 1;
   font-size: 2.4rem;

@@ -22,7 +22,7 @@ export class AppPreferences {
         <div class="theme-wrapper">
           <form>
             <fieldset>
-              <legend>Choose your theme</legend>
+              <legend class="radio-legend">Choose your theme</legend>
               <label class="radio-wrapper">
                 <div class="radio-group">
                   <input
@@ -33,7 +33,7 @@ export class AppPreferences {
                     onChange={ev => this.handleThemeChange(ev)}
                     value="1"
                   />
-                  Dark
+                  <span class="radio-label">Dark</span>
                 </div>
                 <so-preview-theme sidebar-background="#a14545" main-background="#252527" card-background="#3b353b"></so-preview-theme>
               </label>
@@ -49,7 +49,7 @@ export class AppPreferences {
                     onChange={ev => this.handleThemeChange(ev)}
                     value="2"
                   />
-                  Light
+                  <span class="radio-label">Light</span>
                 </div>
                 <so-preview-theme sidebar-background="#a14545" main-background="#f5f5f5" card-background="#fafafa"></so-preview-theme>
               </label>
