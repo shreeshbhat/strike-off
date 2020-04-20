@@ -1,5 +1,4 @@
 import { Component, Host, h, State } from '@stencil/core';
-import { debounce } from 'ts-debounce';
 
 @Component({
   tag: 'so-zoom',
@@ -7,20 +6,35 @@ import { debounce } from 'ts-debounce';
   shadow: false,
 })
 export class Zoom {
-  @State() zoomValue = 62;
+  default = 62;
+  @State() zoomValue = this.default;
+  options = [
+    {
+      value: 50,
+      label: 80,
+    },
+    {
+      value: 55,
+      label: 90,
+    },
+    {
+      value: 62,
+      label: 100,
+    },
+    {
+      value: 75,
+      label: 110,
+    },
+    {
+      value: 85,
+      label: 120,
+    }
+  ];
   minValue = 50;
   maxValue = 90;
   stepValue = 5;
 
-  handleDecreaseButtonClick() {
-    this.changeZoomValue(this.zoomValue - this.stepValue);
-  }
-
-  handleIncreaseButtonClick() {
-    this.changeZoomValue(this.zoomValue + this.stepValue);
-  }
-
-  handleInputChange(event: any) {
+  handleZoomChange(event: any) {
     this.changeZoomValue(Number(event.target.value));
   }
 
@@ -35,41 +49,24 @@ export class Zoom {
   render() {
     return (
       <Host>
-        <div class="accessibility-wrapper">
-          <label class="text-zoom-label" htmlFor="text-zoom">
-            Zoom
-          </label>
-          <div class="range-wrapper">
-            <so-clear-button
-              class="decrease-button"
-              onButtonClick={() => {
-                const debouncedFunction = debounce(this.handleDecreaseButtonClick.bind(this), 500);
-                debouncedFunction();
-              }}
-            >
-              A
-            </so-clear-button>
-            <input
-              type="range"
-              id="text-zoom"
-              name="text-zoom"
-              class="text-zoom"
-              step={this.stepValue}
-              min={this.minValue}
-              max={this.maxValue}
-              value={this.zoomValue}
-              onChange={event => this.handleInputChange(event)}
-            />
-            <so-clear-button
-              class="increase-button"
-              onButtonClick={() => {
-                const debouncedFunction = debounce(this.handleIncreaseButtonClick.bind(this), 500);
-                debouncedFunction();
-              }}
-            >
-              A
-            </so-clear-button>
-          </div>
+        <div class="zoom-wrapper">
+          <form>
+            <fieldset>
+              <legend class="radio-legend">Choose your zoom level</legend>
+              {this.options.map(option => (
+                <label class="radio-wrapper zoom-height">
+                  <div class="radio-group zoom-group">
+                    <input type="radio"
+                        name="zoom"
+                        class="n-radio"
+                        onChange={ev => this.handleZoomChange(ev)}
+                        value={option.value} />
+                    <span class="zoom-label">{option.label} %</span>
+                    </div>
+                </label>
+              ))}
+            </fieldset>
+          </form>
         </div>
       </Host>
     );

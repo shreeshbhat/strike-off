@@ -4,7 +4,7 @@
   align-items: center;
 }
 
-legend,
+.radio-legend,
 label {
   font-variation-settings: 'wght' 400, 'wdth' 90;
   font-size: 2rem;
@@ -69,7 +69,7 @@ label {
 .radio-group {
   display: flex;
   align-items: center;
-  padding-left: 1.2rem;
+  padding-left: 2rem;
   width: calc(100% - 10rem);
   min-width: 10rem;
   background: var(--card-bg-color);
@@ -85,4 +85,9 @@ fieldset {
   width: 100%;
   border: 2px solid var(--text-color);
   border-radius: 0.2rem;
+}
+
+.radio-label {
+  height: 100%;
+  line-height: 5;
 }

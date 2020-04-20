@@ -88,7 +88,7 @@ export class AppRoot {
           <so-clear-button class="menu-button" onButtonClick={() => this.openMenu()}>
             <ion-icon name="menu" class="menu-icon"></ion-icon>
           </so-clear-button>
-          <h1>Strike off</h1>
+          <h1 class="app-header">Strike off</h1>
           {this.showUpdate ? (
             <so-clear-button class="update-button" onButtonClick={() => this.update()}>
               <ion-icon name="download" class="menu-icon"></ion-icon>
