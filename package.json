@@ -4,7 +4,7 @@
   "version": "0.0.4",
   "description": "A fast progressive web app to organize your to-do items and strike em off.",
   "scripts": {
-    "build": "stencil build",
+    "build": "stencil build --prerender --config stencil.config.ts",
     "start": "stencil build --dev --watch --serve",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
