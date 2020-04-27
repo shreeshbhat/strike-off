@@ -1,11 +1,11 @@
 .overflow-ellipsis {
-  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .flex-center {
-  display: flex;
   align-items: center;
+  display: flex;
   justify-content: center;
 }

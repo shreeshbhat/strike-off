@@ -1,42 +1,42 @@
 :root {
-  --primary-color: hsl(0, 40%, 45%);
   --app-bg-color: hsl(240, 2%, 15%);
-  --highlight-box-shadow-color: hsla(0, 20%, 80%, 0.7);
-  --highlight-border-color: hsla(0, 0%, 15%, 0.7);
-  --text-color: hsl(15, 25%, 84%);
-  --text-weight: 200;
-  --card-bg-color: hsl(300, 5%, 22%);
-  --item-bg-color: hsl(300, 5%, 22%);
-  --check-color: hsl(0, 0%, 75%);
   --button-icon-color: hsl(0, 0%, 80%);
+  --card-bg-color: hsl(300, 5%, 22%);
+  --check-color: hsl(0, 0%, 75%);
+  --highlight-border-color: hsla(0, 0%, 15%, 0.7);
+  --highlight-box-shadow-color: hsla(0, 20%, 80%, 0.7);
+  --item-bg-color: hsl(300, 5%, 22%);
   --menu-bg-color: hsl(240, 2%, 15%);
   --menu-border-color: hsl(300, 1%, 25%);
+  --primary-color: hsl(0, 40%, 45%);
+  --text-color: hsl(15, 25%, 84%);
+  --text-weight: 200;
 }
 
 .light {
   --app-bg-color: hsl(0, 1%, 96%);
-  --highlight-box-shadow-color: hsla(20, 80%, 70%, 0.4);
+  --button-icon-color: hsl(0, 0%, 30%);
+  --card-bg-color: hsl(0, 0%, 98%);
+  --check-color: hsl(0, 0%, 30%);
   --highlight-border-color: hsl(20, 75%, 55%);
+  --highlight-box-shadow-color: hsla(20, 80%, 70%, 0.4);
+  --item-bg-color: hsl(0, 0%, 98%);
+  --menu-bg-color: hsl(0, 0%, 97%);
+  --menu-border-color: hsl(0, 0%, 80%);
   --text-color: hsl(0, 0%, 30%);
   --text-weight: 600;
-  --card-bg-color: hsl(0, 0%, 98%);
-  --item-bg-color: hsl(0, 0%, 98%);
-  --check-color: hsl(0, 0%, 30%);
-  --button-icon-color: hsl(0, 0%, 30%);
-  --menu-border-color: hsl(0, 0%, 80%);
-  --menu-bg-color: hsl(0, 0%, 97%);
 }
 
 .dark {
-  --highlight-box-shadow-color: hsla(0, 20%, 80%, 0.7);
-  --highlight-border-color: hsla(0, 0%, 15%, 0.7);
   --app-bg-color: hsl(240, 2%, 15%);
+  --button-icon-color: hsl(0, 0%, 80%);
+  --card-bg-color: hsl(300, 5%, 22%);
+  --check-color: hsl(0, 0%, 75%);
+  --highlight-border-color: hsla(0, 0%, 15%, 0.7);
+  --highlight-box-shadow-color: hsla(0, 20%, 80%, 0.7);
+  --item-bg-color: hsl(300, 5%, 22%);
+  --menu-bg-color: hsl(240, 2%, 15%);
+  --menu-border-color: hsl(300, 1%, 25%);
   --text-color: hsl(15, 25%, 84%);
   --text-weight: 200;
-  --card-bg-color: hsl(300, 5%, 22%);
-  --item-bg-color: hsl(300, 5%, 22%);
-  --check-color: hsl(0, 0%, 75%);
-  --button-icon-color: hsl(0, 0%, 80%);
-  --menu-border-color: hsl(300, 1%, 25%);
-  --menu-bg-color: hsl(240, 2%, 15%);
 }

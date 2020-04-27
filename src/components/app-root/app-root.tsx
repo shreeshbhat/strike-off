@@ -85,14 +85,14 @@ export class AppRoot {
     return (
       <Host>
         <header>
-          <so-clear-button class="menu-button" onButtonClick={() => this.openMenu()}>
+          <so-button class="menu-button" fill="clear" onButtonClick={() => this.openMenu()}>
             <ion-icon name="menu" class="menu-icon"></ion-icon>
-          </so-clear-button>
+          </so-button>
           <h1 class="app-header">Strike off</h1>
           {this.showUpdate ? (
-            <so-clear-button class="update-button" onButtonClick={() => this.update()}>
+            <so-button class="update-button" fill="clear" onButtonClick={() => this.update()}>
               <ion-icon name="download" class="menu-icon"></ion-icon>
-            </so-clear-button>
+            </so-button>
           ) : (
             <div></div>
           )}

@@ -1,12 +1,12 @@
 @import url('../../global/utils.css');
 
 so-preview-theme {
-  height: 100%;
-  width: 10rem;
-  flex: 1;
   display: flex;
   flex-direction: column;
+  flex: 1;
+  height: 100%;
   max-width: 10rem;
+  width: 10rem;
 }
 
 .sidebar {
@@ -18,8 +18,8 @@ so-preview-theme {
 }
 
 .preview-card {
-  height: 50%;
-  width: 50%;
   border-radius: 0.3rem;
   box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  height: 50%;
+  width: 50%;
 }

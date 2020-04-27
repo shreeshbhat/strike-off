@@ -17,11 +17,10 @@ export namespace Components {
     interface AppRoot {
         "openMenu": () => Promise<void>;
     }
-    interface SoClearButton {
+    interface SoButton {
+        "fill"?: "clear" | "solid";
     }
     interface SoCreateTodo {
-    }
-    interface SoFillButton {
     }
     interface SoPreviewTheme {
         "cardBackground": string;
@@ -61,23 +60,17 @@ declare global {
         prototype: HTMLAppRootElement;
         new (): HTMLAppRootElement;
     };
-    interface HTMLSoClearButtonElement extends Components.SoClearButton, HTMLStencilElement {
+    interface HTMLSoButtonElement extends Components.SoButton, HTMLStencilElement {
     }
-    var HTMLSoClearButtonElement: {
-        prototype: HTMLSoClearButtonElement;
-        new (): HTMLSoClearButtonElement;
+    var HTMLSoButtonElement: {
+        prototype: HTMLSoButtonElement;
+        new (): HTMLSoButtonElement;
     };
     interface HTMLSoCreateTodoElement extends Components.SoCreateTodo, HTMLStencilElement {
     }
     var HTMLSoCreateTodoElement: {
         prototype: HTMLSoCreateTodoElement;
         new (): HTMLSoCreateTodoElement;
-    };
-    interface HTMLSoFillButtonElement extends Components.SoFillButton, HTMLStencilElement {
-    }
-    var HTMLSoFillButtonElement: {
-        prototype: HTMLSoFillButtonElement;
-        new (): HTMLSoFillButtonElement;
     };
     interface HTMLSoPreviewThemeElement extends Components.SoPreviewTheme, HTMLStencilElement {
     }
@@ -102,9 +95,8 @@ declare global {
         "app-menu": HTMLAppMenuElement;
         "app-preferences": HTMLAppPreferencesElement;
         "app-root": HTMLAppRootElement;
-        "so-clear-button": HTMLSoClearButtonElement;
+        "so-button": HTMLSoButtonElement;
         "so-create-todo": HTMLSoCreateTodoElement;
-        "so-fill-button": HTMLSoFillButtonElement;
         "so-preview-theme": HTMLSoPreviewThemeElement;
         "so-todo-item": HTMLSoTodoItemElement;
         "so-zoom": HTMLSoZoomElement;
@@ -123,14 +115,12 @@ declare namespace LocalJSX {
     }
     interface AppRoot {
     }
-    interface SoClearButton {
+    interface SoButton {
+        "fill"?: "clear" | "solid";
         "onButtonClick"?: (event: CustomEvent<any>) => void;
     }
     interface SoCreateTodo {
         "onInputSubmit"?: (event: CustomEvent<any>) => void;
-    }
-    interface SoFillButton {
-        "onButtonClick"?: (event: CustomEvent<any>) => void;
     }
     interface SoPreviewTheme {
         "cardBackground"?: string;
@@ -151,9 +141,8 @@ declare namespace LocalJSX {
         "app-menu": AppMenu;
         "app-preferences": AppPreferences;
         "app-root": AppRoot;
-        "so-clear-button": SoClearButton;
+        "so-button": SoButton;
         "so-create-todo": SoCreateTodo;
-        "so-fill-button": SoFillButton;
         "so-preview-theme": SoPreviewTheme;
         "so-todo-item": SoTodoItem;
         "so-zoom": SoZoom;
@@ -167,9 +156,8 @@ declare module "@stencil/core" {
             "app-menu": LocalJSX.AppMenu & JSXBase.HTMLAttributes<HTMLAppMenuElement>;
             "app-preferences": LocalJSX.AppPreferences & JSXBase.HTMLAttributes<HTMLAppPreferencesElement>;
             "app-root": LocalJSX.AppRoot & JSXBase.HTMLAttributes<HTMLAppRootElement>;
-            "so-clear-button": LocalJSX.SoClearButton & JSXBase.HTMLAttributes<HTMLSoClearButtonElement>;
+            "so-button": LocalJSX.SoButton & JSXBase.HTMLAttributes<HTMLSoButtonElement>;
             "so-create-todo": LocalJSX.SoCreateTodo & JSXBase.HTMLAttributes<HTMLSoCreateTodoElement>;
-            "so-fill-button": LocalJSX.SoFillButton & JSXBase.HTMLAttributes<HTMLSoFillButtonElement>;
             "so-preview-theme": LocalJSX.SoPreviewTheme & JSXBase.HTMLAttributes<HTMLSoPreviewThemeElement>;
             "so-todo-item": LocalJSX.SoTodoItem & JSXBase.HTMLAttributes<HTMLSoTodoItemElement>;
             "so-zoom": LocalJSX.SoZoom & JSXBase.HTMLAttributes<HTMLSoZoomElement>;
