@@ -1,14 +1,14 @@
 .theme-wrapper {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
 .radio-legend,
 label {
-  font-variation-settings: 'wght' 400, 'wdth' 90;
-  font-size: 2rem;
   color: var(--text-color);
+  font-size: 2rem;
+  font-variation-settings: 'wght' 400, 'wdth' 90;
 }
 
 .n-radio {
@@ -22,12 +22,12 @@ label {
   display: inline-block;
   height: 1.2rem;
   margin-right: 0.25em;
+  margin-right: 10px;
+  margin-top: 0px;
+  outline: none;
   transition: border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
   vertical-align: text-bottom;
   width: 1.2rem;
-  outline: none;
-  margin-top: 0px;
-  margin-right: 10px;
 }
 
 .n-radio:focus {
@@ -49,7 +49,7 @@ label {
   opacity: 0.4;
 }
 
-/*
+/* TODO - Add ms-high-contrast styling
 @media screen and (-ms-high-contrast: active) {
 	.n-radio:checked {
 		border: 6px solid;
@@ -58,33 +58,33 @@ label {
 } */
 
 .radio-wrapper {
+  border: 1px solid var(--menu-border-color);
+  cursor: pointer;
   display: flex;
   height: 10rem;
-  border: 1px solid var(--menu-border-color);
-  width: 100%;
   margin-bottom: 1rem;
-  cursor: pointer;
+  width: 100%;
 }
 
 .radio-group {
-  display: flex;
   align-items: center;
-  padding-left: 2rem;
-  width: calc(100% - 10rem);
-  min-width: 10rem;
   background: var(--card-bg-color);
   border-right: 1px solid var(--menu-border-color);
+  display: flex;
+  min-width: 10rem;
+  padding-left: 2rem;
+  width: calc(100% - 10rem);
 }
 
 form {
-  width: 100%;
   max-width: 35rem;
+  width: 100%;
 }
 
 fieldset {
-  width: 100%;
-  border: 2px solid var(--text-color);
   border-radius: 0.2rem;
+  border: 2px solid var(--text-color);
+  width: 100%;
 }
 
 .radio-label {

@@ -1,0 +1,40 @@
+so-button {
+  outline: none;
+}
+
+.so-button {
+  -webkit-appearance: none;
+  align-items: center;
+  border-radius: 0.4rem;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  font-family: inherit;
+  font-size: 2.3rem;
+  height: 100%;
+  justify-content: center;
+  padding: 0;
+  transition: 0.25s;
+  width: 100%;
+}
+
+.so-button:focus, .so-button:hover {
+  -webkit-appearance: none;
+  border: 0.1rem solid var(--highlight-border-color);
+  box-shadow: 0 0 0 0.3rem var(--highlight-box-shadow-color);
+  outline: none;
+}
+
+.solid {
+  background: var(--primary-color);
+  color: white;
+  font-size: 1.8rem;
+  height: 100%;
+}
+
+.clear {
+  background-color: transparent;
+  color: var(--button-icon-color);
+  height: 4.4rem;
+  width: 4.4rem;
+}

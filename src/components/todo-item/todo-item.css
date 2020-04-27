@@ -6,46 +6,46 @@
 }
 
 .wrapper {
-  position: relative;
-  margin-left: 0.6rem;
-  margin-right: 0.1rem;
-  width: 100%;
+  align-items: center;
   display: flex;
   height: 5.4rem;
-  align-items: center;
+  margin-left: 0.6rem;
+  margin-right: 0.1rem;
   overflow: hidden;
+  position: relative;
+  width: 100%;
 }
 
 .wrapper input {
-  height: 4.4rem;
-  width: 4.4rem;
-  opacity: 0;
-  z-index: 1;
   cursor: pointer;
+  height: 4.4rem;
+  opacity: 0;
+  width: 4.4rem;
+  z-index: 1;
 }
 
 .wrapper input + label::before {
+  border-radius: 0.2rem;
   border: 0.1rem solid var(--check-color);
-  font-variation-settings: inherit;
   content: '';
+  font-variation-settings: inherit;
   height: 2rem;
-  top: 1.65rem;
   left: 1rem;
   position: absolute;
+  top: 1.65rem;
   width: 2rem;
-  border-radius: 0.2rem;
 }
 
 .wrapper input + label::after {
-  content: '';
-  border: 0.2rem solid var(--check-color);
   border-left: 0;
   border-top: 0;
+  border: 0.2rem solid var(--check-color);
+  content: '';
   height: 1rem;
-  top: 1.95rem;
   left: 1.7rem;
   opacity: 0;
   position: absolute;
+  top: 1.95rem;
   transform: rotate(45deg);
   transition: opacity 0.25s ease-in-out;
   width: 0.6rem;
@@ -58,9 +58,9 @@
 .wrapper input:focus + label::before,
 .wrapper input:hover + label::before {
   -webkit-appearance: none;
-  transition: 0.25s;
-  box-shadow: 0 0 0 0.3rem var(--highlight-box-shadow-color);
   border-color: var(--highlight-border-color);
+  box-shadow: 0 0 0 0.3rem var(--highlight-box-shadow-color);
+  transition: 0.25s;
 }
 
 .toggle {
@@ -68,11 +68,11 @@
 }
 
 .label {
-  flex: 1;
-  padding-left: 0.5rem;
-  font-size: 2rem;
   color: var(--text-color);
+  flex: 1;
+  font-size: 2rem;
   line-height: 100%;
+  padding-left: 0.5rem;
 }
 
 .delete {

@@ -1,29 +1,29 @@
 .item {
-  display: flex;
   background: var(--menu-bg-color);
-  color: var(--text-color);
-  font-weight: var(--text-weight);
   border-bottom: 1px solid var(--menu-border-color);
+  color: var(--text-color);
+  display: flex;
+  font-weight: var(--text-weight);
   min-height: 5.4rem;
 }
 
 .link-wrapper {
-  padding: 1rem;
-  outline: none;
-  margin-left: 1rem;
   border: 0.1rem solid transparent;
+  margin-left: 1rem;
+  outline: none;
+  padding: 1rem;
   width: 100%;
 }
 
 a {
-  font-variation-settings: 'wght' 400, 'wdth' 90;
-  font-size: 2rem;
-  line-height: 3rem;
+  border: 0.1rem solid transparent;
   color: var(--text-color);
   font-family: inherit;
-  outline: none;
+  font-size: 2rem;
+  font-variation-settings: 'wght' 400, 'wdth' 90;
+  line-height: 3rem;
   margin-left: 1rem;
-  border: 0.1rem solid transparent;
+  outline: none;
   text-decoration: unset;
 }
 
@@ -35,15 +35,15 @@ a:hover {
 }
 
 .link-layout {
-  display: flex;
   align-items: center;
+  display: flex;
   padding-left: 1rem;
 }
 
 .contact-link {
   border-bottom: 0.2rem solid transparent;
-  margin-left: 2rem;
   line-height: 2rem;
+  margin-left: 2rem;
   padding-bottom: 0.3rem;
 }
 
@@ -55,12 +55,12 @@ a:hover {
 
 .logo-icon {
   color: var(--text-color);
-  margin-left: 1.5rem;
   font-size: 2.5rem;
+  margin-left: 1.5rem;
 }
 
 .menu-label {
-  margin-left: 2rem;
-  line-height: 2rem;
   font-size: 2rem;
+  line-height: 2rem;
+  margin-left: 2rem;
 }

@@ -1,31 +1,31 @@
 app-root {
   display: flex;
-  height: 100%;
   flex-direction: column;
+  height: 100%;
 }
 
 header {
-  background: var(--primary-color);
-  color: white;
-  height: 5.6rem;
-  display: flex;
   align-items: center;
+  background: var(--primary-color);
   box-shadow: 0 0.2rem 0.5rem 0 rgba(0, 0, 0, 0.26);
+  color: white;
+  display: flex;
+  height: 5.6rem;
   z-index: 1;
 }
 
 .app-header {
-  font-variation-settings: 'wght' 600, 'wdth' 100;
+  color: white;
   flex: 1;
   font-size: 2.4rem;
-  color: white;
+  font-variation-settings: 'wght' 600, 'wdth' 100;
   padding: 0 1.2rem;
 }
 
 .menu-button {
-  margin-left: 0.7rem;
-  --highlight-box-shadow-color: hsla(0, 0%, 80%, 0.4);
   --highlight-border-color: hsl(0, 0%, 90%);
+  --highlight-box-shadow-color: hsla(0, 0%, 80%, 0.4);
+  margin-left: 0.7rem;
 }
 
 .update-button {
@@ -33,17 +33,17 @@ header {
 }
 
 .content {
-  height: 100%;
-  width: 100%;
   display: flex;
+  height: 100%;
   overflow: auto;
+  width: 100%;
 }
 
 main {
   flex: 1;
-  width: 100%;
   overflow-y: auto;
   padding: 1rem 1.5rem 0 1.5rem;
+  width: 100%;
 }
 
 .menu-icon {
@@ -52,16 +52,16 @@ main {
 
 app-menu {
   background-color: var(--menu-bg-color);
-  transition-property: margin-left, visibility;
-  transition-duration: 0.4s;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   padding: 1rem;
+  transition-duration: 0.4s;
+  transition-property: margin-left, visibility;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   width: 20rem;
 }
 
 .show-menu {
-  margin-left: 0;
   border-right: 0.1rem solid var(--menu-border-color);
+  margin-left: 0;
 }
 
 .hide-menu {

@@ -43,9 +43,9 @@ export class CreateTodo {
               onInput={this.handleInputChange}
               ref={el => (this.textInput = el as HTMLInputElement)}
             />
-            <so-fill-button class="add-button" onClick={this.emitInput.bind(this)}>
+            <so-button class="add-button" fill="solid" onClick={this.emitInput.bind(this)}>
               Add a task
-            </so-fill-button>
+            </so-button>
           </div>
         </div>
       </div>

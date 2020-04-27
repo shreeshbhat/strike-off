@@ -25,9 +25,9 @@ export class TodoItem {
             {this.text}
           </label>
         </div>
-        <so-clear-button slot="end" class="flex-center delete" onButtonClick={this.handleOnRemove}>
+        <so-button slot="end" class="flex-center delete" fill="clear" onButtonClick={this.handleOnRemove}>
           <ion-icon name="md-trash" />
-        </so-clear-button>
+        </so-button>
       </div>
     );
   }
