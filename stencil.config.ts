@@ -1,4 +1,6 @@
 import { Config } from '@stencil/core';
+import { postcss } from '@stencil/postcss';
+const cssnano = require('cssnano');
 
 // https://stenciljs.com/docs/config
 
@@ -21,4 +23,11 @@ export const config: Config = {
       dir: 'dist/prerender',
     },
   ],
+  plugins: [
+    postcss({
+      plugins: [cssnano({
+        preset: 'default',
+    })]
+    })
+  ]
 };
