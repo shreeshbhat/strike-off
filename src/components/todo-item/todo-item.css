@@ -37,9 +37,9 @@
 }
 
 .wrapper input + label::after {
+  border: 0.2rem solid var(--check-color);
   border-left: 0;
   border-top: 0;
-  border: 0.2rem solid var(--check-color);
   content: '';
   height: 1rem;
   left: 1.7rem;
