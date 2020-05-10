@@ -9,6 +9,7 @@ so-button {
   border: 0;
   cursor: pointer;
   display: flex;
+  flex-direction: column;
   font-family: inherit;
   font-size: 2.3rem;
   height: 100%;
@@ -37,4 +38,9 @@ so-button {
   color: var(--button-icon-color);
   height: 4.4rem;
   width: 4.4rem;
+}
+
+.button-label {
+  font-size: 1.2rem;
+  color: white;
 }
