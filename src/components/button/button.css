@@ -7,7 +7,6 @@ so-button {
   align-items: center;
   border-radius: 0.4rem;
   border: 0;
-  cursor: pointer;
   display: flex;
   flex-direction: column;
   font-family: inherit;
