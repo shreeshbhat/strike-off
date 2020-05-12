@@ -26,7 +26,6 @@
   -webkit-appearance: none;
   background: var(--card-bg-color);
   border-radius: 0.2rem;
-  border: 0.1rem solid transparent;
   border: none;
   box-shadow: 0 0.2rem 0.2rem 0 rgba(0, 0, 0, 0.16), 0 0 0 0.1rem rgba(0, 0, 0, 0.08);
   box-sizing: border-box;

@@ -1,4 +1,5 @@
-import { Component, Host, h, State } from '@stencil/core';
+import { Component, Host, h, State, Build } from '@stencil/core';
+import { addToDB, getFromDB } from '../../utils/service';
 
 @Component({
   tag: 'so-zoom',
@@ -7,7 +8,7 @@ import { Component, Host, h, State } from '@stencil/core';
 })
 export class Zoom {
   default = 62;
-  @State() zoomValue = this.default;
+  @State() zoomValue;
   options = [
     {
       value: 50,
@@ -41,8 +42,29 @@ export class Zoom {
   changeZoomValue(value: number) {
     if (value > this.minValue - this.stepValue && value < this.maxValue + this.stepValue) {
       this.zoomValue = value;
-      const htmlEl: HTMLElement = document.getElementsByTagName('html')[0];
-      htmlEl.style.fontSize = this.zoomValue + '%';
+      this.updateHTML(this.zoomValue);
+      addToDB('zoom', this.zoomValue);
+    }
+  }
+
+  updateHTML(value: number) {
+    const htmlEl: HTMLElement = document.getElementsByTagName('html')[0];
+    htmlEl.style.fontSize = value + '%';
+  }
+
+  componentWillLoad() {
+    if (Build.isBrowser) {
+      getFromDB('zoom').then(val => {
+        if (!!val) {
+          this.zoomValue = val as number;
+          this.updateHTML(this.zoomValue);
+        }
+        else {
+          this.zoomValue = this.default;
+        }
+      });
+    } else {
+      this.zoomValue = this.default;
     }
   }
 
@@ -59,6 +81,7 @@ export class Zoom {
                     <input type="radio"
                         name="zoom"
                         class="n-radio"
+                        checked={this.zoomValue == option.value}
                         onChange={ev => this.handleZoomChange(ev)}
                         value={option.value} />
                     <span class="zoom-label">{option.label} %</span>
