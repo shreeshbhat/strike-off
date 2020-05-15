@@ -29,7 +29,7 @@ export class Zoom {
     {
       value: 85,
       label: 120,
-    }
+    },
   ];
   minValue = 50;
   maxValue = 90;
@@ -58,8 +58,7 @@ export class Zoom {
         if (!!val) {
           this.zoomValue = val as number;
           this.updateHTML(this.zoomValue);
-        }
-        else {
+        } else {
           this.zoomValue = this.default;
         }
       });
@@ -78,14 +77,9 @@ export class Zoom {
               {this.options.map(option => (
                 <label class="radio-wrapper zoom-height">
                   <div class="radio-group zoom-group">
-                    <input type="radio"
-                        name="zoom"
-                        class="n-radio"
-                        checked={this.zoomValue == option.value}
-                        onChange={ev => this.handleZoomChange(ev)}
-                        value={option.value} />
+                    <input type="radio" name="zoom" class="n-radio" checked={this.zoomValue == option.value} onChange={ev => this.handleZoomChange(ev)} value={option.value} />
                     <span class="zoom-label">{option.label} %</span>
-                    </div>
+                  </div>
                 </label>
               ))}
             </fieldset>
