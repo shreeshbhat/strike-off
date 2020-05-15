@@ -25,14 +25,7 @@ export class AppPreferences {
               <legend class="radio-legend">Choose your theme</legend>
               <label class="radio-wrapper">
                 <div class="radio-group">
-                  <input
-                    type="radio"
-                    name="theme"
-                    class="n-radio"
-                    checked={this.theme == Theme.dark ? true : false}
-                    onChange={ev => this.handleThemeChange(ev)}
-                    value="1"
-                  />
+                  <input type="radio" name="theme" class="n-radio" checked={this.theme == Theme.dark ? true : false} onChange={ev => this.handleThemeChange(ev)} value="1" />
                   <span class="radio-label">Dark</span>
                 </div>
                 <so-preview-theme sidebar-background="#a14545" main-background="#252527" card-background="#3b353b"></so-preview-theme>
