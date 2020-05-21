@@ -8,7 +8,7 @@
 label {
   color: var(--text-color);
   font-size: 2rem;
-  font-variation-settings: 'wght' 400, 'wdth' 90;
+  font-variation-settings: var(--font-variation);
 }
 
 .n-radio {
