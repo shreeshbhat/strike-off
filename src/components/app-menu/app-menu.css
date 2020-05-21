@@ -3,7 +3,7 @@
   border-bottom: 1px solid var(--menu-border-color);
   color: var(--text-color);
   display: flex;
-  font-weight: var(--text-weight);
+  font-weight: var(--item-text-weight);
   min-height: 5.4rem;
 }
 
@@ -20,7 +20,7 @@ a {
   color: var(--text-color);
   font-family: inherit;
   font-size: 2rem;
-  font-variation-settings: 'wght' 400, 'wdth' 90;
+  font-variation-settings: var(--font-variation);
   line-height: 3rem;
   margin-left: 1rem;
   outline: none;
@@ -63,4 +63,5 @@ a:hover {
   font-size: 2rem;
   line-height: 2rem;
   margin-left: 2rem;
+  font-variation-settings: var(--font-variation);
 }

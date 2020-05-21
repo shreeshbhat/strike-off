@@ -10,7 +10,8 @@
   --menu-border-color: hsl(300, 1%, 25%);
   --primary-color: hsl(0, 40%, 45%);
   --text-color: hsl(15, 25%, 84%);
-  --text-weight: 200;
+  --item-text-weight: 200;
+  --font-variation: 'wght' 400, 'wdth' 90;
 }
 
 .light {
@@ -24,7 +25,8 @@
   --menu-bg-color: hsl(0, 0%, 97%);
   --menu-border-color: hsl(0, 0%, 80%);
   --text-color: hsl(0, 0%, 30%);
-  --text-weight: 600;
+  --item-text-weight: 600;
+  --font-variation: 'wght' 500, 'wdth' 90;
 }
 
 .dark {
@@ -38,5 +40,6 @@
   --menu-bg-color: hsl(240, 2%, 15%);
   --menu-border-color: hsl(300, 1%, 25%);
   --text-color: hsl(15, 25%, 84%);
-  --text-weight: 200;
+  --item-text-weight: 200;
+  --font-variation: 'wght' 400, 'wdth' 90;
 }
