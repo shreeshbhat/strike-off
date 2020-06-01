@@ -18,7 +18,7 @@ export namespace Components {
         "openMenu": () => Promise<void>;
     }
     interface SoButton {
-        "fill"?: "clear" | "solid";
+        "fill"?: 'clear' | 'solid';
     }
     interface SoCreateTodo {
     }
@@ -116,7 +116,7 @@ declare namespace LocalJSX {
     interface AppRoot {
     }
     interface SoButton {
-        "fill"?: "clear" | "solid";
+        "fill"?: 'clear' | 'solid';
         "onButtonClick"?: (event: CustomEvent<any>) => void;
     }
     interface SoCreateTodo {
