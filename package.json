@@ -1,7 +1,7 @@
 {
   "name": "strike-off",
   "private": true,
-  "version": "0.0.11",
+  "version": "0.0.12",
   "description": "A fast progressive web app to organize your to-do items and strike em off.",
   "scripts": {
     "build": "stencil build --prerender --config stencil.config.ts",
@@ -13,8 +13,8 @@
     "generate": "stencil generate"
   },
   "dependencies": {
-    "@ionic/core": "5.1.0",
-    "@stencil/core": "1.13.0",
+    "@ionic/core": "5.1.1",
+    "@stencil/core": "1.14.0",
     "@stencil/router": "1.0.1",
     "idb": "4.0.4",
     "ionicons": "4.6.3"
