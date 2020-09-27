@@ -38,6 +38,7 @@ label {
 .n-radio:checked {
   border-color: hsl(0, 0%, 69%);
   box-shadow: 0 0 0 2px hsl(210, 18%, 30%), inset 0 0 0 6px hsl(210, 18%, 23%);
+  background-color: hsl(210, 18%, 30%);
 }
 
 .n-radio:checked:focus {
@@ -49,14 +50,6 @@ label {
   opacity: 0.4;
 }
 
-/* TODO - Add ms-high-contrast styling
-@media screen and (-ms-high-contrast: active) {
-	.n-radio:checked {
-		border: 6px solid;
-		box-shadow: none;
-	}
-} */
-
 .radio-wrapper {
   border: 1px solid var(--menu-border-color);
   cursor: pointer;
@@ -66,14 +59,22 @@ label {
   width: 100%;
 }
 
+.radio-group:focus-within {
+  background-color: var(--highlight-bg-color);
+  color: var(--highlight-font-color);
+}
+
 .radio-group {
   align-items: center;
   background: var(--card-bg-color);
-  border-right: 1px solid var(--menu-border-color);
   display: flex;
   min-width: 10rem;
   padding-left: 2rem;
   width: calc(100% - 10rem);
+}
+
+so-preview-theme {
+  border-left: 1px solid var(--menu-border-color);
 }
 
 form {
