@@ -16,10 +16,20 @@ export class AppPreferences {
     this.themeClick.emit(value);
   }
 
+  componentDidLoad() {
+    setTimeout(()=> {
+      let homeEl = document.getElementById('preferences');
+      homeEl.focus();
+    },100);
+  }
+
   render() {
     return (
       <Host>
         <div class="theme-wrapper">
+          <div class="heading-wrapper">
+            <h2 id="preferences" tabindex="-1">Preferences</h2>
+          </div>
           <form>
             <fieldset>
               <legend class="radio-legend">Choose your theme</legend>

@@ -1,3 +1,5 @@
+@import url('../../global/utils.css');
+
 .card-layout {
   align-items: center;
   display: flex;
