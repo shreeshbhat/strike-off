@@ -18,6 +18,13 @@ export class AppHome {
     }
   }
 
+  componentDidLoad() {
+    setTimeout(()=> {
+      let homeEl = document.getElementById('home');
+      homeEl.focus();
+    },100);
+  }
+
   inputSubmitHandler = (e: CustomEvent) => {
     const item = {
       todoId: this.updateCounter(),
@@ -51,6 +58,7 @@ export class AppHome {
   render() {
     return (
       <Host>
+        <h2 id="home" class="visually-hidden" tabindex="-1">Home</h2>
         <so-create-todo onInputSubmit={this.inputSubmitHandler} />
         <div class="card-layout">
           {!!this.list && this.list.length > 0 ? (
