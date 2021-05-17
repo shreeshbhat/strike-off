@@ -8,7 +8,7 @@ so-zoom {
 .zoom-wrapper {
   display: flex;
   flex-direction: column;
-  width: 35rem;
+  width: 45rem;
 }
 
 .zoom-group {

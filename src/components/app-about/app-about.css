@@ -1,0 +1,42 @@
+:host {
+  display: block;
+}
+
+.about-wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.about-item {
+  color: var(--text-color);
+  font-weight: var(--item-text-weight);
+  max-width: 55rem;
+  width: 100%;
+}
+
+
+h2 {
+  font-size: 2.5rem;
+  font-variation-settings: "wght" 600,"wdth" 90;
+  line-height: 3.5rem;
+  word-spacing: .05rem;
+}
+
+h3 {
+  font-size: 2.2rem;
+  margin: 1.5rem 0;
+}
+
+li {
+  margin: 1.5rem 0;
+}
+
+.contact-link {
+  color: var(--highlight-link-text-color);
+  text-decoration: underline;
+}
+
+p, li {
+  font-size: 2rem;
+}

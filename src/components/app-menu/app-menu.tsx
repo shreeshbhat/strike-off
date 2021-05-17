@@ -1,5 +1,5 @@
 import { Component, Event, EventEmitter, Host, Prop, h } from '@stencil/core';
-import { version } from '../../../package.json';
+
 @Component({
   tag: 'app-menu',
   styleUrl: 'app-menu.css',
@@ -23,9 +23,13 @@ export class AppMenu {
         name: 'Home',
       },
       {
-        url: '/preferences/',
+        url: '/preferences',
         name: 'Preferences',
       },
+      {
+        url: '/about',
+        name: 'About',
+      }
     ];
     return (
       <Host>
@@ -38,22 +42,6 @@ export class AppMenu {
                 </stencil-route-link>
               </div>
             ))}
-            <div class="item link-layout">
-              <a class="contact-link" href="https://github.com/shreeshbhat/strike-off">
-                Github
-              </a>
-              <ion-icon name="logo-github" class="logo-icon"></ion-icon>
-            </div>
-
-            <div class="item link-layout">
-              <a class="contact-link" href="https://twitter.com/shreeshbhat">
-                Twitter
-              </a>
-              <ion-icon name="logo-twitter" class="logo-icon"></ion-icon>
-            </div>
-            <div class="item link-layout">
-              <span class="menu-label">Version {version}</span>
-            </div>
           </nav>
         </aside>
       </Host>

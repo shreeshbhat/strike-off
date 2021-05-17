@@ -6,7 +6,7 @@
 
 .heading-wrapper {
   width: 100%;
-  max-width: 35rem;
+  max-width: 45rem;
 }
 
 #preferences {
@@ -95,7 +95,7 @@ so-preview-theme {
 }
 
 form {
-  max-width: 35rem;
+  max-width: 45rem;
   width: 100%;
 }
 

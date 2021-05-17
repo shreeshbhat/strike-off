@@ -14,6 +14,7 @@
   --font-variation: 'wght' 400, 'wdth' 90;
   --highlight-bg-color: #71A3F4;
   --highlight-font-color: #101010;
+  --highlight-link-text-color: #71A3F4;
 }
 
 .light {
@@ -29,6 +30,7 @@
   --text-color: hsl(0, 0%, 30%);
   --item-text-weight: 600;
   --font-variation: 'wght' 450, 'wdth' 90;
+  --highlight-link-text-color: #132d57;
 }
 
 .dark {
@@ -44,4 +46,5 @@
   --text-color: hsl(15, 25%, 84%);
   --item-text-weight: 200;
   --font-variation: 'wght' 400, 'wdth' 90;
+  --highlight-link-text-color: #71A3F4;
 }
