@@ -10,6 +10,7 @@ export class TodoItem {
   @Prop() checked!: boolean;
   @Prop() text!: string;
   @Prop() todoId!: number;
+  @Prop() allowDelete: boolean;
   @Event() itemCheck!: EventEmitter;
   @Event() itemRemove!: EventEmitter;
 
@@ -25,9 +26,13 @@ export class TodoItem {
             {this.text}
           </label>
         </div>
-        <so-button slot="end" class="flex-center delete" fill="clear" onButtonClick={this.handleOnRemove}>
-          <ion-icon name="md-trash" />
-        </so-button>
+
+        {this.allowDelete ?
+          <so-button slot="end" class="flex-center delete" fill="clear" onButtonClick={this.handleOnRemove}>
+            <ion-icon name="md-trash" />
+          </so-button>
+          : null
+        }
       </div>
     );
   }

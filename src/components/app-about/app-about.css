@@ -15,10 +15,9 @@
   width: 100%;
 }
 
-
 h2 {
   font-size: 2.5rem;
-  font-variation-settings: "wght" 600,"wdth" 90;
+  font-variation-settings: "wght" 600, "wdth" 90;
   line-height: 3.5rem;
   word-spacing: .05rem;
 }
@@ -35,6 +34,12 @@ li {
 .contact-link {
   color: var(--highlight-link-text-color);
   text-decoration: underline;
+  padding: 0.5rem;
+}
+
+.contact-link:focus-within, .contact-link:hover {
+  background-color: var(--highlight-bg-color);
+  color: var(--highlight-font-color);
 }
 
 p, li {
