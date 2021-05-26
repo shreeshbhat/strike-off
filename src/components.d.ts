@@ -5,6 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { Todo } from "./interfaces/Todo";
 export namespace Components {
     interface AppAbout {
     }
@@ -29,7 +30,13 @@ export namespace Components {
         "mainBackground": string;
         "sidebarBackground": string;
     }
+    interface SoTodoCard {
+        "allowDelete": boolean;
+        "header": string;
+        "list": Todo[];
+    }
     interface SoTodoItem {
+        "allowDelete": boolean;
         "checked": boolean;
         "text": string;
         "todoId": number;
@@ -86,6 +93,12 @@ declare global {
         prototype: HTMLSoPreviewThemeElement;
         new (): HTMLSoPreviewThemeElement;
     };
+    interface HTMLSoTodoCardElement extends Components.SoTodoCard, HTMLStencilElement {
+    }
+    var HTMLSoTodoCardElement: {
+        prototype: HTMLSoTodoCardElement;
+        new (): HTMLSoTodoCardElement;
+    };
     interface HTMLSoTodoItemElement extends Components.SoTodoItem, HTMLStencilElement {
     }
     var HTMLSoTodoItemElement: {
@@ -107,6 +120,7 @@ declare global {
         "so-button": HTMLSoButtonElement;
         "so-create-todo": HTMLSoCreateTodoElement;
         "so-preview-theme": HTMLSoPreviewThemeElement;
+        "so-todo-card": HTMLSoTodoCardElement;
         "so-todo-item": HTMLSoTodoItemElement;
         "so-zoom": HTMLSoZoomElement;
     }
@@ -138,7 +152,15 @@ declare namespace LocalJSX {
         "mainBackground"?: string;
         "sidebarBackground"?: string;
     }
+    interface SoTodoCard {
+        "allowDelete"?: boolean;
+        "header"?: string;
+        "list"?: Todo[];
+        "onItemCheck"?: (event: CustomEvent<any>) => void;
+        "onItemRemove"?: (event: CustomEvent<any>) => void;
+    }
     interface SoTodoItem {
+        "allowDelete"?: boolean;
         "checked": boolean;
         "onItemCheck"?: (event: CustomEvent<any>) => void;
         "onItemRemove"?: (event: CustomEvent<any>) => void;
@@ -156,6 +178,7 @@ declare namespace LocalJSX {
         "so-button": SoButton;
         "so-create-todo": SoCreateTodo;
         "so-preview-theme": SoPreviewTheme;
+        "so-todo-card": SoTodoCard;
         "so-todo-item": SoTodoItem;
         "so-zoom": SoZoom;
     }
@@ -172,6 +195,7 @@ declare module "@stencil/core" {
             "so-button": LocalJSX.SoButton & JSXBase.HTMLAttributes<HTMLSoButtonElement>;
             "so-create-todo": LocalJSX.SoCreateTodo & JSXBase.HTMLAttributes<HTMLSoCreateTodoElement>;
             "so-preview-theme": LocalJSX.SoPreviewTheme & JSXBase.HTMLAttributes<HTMLSoPreviewThemeElement>;
+            "so-todo-card": LocalJSX.SoTodoCard & JSXBase.HTMLAttributes<HTMLSoTodoCardElement>;
             "so-todo-item": LocalJSX.SoTodoItem & JSXBase.HTMLAttributes<HTMLSoTodoItemElement>;
             "so-zoom": LocalJSX.SoZoom & JSXBase.HTMLAttributes<HTMLSoZoomElement>;
         }

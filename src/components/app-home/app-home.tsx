@@ -38,7 +38,7 @@ export class AppHome {
   itemCheckedHandler = (e: CustomEvent) => {
     const list = [...this.list];
     const index = this.list.findIndex(x => x.todoId === e.detail);
-    const item = list[index];
+    let item = list[index];
     list[index] = Object.assign({}, item, { checked: !item.checked });
     this.list = list;
     updateTodo(list[index]);
@@ -55,22 +55,37 @@ export class AppHome {
     return listLength > 0 ? this.list[listLength - 1].todoId + 1 : 0;
   }
 
+  filterCheckedItems(list: Todo[], filterChecked: boolean): Todo[] {
+    return list.filter(item => item.checked == filterChecked);
+  }
+
   render() {
     return (
       <Host>
         <h2 id="home" class="visually-hidden" tabindex="-1">Home</h2>
         <so-create-todo onInputSubmit={this.inputSubmitHandler} />
-        <div class="card-layout">
           {!!this.list && this.list.length > 0 ? (
-            <div class="card">
-              {this.list.map(item => (
-                <so-todo-item onItemCheck={this.itemCheckedHandler} onItemRemove={this.itemRemoveHandler} checked={item.checked} text={item.text} todoId={item.todoId} />
-              ))}
+            <div class="card-layout">
+              <so-todo-card
+                header={'To be done'}
+                list={this.filterCheckedItems(this.list, false)}
+                allowDelete={false}
+                onItemCheck={this.itemCheckedHandler}
+                onItemRemove={this.itemRemoveHandler}
+              />
+
+              <so-todo-card
+                header={'Completed'}
+                list={this.filterCheckedItems(this.list, true)}
+                allowDelete={true}
+                onItemCheck={this.itemCheckedHandler}
+                onItemRemove={this.itemRemoveHandler}
+              />
             </div>
           ) : (
-            <div></div>
+            null
           )}
-        </div>
+
       </Host>
     );
   }

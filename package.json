@@ -1,11 +1,11 @@
 {
   "name": "strike-off",
   "private": true,
-  "version": "0.0.15",
+  "version": "0.0.16",
   "description": "A fast progressive web app to organize your to-do items and strike em off.",
   "scripts": {
     "build": "stencil build --prerender --config stencil.config.ts",
-    "start": "stencil build --dev --watch --serve",
+    "start": "stencil build --dev --watch --serve --no-open",
     "test": "stencil test --spec --e2e",
     "test.watch": "stencil test --spec --e2e --watchAll",
     "prerender": "stencil build --prerender --config stencil.config.ts",
