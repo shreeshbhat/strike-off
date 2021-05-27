@@ -3,8 +3,8 @@
 .card-layout {
   align-items: center;
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  flex-direction: column;
   min-width: 28rem;
   padding: 1.5rem 0;
 }
