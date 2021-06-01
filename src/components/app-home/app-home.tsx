@@ -1,4 +1,5 @@
 import { Build, Component, Host, State, h } from '@stencil/core';
+import { createAnimation, Animation } from '@ionic/core';
 import { Todo } from '../../interfaces/Todo';
 import { addTodo, getTodos, updateTodo, deleteTodo } from '../../utils/service';
 
@@ -30,9 +31,23 @@ export class AppHome {
       todoId: this.updateCounter(),
       text: e.detail,
       checked: false,
+      new: true
     };
     this.list = [...this.list, item];
     addTodo(item);
+
+
+    setTimeout(() => {
+      const animation: Animation =
+        createAnimation()
+          .addElement(document.querySelector('so-todo-item:last-child'))
+          .duration(300)
+          .fromTo('height', '0', '100%')
+          .fromTo('opacity', '0', '1');
+      animation.play();
+      this.list[this.list.length - 1].new = false;
+      this.list = [...this.list];
+    }, 100);
   };
 
   itemCheckedHandler = (e: CustomEvent) => {

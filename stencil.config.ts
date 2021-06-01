@@ -23,11 +23,11 @@ export const config: Config = {
       dir: 'dist/prerender',
     },
   ],
-  plugins: [
-    postcss({
-      plugins: [cssnano({
-        preset: 'default',
-    })]
-    })
-  ]
+  // plugins: [
+  //   postcss({
+  //     plugins: [cssnano({
+  //       preset: 'default',
+  //   })]
+  //   })
+  // ]
 };
