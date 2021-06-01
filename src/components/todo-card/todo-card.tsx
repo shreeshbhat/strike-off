@@ -21,6 +21,7 @@ export class TodoCard {
           {this.list.map(item => (
             <so-todo-item
               key={item.todoId}
+              class={item.new? null: "show"}
               allowDelete={this.allowDelete}
               checked={item.checked}
               text={item.text}

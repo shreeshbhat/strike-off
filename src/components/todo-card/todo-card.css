@@ -20,6 +20,7 @@ so-todo-card {
   top: 1.6rem;
   user-select: none;
   width: 40%;
+  z-index: 3;
 }
 
 .card {
@@ -38,4 +39,15 @@ p.empty-text {
   padding-left: 2rem;
   margin: 0;
   user-select: none;
+}
+
+so-todo-item {
+  display: block;
+  height: 0;
+  opacity: 0;
+}
+
+.show {
+  height: 100%;
+  opacity: 1;
 }

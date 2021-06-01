@@ -29,7 +29,7 @@ export class TodoItem {
 
         {this.allowDelete ?
           <so-button slot="end" class="flex-center delete" fill="clear" onButtonClick={this.handleOnRemove}>
-            <ion-icon name="md-trash" />
+            <ion-icon name="trash-outline" />
           </so-button>
           : null
         }
