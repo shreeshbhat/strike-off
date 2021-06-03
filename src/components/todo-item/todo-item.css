@@ -1,21 +1,5 @@
 @import url('../../global/utils.css');
 
-.todo-item {
-  background-color: inherit;
-  display: flex;
-}
-
-.wrapper {
-  align-items: center;
-  display: flex;
-  height: 5.4rem;
-  margin-left: 0.6rem;
-  margin-right: 0.1rem;
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-}
-
 .wrapper input {
   height: 4.4rem;
   opacity: 0;
@@ -64,14 +48,6 @@
 
 .toggle {
   margin: 0;
-}
-
-.label {
-  color: var(--text-color);
-  flex: 1;
-  font-size: 2rem;
-  line-height: 4rem;
-  padding-left: 0.5rem;
 }
 
 .delete {
