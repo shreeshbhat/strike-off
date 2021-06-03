@@ -46,6 +46,7 @@ export class AppHome {
           .fromTo('opacity', '0', '1');
       animation.play();
       this.list[this.list.length - 1].new = false;
+      updateTodo(this.list[this.list.length - 1]);
       this.list = [...this.list];
     }, 100);
   };
