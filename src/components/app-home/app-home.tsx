@@ -94,6 +94,7 @@ export class AppHome {
                 header={'Completed'}
                 list={this.filterCheckedItems(this.list, true)}
                 allowDelete={true}
+                displayEmptyCard={true}
                 onItemCheck={this.itemCheckedHandler}
                 onItemRemove={this.itemRemoveHandler}
               />

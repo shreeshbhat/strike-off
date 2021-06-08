@@ -32,6 +32,7 @@ export namespace Components {
     }
     interface SoTodoCard {
         "allowDelete": boolean;
+        "displayEmptyCard": boolean;
         "header": string;
         "list": Todo[];
     }
@@ -154,6 +155,7 @@ declare namespace LocalJSX {
     }
     interface SoTodoCard {
         "allowDelete"?: boolean;
+        "displayEmptyCard"?: boolean;
         "header"?: string;
         "list"?: Todo[];
         "onItemCheck"?: (event: CustomEvent<any>) => void;
